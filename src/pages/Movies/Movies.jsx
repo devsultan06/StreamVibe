@@ -3,7 +3,7 @@
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/swiper-bundle.css";
-import Navbar from "../../Components/Navbar";
+import Navbar from "../../utils/Navbar";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";

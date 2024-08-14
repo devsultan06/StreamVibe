@@ -2,12 +2,12 @@ import Explore from "../../Components/Home Component/Explore";
 import Header from "../../Components/Home Component/Header";
 import NavbarTitle from "../../Components/Home Component/NavbarTitle";
 import Devices from "../../Components/Home Component/Devices";
-import Preloader from "../../Components/Home Component/Preloader"; // Create a new Preloader component
+import Preloader from "../../utils/Preloader"; // Create a new Preloader component
 import { useEffect, useState } from "react";
 import Faq from "../../Components/Home Component/Faq";
 import Pricing from "../../Components/Home Component/Plan";
 import Trial from "../../Components/Home Component/Trial";
-import Footer from "../../Components/Footer";
+import Footer from "../../utils/Footer";
 
 
 const Home = () => {

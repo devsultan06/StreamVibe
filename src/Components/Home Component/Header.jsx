@@ -1,7 +1,7 @@
 import PlayButton from "/images/Play-Video-Button-2.png";
 import { motion, useScroll, useSpring } from "framer-motion";
 import Lenis from "@studio-freight/lenis";
-import Navbar from "../Navbar";
+import Navbar from "../../utils/Navbar";
 
 const Header = () => {
   const lenis = new Lenis();
