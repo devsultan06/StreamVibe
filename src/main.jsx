@@ -3,6 +3,7 @@ import "./index.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Movies from "./pages/Movies/Movies";
+import MovieShow from "./pages/MovieShow/MovieShow";
 import Subscription from "./pages/Subscription/Subscription";
 import Support from "./pages/Support/Support";
 import Authentication from "./pages/auth/Authentication";
@@ -13,6 +14,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/movies" element={<Movies />} />
+      <Route path="/movieshow" element={<MovieShow />} />
       <Route path="/subscription" element={<Subscription />} />
       <Route path="/support" element={<Support />} />
       <Route path="/authentication" element={<Authentication />} />

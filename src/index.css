@@ -522,21 +522,21 @@ section.movies button {
   outline: none;
 }
 
-.movies-show-box h1 {
+.movies-box-box h1 {
   font-size: 32px;
   filter: brightness(3);
   font-weight: 900;
 }
 
-.movies-show-box p {
+.movies-box-box p {
   color: #999999;
   font-size: 20px;
   padding: 10px 200px;
 }
 
-.movies-show-container,
-.movies-show-container:nth-child(2),
-.movies-show-container:nth-child(3) {
+.movies-box-container,
+.movies-box-container:nth-child(2),
+.movies-box-container:nth-child(3) {
   padding-top: 120px;
   padding-bottom: 100px;
   position: relative;
@@ -582,7 +582,7 @@ div.second-item {
   justify-content: center;
 }
 
-.movies-show-container::before {
+.movies-box-container::before {
   content: "";
   position: absolute;
   border-radius: 10px;
@@ -596,7 +596,7 @@ div.second-item {
   filter: brightness(0.5); /* adjust the brightness to your liking */
 }
 
-.slide2 .movies-show-container::before {
+.slide2 .movies-box-container::before {
   content: "";
   position: absolute;
   border-radius: 10px;
@@ -610,7 +610,7 @@ div.second-item {
   filter: brightness(0.5); /* adjust the brightness to your liking */
 }
 
-.slide3 .movies-show-container::before {
+.slide3 .movies-box-container::before {
   content: "";
   position: absolute;
   top: 100;
@@ -627,12 +627,12 @@ div.second-item {
   margin-top: 20px;
 }
 
-.movies-show-box {
+.movies-box-box {
   padding-top: 200px;
   border-radius: 10px;
 }
 
-.movies-show-box > * {
+.movies-box-box > * {
   /* target the text elements */
   position: relative;
   z-index: 1;
@@ -662,6 +662,102 @@ div.vid-tag video {
   left: 50%;
   right: 50%;
   transform: translate(-50%, -50%);
+}
+
+div.support {
+  background-color: #1a1a1a;
+  color: white;
+}
+
+div.support-box {
+  padding: 200px 70px 100px 70px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.support-box p {
+  font-size: 12px;
+}
+
+.support-box img {
+  margin-top: 40px;
+  height: 400px;
+}
+
+div.right form {
+  background-color: #0f0f0f;
+  padding: 30px;
+
+  border-radius: 8px;
+  width: 750px;
+}
+
+div.right form .form-controls input {
+  width: 100%;
+  margin-bottom: 30px;
+  margin-top: 10px;
+  background-color: #1a1a1a;
+  padding: 10px;
+  outline: none;
+  border: 1px solid #5c5959;
+  border-radius: 5px;
+  color: #999999;
+}
+
+div.right form .form-controls textarea {
+  width: 210%;
+  margin-bottom: 30px;
+  margin-top: 10px;
+  background-color: #1a1a1a;
+  padding: 10px;
+  outline: none;
+  border: 1px solid #5c5959;
+  border-radius: 5px;
+  color: #999999;
+  resize: none;
+}
+
+div.right form .form-controls {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+textarea::placeholder {
+  color: #5c5959;
+}
+
+div.terms-and-submit {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+div.terms {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+div.terms input {
+  background-color: #1a1a1a;
+  border: 2px solid #0f0f0f;
+}
+
+div.send button {
+  width: 100%;
+  padding: 10px;
+  background-color: #e50000;
+  color: white;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 15px;
+  transition: 0.1s ease-in-out;
+}
+
+div.send button:hover {
+  background-color: #b11a1a !important;
 }
 
 div.authentication {
@@ -703,8 +799,13 @@ div.authentication form input {
   background-color: #1a1a1a;
   padding: 10px;
   outline: none;
-  border: none;
+  border: 1px solid #5c5959;
   border-radius: 5px;
+  color: #999999;
+}
+
+input::placeholder {
+  color: #5c5959;
 }
 
 div.authentication form button.submit {
@@ -773,6 +874,16 @@ div.password-icon {
   top: 18px;
   cursor: pointer;
   width: 10px;
+}
+
+@media (max-width: 1480px) {
+  div.right form {
+    background-color: #0f0f0f;
+    padding: 30px;
+
+    border-radius: 8px;
+    width: 550px;
+  }
 }
 @media (max-width: 990px) {
   div.box {
@@ -866,6 +977,33 @@ div.password-icon {
     font-size: 20px;
     padding: 10px 0px;
   }
+  div.support-box {
+    padding: 200px 10px 100px 10px;
+  }
+  div.support-box form {
+    width: 100%;
+    margin-top: 40px;
+  }
+
+  div.support-box form .form-controls {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  div.support-box form .form-controls input {
+    margin-bottom: 10px;
+  }
+
+  div.right form .form-controls textarea {
+    width: 100%;
+  }
+
+  div.terms-and-submit {
+    display: block;
+  }
+
+  div.terms {
+    margin-bottom: 20px;
+  }
 }
 
 @media (max-width: 600px) {
@@ -921,6 +1059,9 @@ div.password-icon {
   }
   nav ul {
     margin-top: 30px;
+  }
+  div.support-box {
+    display: block;
   }
 }
 

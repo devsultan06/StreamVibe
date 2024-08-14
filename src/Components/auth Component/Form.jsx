@@ -59,6 +59,7 @@ const Form = () => {
               value={state.fullname}
               required
               onChange={handleInputChange}
+              placeholder="Enter your Full Name"
             />
           </div>
           <div className="form-control">
@@ -74,6 +75,7 @@ const Form = () => {
               minLength={11}
               required
               onChange={handleInputChange}
+              placeholder="Enter your Phone Number"
             />
             {touched.number && errors.number && (
               <p className="error">{errors.number}</p>
@@ -93,6 +95,7 @@ const Form = () => {
           required
           onChange={handleInputChange}
           onBlur={() => setTouched((prev) => ({ ...prev, email: true }))}
+          placeholder="Enter your Email"
         />
         {touched.email && errors.email && (
           <p className="error">{errors.email}</p>
@@ -111,6 +114,7 @@ const Form = () => {
             required
             onChange={handleInputChange}
             onBlur={() => setTouched((prev) => ({ ...prev, password: true }))}
+            placeholder="Enter your Password"
           />
           <div
             className="password-icon"
