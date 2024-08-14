@@ -12,7 +12,7 @@ import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/swiper-bundle.css";
-import MovieShow from "../../Components/Movies Component/MovieShow";
+import MovieBox from "../../Components/Movies Component/MovieBox";
 import { useEffect } from "react";
 
 const Movies = () => {
@@ -38,15 +38,15 @@ const Movies = () => {
         onSwiper={(swiper) => console.log(swiper)}
       >
         <SwiperSlide className="slide1">
-          <MovieShow />
+          <MovieBox />
         </SwiperSlide>
 
         <SwiperSlide className="slide2">
-          <MovieShow />
+          <MovieBox />
         </SwiperSlide>
 
         <SwiperSlide className="slide3">
-          <MovieShow />
+          <MovieBox />
         </SwiperSlide>
 
         <div className="swiper-pagination hidden-md-and-up"></div>
