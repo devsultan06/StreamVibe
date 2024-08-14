@@ -13,8 +13,12 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/swiper-bundle.css";
 import MovieShow from "../../Components/Movies Component/MovieShow";
+import { useEffect } from "react";
 
 const Movies = () => {
+  useEffect(() => {
+    document.title = "Movies";
+  }, []);
   return (
     <section className="movies relative">
       <Navbar />

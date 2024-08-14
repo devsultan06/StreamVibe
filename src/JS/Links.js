@@ -1,4 +1,3 @@
-
 const Links = [
   {
     label: "Home",
@@ -16,7 +15,10 @@ const Links = [
     label: "Subscription",
     href: "/subscription",
   },
-
+  {
+    label: "SignUp",
+    href: "/authentication",
+  },
 ];
 
-export default Links
+export default Links;

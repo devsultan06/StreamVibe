@@ -1,8 +1,12 @@
 /* eslint-disable react/no-unknown-property */
 import video from "/images/Avengers Endgame _ The Big Three Fight Scenes.mp4";
 import Navbar from "../../Components/Navbar";
+import { useEffect } from "react";
 
 const Support = () => {
+  useEffect(() => {
+    document.title = "Support";
+  }, []);
   return (
     <div className="bg-black10">
       <Navbar />

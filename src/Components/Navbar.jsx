@@ -36,7 +36,7 @@ const Navbar = () => {
     setIsMenuOpen(false);
   };
 
-  const isDesktop = useMediaQuery({ query: "(min-width: 800px)" }); // adjust the breakpoint as needed
+  const isDesktop = useMediaQuery({ query: "(min-width: 900px)" }); // adjust the breakpoint as needed
 
   useEffect(() => {
     if (isDesktop) {

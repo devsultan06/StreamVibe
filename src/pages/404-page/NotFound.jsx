@@ -1,6 +1,10 @@
+import { useEffect } from "react";
 import Image404 from "/images/404.jpg";
 
 const NotFound = () => {
+  useEffect(() => {
+    document.title = "Page Not Found";
+  });
   return (
     <div className="not-found">
       <div className="in">

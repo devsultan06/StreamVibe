@@ -12,7 +12,9 @@
   "dependencies": {
     "@emotion/react": "^11.13.0",
     "@emotion/styled": "^11.13.0",
-    "@mui/material": "^5.16.5",
+    "@mui/icons-material": "^5.16.7",
+    "@mui/material": "^5.16.7",
+    "@mui/styled-engine-sc": "^6.0.0-alpha.18",
     "@react-spring/web": "^9.7.4",
     "@studio-freight/react-lenis": "^0.0.47",
     "aos": "^2.3.4",
@@ -23,6 +25,7 @@
     "react-responsive": "^10.0.0",
     "react-say": "^2.1.1-master.22688e3",
     "react-scroll": "^1.9.0",
+    "styled-components": "^6.1.12",
     "swiper": "^11.1.5"
   },
   "devDependencies": {
