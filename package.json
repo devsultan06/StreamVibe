@@ -22,6 +22,7 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-icons": "^5.2.1",
+    "react-phone-number-input": "^3.4.5",
     "react-responsive": "^10.0.0",
     "react-say": "^2.1.1-master.22688e3",
     "react-scroll": "^1.9.0",

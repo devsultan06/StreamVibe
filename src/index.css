@@ -593,7 +593,7 @@ div.second-item {
   height: 100%;
   background-image: url("/images/movieshowbg.png");
   background-size: cover;
-  filter: brightness(0.5); /* adjust the brightness to your liking */
+  filter: brightness(0.5);
 }
 
 .slide2 .movies-box-container::before {
@@ -670,10 +670,11 @@ div.support {
 }
 
 div.support-box {
-  padding: 200px 70px 100px 70px;
+  padding: 150px 70px 100px 70px;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
+  gap: 10px;
 }
 .support-box p {
   font-size: 12px;
@@ -689,7 +690,7 @@ div.right form {
   padding: 30px;
 
   border-radius: 8px;
-  width: 750px;
+  width: 720px;
 }
 
 div.right form .form-controls input {
@@ -735,8 +736,13 @@ div.terms-and-submit {
 div.terms {
   display: flex;
   align-items: center;
-  justify-content: center;
+
   gap: 8px;
+}
+
+
+div.terms1 p.error {
+  margin-top: 10px;
 }
 div.terms input {
   background-color: #1a1a1a;
@@ -878,10 +884,7 @@ div.password-icon {
 
 @media (max-width: 1480px) {
   div.right form {
-    background-color: #0f0f0f;
     padding: 30px;
-
-    border-radius: 8px;
     width: 550px;
   }
 }
@@ -889,6 +892,9 @@ div.password-icon {
   div.box {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+  }
+  div.support-box {
+    display: block;
   }
 }
 
@@ -978,7 +984,7 @@ div.password-icon {
     padding: 10px 0px;
   }
   div.support-box {
-    padding: 200px 10px 100px 10px;
+    padding: 150px 10px 100px 10px;
   }
   div.support-box form {
     width: 100%;
@@ -1059,9 +1065,6 @@ div.password-icon {
   }
   nav ul {
     margin-top: 30px;
-  }
-  div.support-box {
-    display: block;
   }
 }
 

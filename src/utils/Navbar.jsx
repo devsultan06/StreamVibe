@@ -92,7 +92,7 @@ const Navbar = () => {
               to={link.href}
               key={index}
               target={link.label !== "Home" ? "_blank" : "_self"}
-              className={({ isActive }) => isActive && "active-link"}
+              className={({ isActive }) => isActive ? "active-link" : undefined}
             >
               <li>{link.label}</li>
             </NavLink>
@@ -130,7 +130,7 @@ const Navbar = () => {
             >
               <NavLink
                 to={link.href}
-                className={({ isActive }) => isActive && "active-link"}
+                className={({ isActive }) => isActive ? "active-link" : undefined}
                 target={link.label !== "Home" ? "_blank" : "_self"}
                 onClick={(event) => {
                   if (link.label === "Home") {
