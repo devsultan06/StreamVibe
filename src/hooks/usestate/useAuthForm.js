@@ -199,6 +199,7 @@ const useAuthForm = () => {
   const handleClickShowPassword = () => {
     setShowPassword((prevShowPassword) => !prevShowPassword);
   };
+  
 
   return {
     showPassword,

@@ -733,13 +733,74 @@ div.terms-and-submit {
   justify-content: space-between;
 }
 
+.phone-input-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Border for visual debugging */
+  border-radius: 4px; /* Rounded corners */
+  /* Hide any overflow */
+
+  background-color: white;
+  margin-top: 40px;
+  position: relative;
+}
+
+.PhoneInputCountrySelect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 10%;
+  width: 100%;
+  z-index: 1;
+  border: 0;
+  opacity: 1;
+  cursor: pointer;
+  background-color: #1a1a1a;
+}
+
+.PhoneInput {
+  width: 100%;
+  border-radius: 4px;
+  height: 0px;
+}
+
+.PhoneInputInternationalIconPhone {
+  opacity: 0;
+  display: none;
+}
+
+.PhoneInputInternationalIconGlobe {
+  opacity: 0;
+  display: none;
+}
+
+.PhoneInputCountry {
+  width: 50px;
+  height: 44px;
+  margin-top: -30px;
+}
+
+.PhoneInputCountry .PhoneInputCountryIcon {
+  width: 30px; /* Adjust the size */
+  height: 25px; /* Adjust the size */
+  border-radius: 0%;
+  border: 1px solid #1a1a1a;
+  margin-left: 4px;
+  margin-top: -460px;
+  z-index: 2;
+}
+
+.PhoneInputCountry:focus .PhoneInputCountryIcon:focus {
+  border: 1px solid red;
+}
+
 div.terms {
   display: flex;
   align-items: center;
 
   gap: 8px;
 }
-
 
 div.terms1 p.error {
   margin-top: 10px;
@@ -983,6 +1044,7 @@ div.password-icon {
     font-size: 20px;
     padding: 10px 0px;
   }
+
   div.support-box {
     padding: 150px 10px 100px 10px;
   }
@@ -993,6 +1055,12 @@ div.password-icon {
 
   div.support-box form .form-controls {
     grid-template-columns: repeat(1, 1fr);
+  }
+
+  .PhoneInputCountry {
+    width: 50px;
+    height: 44px;
+    margin-top: -22px;
   }
 
   div.support-box form .form-controls input {

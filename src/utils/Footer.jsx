@@ -1,13 +1,6 @@
-import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-
+import Copyright from "./Copyright";
 const Footer = () => {
-  const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
-
-  // Update the year every time the component mounts
-  useEffect(() => {
-    setCurrentYear(new Date().getFullYear());
-  }, []);
   return (
     <footer className="footer">
       <div
@@ -137,16 +130,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div>
-        <p
-          className="copyright"
-          data-aos="flip-left"
-          data-aos-easing="ease-out-cubic"
-          data-aos-duration="4000"
-        >
-          Copyright &copy; {currentYear} DevSultan
-        </p>
-      </div>
+      <Copyright />
     </footer>
   );
 };

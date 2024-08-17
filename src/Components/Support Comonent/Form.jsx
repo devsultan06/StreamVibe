@@ -1,4 +1,6 @@
 import { useState } from "react";
+import PhoneInput from "react-phone-number-input";
+import "react-phone-number-input/style.css";
 
 const Form = () => {
   const [state, setState] = useState({
@@ -8,6 +10,13 @@ const Form = () => {
     message: "",
     number: "",
   });
+
+  const handlePhoneNumberChange = (value) => {
+    setState((prevValue) => ({
+      ...prevValue,
+      number: value,
+    }));
+  };
 
   const [errors, setErrors] = useState({
     email: "",
@@ -139,18 +148,18 @@ const Form = () => {
         <div className="form-control">
           <label htmlFor="number">Phone Number</label>
           <br />
-          <input
-            type="tel"
-            name="number"
-            autoComplete="off"
-            id="number"
-            value={state.number}
-            maxLength={11}
-            minLength={11}
-            required
-            onChange={handleInputChange}
-            placeholder="Enter your Phone Number"
-          />
+          <div className="phone-input-wrapper">
+            <PhoneInput
+              international
+              defaultCountry="US" // You can set the default country here
+              value={state.number}
+              onChange={handlePhoneNumberChange}
+              placeholder="Enter phone number"
+              className="PhoneInput"
+              style={{ backgroundColor: "black" }}
+            />
+          </div>
+
           {touched.number && errors.number && (
             <p className="error">{errors.number}</p>
           )}

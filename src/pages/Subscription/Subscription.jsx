@@ -1,4 +1,6 @@
 import { useEffect } from "react";
+import "react-phone-number-input/style.css"; // Import the styles
+import PhoneInput from "react-phone-number-input";
 
 const Subscription = () => {
   useEffect(() => {
@@ -6,7 +8,13 @@ const Subscription = () => {
   }, []);
   return (
     <div>
-      <h1 className="text-3xl font-bold underline">Subscription</h1>
+      <div>
+        <PhoneInput
+          international
+          defaultCountry="US" // You can set the default country here
+          placeholder="Enter phone number"
+        />
+      </div>
     </div>
   );
 };
