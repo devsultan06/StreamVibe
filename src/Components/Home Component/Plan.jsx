@@ -28,10 +28,10 @@ const Pricing = () => {
         </div>
 
         <div className="plan-button" data-aos="fade-right">
-          <button className="font-bold monthly" onClick={showMonthlyPlans}>
+          <button className="font-semibold monthly" onClick={showMonthlyPlans}>
             Monthly
           </button>
-          <button className="font-bold yearly" onClick={showYearlyPlans}>
+          <button className="font-semibold yearly" onClick={showYearlyPlans}>
             Yearly
           </button>
         </div>

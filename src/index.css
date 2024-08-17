@@ -299,6 +299,7 @@ div.device:hover {
   background-color: #0f0f0f;
 }
 
+
 .plan-button button {
   padding: 10px;
   border-radius: 5px;
@@ -747,15 +748,6 @@ div.terms-and-submit {
 }
 
 .PhoneInputCountrySelect {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 10%;
-  width: 100%;
-  z-index: 1;
-  border: 0;
-  opacity: 1;
-  cursor: pointer;
   background-color: #1a1a1a;
 }
 
@@ -791,10 +783,6 @@ div.terms-and-submit {
   z-index: 2;
 }
 
-.PhoneInputCountry:focus .PhoneInputCountryIcon:focus {
-  border: 1px solid red;
-}
-
 div.terms {
   display: flex;
   align-items: center;
@@ -827,6 +815,14 @@ div.send button:hover {
   background-color: #b11a1a !important;
 }
 
+.subscription {
+  background-color: #1a1a1a;
+  height: 180vh;
+}
+
+div.space{
+  padding-bottom: 200px;
+}
 div.authentication {
   background-color: #1a1a1a;
   height: 100vh;
