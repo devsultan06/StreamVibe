@@ -1,6 +1,10 @@
 /* eslint-disable react/no-unescaped-entities */
 
 const Trial = () => {
+  const handleFreeTrialClick = () => {
+    window.open("/Authentication", "_blank");
+  };
+
   return (
     <div className="trial" id="trial">
       <div
@@ -19,7 +23,12 @@ const Trial = () => {
           </div>
 
           <div className="trial-button" data-aos="fade-right">
-            <button className="bg-red45 font-bold">Start a Free Trial</button>
+            <button
+              className="bg-red45 font-bold"
+              onClick={handleFreeTrialClick}
+            >
+              Start a Free Trial
+            </button>
           </div>
         </div>
       </div>

@@ -8,7 +8,7 @@ import Faq from "../../Components/Home Component/Faq";
 import Pricing from "../../Components/Home Component/Plan";
 import Trial from "../../Components/Home Component/Trial";
 import Footer from "../../utils/Footer";
-
+import BackToTop from "../../Components/Home Component/BackToTop"; // Import the BackToTop component
 
 const Home = () => {
   const [loaded, setLoaded] = useState(false);
@@ -16,7 +16,7 @@ const Home = () => {
   useEffect(() => {
     setTimeout(() => {
       setLoaded(true);
-    }, 3000); // Simulate a 2-second delay
+    }, 3000); // Simulate a 3-second delay
   }, []);
 
   return (
@@ -31,9 +31,10 @@ const Home = () => {
             <Explore />
             <Devices />
             <Faq />
-            <Pricing/>
-            <Trial/>
-            <Footer/>
+            <Pricing />
+            <Trial />
+            <Footer />
+            <BackToTop /> {/* Add the BackToTop component here */}
           </div>
         </div>
       )}

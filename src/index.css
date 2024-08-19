@@ -299,7 +299,6 @@ div.device:hover {
   background-color: #0f0f0f;
 }
 
-
 .plan-button button {
   padding: 10px;
   border-radius: 5px;
@@ -820,7 +819,7 @@ div.send button:hover {
   height: 180vh;
 }
 
-div.space{
+div.space {
   padding-bottom: 200px;
 }
 div.authentication {
