@@ -7,6 +7,7 @@ import Form from "../../Components/Support Comonent/Form";
 import Faq from "../../Components/Home Component/Faq";
 import Trial from "../../Components/Home Component/Trial";
 import Footer from "../../utils/Footer";
+import BackToTop from "../../utils/BackToTop";
 
 const Support = () => {
   useEffect(() => {
@@ -37,6 +38,7 @@ const Support = () => {
       <Faq />
       <Trial />
       <Footer />
+      <BackToTop /> {/* Add the BackToTop component here */}
     </div>
   );
 };

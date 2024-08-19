@@ -14,6 +14,7 @@ import "swiper/css/navigation";
 import "swiper/swiper-bundle.css";
 import MovieBox from "../../Components/Movies Component/MovieBox";
 import { useEffect } from "react";
+import BackToTop from "../../utils/BackToTop";
 
 const Movies = () => {
   useEffect(() => {
@@ -51,6 +52,7 @@ const Movies = () => {
 
         <div className="swiper-pagination hidden-md-and-up"></div>
       </Swiper>
+      <BackToTop /> {/* Add the BackToTop component here */}
     </section>
   );
 };

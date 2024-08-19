@@ -3,6 +3,7 @@ import Navbar from "../../utils/Navbar";
 import Plan from "../../Components/Home Component/Plan";
 import Trial from "../../Components/Home Component/Trial";
 import Footer from "../../utils/Footer";
+import BackToTop from "../../utils/BackToTop";
 
 const Subscription = () => {
   useEffect(() => {
@@ -15,6 +16,7 @@ const Subscription = () => {
       <Plan />
       <Trial />
       <Footer />
+      <BackToTop /> {/* Add the BackToTop component here */}
     </div>
   );
 };

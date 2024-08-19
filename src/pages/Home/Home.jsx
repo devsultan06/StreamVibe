@@ -8,7 +8,7 @@ import Faq from "../../Components/Home Component/Faq";
 import Pricing from "../../Components/Home Component/Plan";
 import Trial from "../../Components/Home Component/Trial";
 import Footer from "../../utils/Footer";
-import BackToTop from "../../Components/Home Component/BackToTop"; // Import the BackToTop component
+import BackToTop from "../../utils/BackToTop"; // Import the BackToTop component
 
 const Home = () => {
   const [loaded, setLoaded] = useState(false);
