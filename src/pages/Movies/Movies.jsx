@@ -50,6 +50,13 @@ const Movies = () => {
           <MovieBox />
         </SwiperSlide>
 
+        <SwiperSlide className="slide4">
+          <MovieBox />
+        </SwiperSlide>
+        <SwiperSlide className="slide5">
+          <MovieBox />
+        </SwiperSlide>
+
         <div className="swiper-pagination hidden-md-and-up"></div>
       </Swiper>
       <BackToTop /> {/* Add the BackToTop component here */}

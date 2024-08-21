@@ -623,6 +623,33 @@ div.second-item {
   filter: brightness(0.5); /* adjust the brightness to your liking */
 }
 
+.slide4 .movies-box-container::before {
+  content: "";
+  position: absolute;
+  border-radius: 10px;
+  top: 100;
+  left: 0%;
+  right: 0;
+  max-width: 100%;
+  height: 100%;
+  background-image: url("/images/team-superheroes-defending-earth-from-cosmic-th_1148322-72774.jpg");
+  background-size: cover;
+  filter: brightness(0.5); /* adjust the brightness to your liking */
+}
+
+.slide5 .movies-box-container::before {
+  content: "";
+  position: absolute;
+  top: 100;
+  left: 0%;
+  right: 0;
+  max-width: 100%;
+  height: 100%;
+  background-image: url("/images/power-struggles-within-superhero-alliances-ar-generative-ai_1169639-111853.jpg");
+  background-size: cover;
+  filter: brightness(0.5); /* adjust the brightness to your liking */
+}
+
 .swipe-movies {
   margin-top: 20px;
 }
@@ -1034,7 +1061,7 @@ div.password-icon {
     height: 200vh;
   }
 
-  .movies-show-box p {
+  .movies-box-box p {
     color: #999999;
     font-size: 20px;
     padding: 10px 0px;
@@ -1111,7 +1138,7 @@ div.password-icon {
     width: 90%;
   }
 
-  .movies-show-box {
+  .movies-box-box {
     padding-top: 150px;
   }
 }
