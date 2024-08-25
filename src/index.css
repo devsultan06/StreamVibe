@@ -181,8 +181,8 @@ div.category:nth-child(7) img {
   transition: 0.2s ease-in-out;
 }
 
-.category:hover .category-title img {
-  transform: rotate(30deg);
+.category-title:hover img {
+  transform: translateX(8px);
 }
 
 .category-title:hover {
@@ -965,6 +965,45 @@ div.password-icon {
   width: 10px;
 }
 
+table{
+  margin-top: 30px;
+}
+.pricing-table-container {
+  padding: 0px 70px;
+  color: #fff;
+  background-color: #1a1a1a;
+}
+
+
+.pricing-table td {
+  color: #999999;
+  font-size: 15px;
+}
+
+.pricing-table th,
+.pricing-table td {
+  padding: 20px !important;
+  border: 1px solid #333;
+  text-align: left;
+  width: 20%;
+}
+
+.pricing-table th {
+  background-color: #0f0f0f;
+  font-weight: bold;
+  padding: 20px !important;
+}
+
+.popular-tag {
+  background-color: #e50914;
+  color: #fff;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.75rem;
+  border-radius: 0.25rem;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+
 @media (max-width: 1480px) {
   div.right form {
     padding: 30px;
@@ -1016,6 +1055,10 @@ div.password-icon {
   footer.footer {
     padding: 0px 20px;
     padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .pricing-table-container {
+    padding: 0px 20px;
     padding-bottom: 50px;
   }
 }
