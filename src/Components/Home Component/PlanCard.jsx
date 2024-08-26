@@ -1,6 +1,16 @@
+/* eslint-disable react/jsx-no-duplicate-props */
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 
-const PlanCard = ({ title, description, price, button1Text, button2Text }) => {
+const PlanCard = ({
+  id,
+  title,
+  description,
+  price,
+  button1Text,
+  button2Text,
+  onPayClick,
+}) => {
   return (
     <div
       className="plan-card bg-black15"
@@ -16,7 +26,9 @@ const PlanCard = ({ title, description, price, button1Text, button2Text }) => {
       </div>
       <div className="price-button">
         <button className="button">{button1Text}</button>
-        <button className="button">{button2Text}</button>
+        <button className="button" onClick={() => onPayClick(id)}>
+          {button2Text}
+        </button>
       </div>
     </div>
   );

@@ -965,7 +965,7 @@ div.password-icon {
   width: 10px;
 }
 
-table{
+table {
   margin-top: 30px;
 }
 .pricing-table-container {
@@ -973,7 +973,6 @@ table{
   color: #fff;
   background-color: #1a1a1a;
 }
-
 
 .pricing-table td {
   color: #999999;
@@ -1002,6 +1001,102 @@ table{
   border-radius: 0.25rem;
   margin-right: 0.5rem;
   vertical-align: middle;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  backdrop-filter: blur(5px); /* Blur effect */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it sits above other content */
+}
+
+.modal-content {
+  background-color: #1a1a1a;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 500px;
+  max-width: 90%;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: white;
+}
+
+.payment-form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.payment-form h2 {
+  margin-bottom: 1rem;
+  text-align: center;
+  color: white;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+.form-group input {
+  width: 100%;
+  background-color: #1a1a1a;
+  padding: 10px;
+  outline: none;
+  border: 1px solid #5c5959;
+  border-radius: 5px;
+  color: #999999;
+}
+input.amount {
+  cursor: not-allowed;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-row .form-group {
+  width: 48%;
+}
+
+.submit-button {
+  padding: 0.75rem;
+  font-size: 1rem;
+  background-color: #e50000;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.submit-button:hover {
+  background-color: #b11a1a;
 }
 
 @media (max-width: 1480px) {

@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable react/no-unescaped-entities */
 import { useState } from "react";
 import plans from "../../JS/plans";
@@ -5,7 +6,7 @@ import PlanCard from "./PlanCard";
 import Year from "./Year";
 import yearPlans from "../../JS/yearPlans";
 
-const Pricing = () => {
+const Pricing = ({ onPayClick }) => {
   const [planType, setPlanType] = useState("monthly");
 
   const showYearlyPlans = () => {
@@ -38,8 +39,16 @@ const Pricing = () => {
       </div>
       <div className="plans">
         {planType === "monthly"
-          ? plans.map((device) => <PlanCard key={device.price} {...device} />)
-          : yearPlans.map((device) => <Year key={device.price} {...device} />)}
+          ? plans.map((device) => (
+              <PlanCard
+                key={device.price}
+                {...device}
+                onPayClick={onPayClick}
+              />
+            ))
+          : yearPlans.map((device) => (
+              <Year key={device.price} {...device} onPayClick={onPayClick} />
+            ))}
       </div>
     </div>
   );
