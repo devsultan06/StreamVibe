@@ -1,5 +1,4 @@
 /* eslint-disable react/no-unescaped-entities */
-
 const Trial = () => {
   const handleFreeTrialClick = () => {
     window.open("/Authentication", "_blank");

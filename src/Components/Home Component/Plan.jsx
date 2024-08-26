@@ -5,7 +5,6 @@ import plans from "../../JS/plans";
 import PlanCard from "./PlanCard";
 import Year from "./Year";
 import yearPlans from "../../JS/yearPlans";
-
 const Pricing = ({ onPayClick }) => {
   const [planType, setPlanType] = useState("monthly");
 

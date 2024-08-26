@@ -1,6 +1,4 @@
-
 import Small_Play_Button from "/images/small-play-button.png"
-
 const NavbarTitle = () => {
   const handleClick = () => {
     window.open("/movies", "_blank");

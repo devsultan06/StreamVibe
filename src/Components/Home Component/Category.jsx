@@ -1,11 +1,8 @@
 /* eslint-disable react/prop-types */
-
 import IconRight from "/images/Icon-right.png";
-
 const handleClick = () => {
   window.open("/movies", "_blank");
 };
-
 const Category = ({ title, image }) => {
   return (
     <div
@@ -18,7 +15,6 @@ const Category = ({ title, image }) => {
       <div className="image-box">
         <img src={image} alt="" className="w-full" />
       </div>
-
       <div className="category-title flex justify-between  ">
         <p>{title}</p>
         <button>

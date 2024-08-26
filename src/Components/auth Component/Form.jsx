@@ -4,7 +4,6 @@ import Alert from "@mui/material/Alert";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import useAuthForm from "../../hooks/usestate/useAuthForm";
-
 const Form = () => {
   const {
     showPassword,
@@ -128,7 +127,6 @@ const Form = () => {
           <p className="error">{errors.password}</p>
         )}
       </div>
-
       <div className="form-actions">
         <button type="submit" className="submit">
           {isLogin ? "Login" : "Sign Up"}

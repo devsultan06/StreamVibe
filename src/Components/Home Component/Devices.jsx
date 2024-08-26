@@ -1,8 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
-
 import Device from "./Device";
 import Types from "../../JS/Types";
-
 const Devices = () => {
   return (
     <div className="devices bg-black10 text-white">
@@ -16,7 +14,6 @@ const Devices = () => {
           wide range of devices.
         </p>
       </div>
-
       <div className="box">
         {Types.map((device) => (
           <Device key={device.deviceName} {...device} />

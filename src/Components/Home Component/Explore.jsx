@@ -3,17 +3,13 @@
 /* eslint-disable react/prop-types */
 import SwipeLeftImage from "/images/button-left.png";
 import SwipeRightImage from "/images/button-right.png";
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import categories from "../../JS/categories";
 import Category from "./Category";
-
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/swiper-bundle.css";
-
 const Movies = () => {
   return (
     <div className="explore bg-black10 text-white">
@@ -32,16 +28,11 @@ const Movies = () => {
           <button className="swipe-button-prev bg-black10">
             <img src={SwipeLeftImage} alt="" />
           </button>
-          {/* <div className="current move"></div>
-          <div className="move"></div>
-          <div className="move"></div> */}
-
           <button className="swipe-button-next bg-black10">
             <img src={SwipeRightImage} alt="" />
           </button>
         </div>
       </div>
-
       <div className="categories">
         <Swiper
           modules={[Navigation, Pagination]}

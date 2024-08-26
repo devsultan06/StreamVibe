@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-
 const Device = ({ image, deviceName, paragraphText }) => {
   return (
     <div

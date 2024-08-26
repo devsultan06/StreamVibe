@@ -1,7 +1,6 @@
 /* eslint-disable react/jsx-no-duplicate-props */
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-
 const PlanCard = ({
   id,
   title,
