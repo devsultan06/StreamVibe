@@ -8,18 +8,33 @@ import Subscription from "./pages/Subscription/Subscription";
 import Support from "./pages/Support/Support";
 import Authentication from "./pages/auth/Authentication";
 import NotFound from "./pages/404-page/NotFound";
+import { UserProvider } from "./contexts/UserContext";
+import ProtectedRoute from "./ProtectedRoute";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/movies" element={<Movies />} />
-      <Route path="/movieshow" element={<MovieShow />} />
-      <Route path="/subscription" element={<Subscription />} />
-      <Route path="/support" element={<Support />} />
-      <Route path="/authentication" element={<Authentication />} />
-      {/* Define other routes here */}
-      <Route path="*" element={<NotFound />} /> {/* 404 route */}
-    </Routes>
+    <UserProvider>
+      <Routes>
+        <Route path="/" element={<Authentication />} />
+        <Route path="/home" element={<ProtectedRoute element={<Home />} />} />
+        <Route
+          path="/movies"
+          element={<ProtectedRoute element={<Movies />} />}
+        />
+        <Route
+          path="/movieshow"
+          element={<ProtectedRoute element={<MovieShow />} />}
+        />
+        <Route
+          path="/subscription"
+          element={<ProtectedRoute element={<Subscription />} />}
+        />
+        <Route
+          path="/support"
+          element={<ProtectedRoute element={<Support />} />}
+        />
+        <Route path="*" element={<NotFound />} /> {/* 404 route */}
+      </Routes>
+    </UserProvider>
   </BrowserRouter>
 );

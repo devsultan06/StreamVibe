@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unknown-property */
-import video from "/images/Avengers Endgame _ The Big Three Fight Scenes.mp4";
+import video from "/videos/Avengers Endgame _ The Big Three Fight Scenes.mp4";
 import { useEffect } from "react";
 
 const MovieShow = () => {

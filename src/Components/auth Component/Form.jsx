@@ -3,25 +3,228 @@
 import Alert from "@mui/material/Alert";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
-import useAuthForm from "../../hooks/usestate/useAuthForm";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { UserContext } from "../../contexts/UserContext";
 const Form = () => {
-  const {
-    showPassword,
-    isLogin,
-    state,
-    errors,
-    touched,
-    showSignUpSuccessAlert,
-    showLoginSuccessAlert,
-    exist,
-    emailNotFound,
-    passwordNotCorrect,
-    setTouched,
-    handleInputChange,
-    handleClickSwitch,
-    handleSubmit,
-    handleClickShowPassword,
-  } = useAuthForm();
+
+  const { login } = useContext(UserContext);
+  const navigate = useNavigate();
+  const [showPassword, setShowPassword] = useState(false);
+  const [isLogin, setIsLogin] = useState(false);
+  const [state, setState] = useState({
+    username: "",
+    email: "",
+    password: "",
+    number: "",
+  });
+  const [errors, setErrors] = useState({
+    password: "",
+    email: "",
+    number: "",
+  });
+  const [touched, setTouched] = useState({
+    email: false,
+    number: false,
+    password: false,
+  });
+  const [showSignUpSuccessAlert, setSignUpShowSuccessAlert] = useState(false);
+  const [showLoginSuccessAlert, setLoginShowSuccessAlert] = useState(false);
+  const [exist, setExist] = useState(false);
+  const [emailNotFound, setEmailNotFound] = useState(false);
+  const [passwordNotCorrect, setPasswordNotCorrect] = useState(false);
+  const [timeoutId, setTimeoutId] = useState(null);
+
+  useEffect(() => {
+    return () => {
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
+    };
+  }, [timeoutId]);
+
+  useEffect(() => {
+    document.title = isLogin ? "Auth | Login" : "Auth | Sign Up";
+  }, [isLogin]);
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setState((prevValue) => ({
+      ...prevValue,
+      [name]: value,
+    }));
+
+    if (name === "email") {
+      if (!value.endsWith("@gmail.com")) {
+        setErrors((prevErrors) => ({
+          ...prevErrors,
+          email: "Please enter a valid email address ending with @gmail.com.",
+        }));
+      } else {
+        setErrors((prevErrors) => ({
+          ...prevErrors,
+          email: "",
+        }));
+      }
+    }
+
+    if (name === "password") {
+      if (value.trim().length < 11) {
+        setErrors((prevErrors) => ({
+          ...prevErrors,
+          password: "Password must be at least 11 characters.",
+        }));
+      } else {
+        setErrors((prevErrors) => ({
+          ...prevErrors,
+          password: "",
+        }));
+      }
+    }
+  };
+
+  const handleClickSwitch = (event) => {
+    event.preventDefault();
+    setState({
+      username: "",
+      email: "",
+      password: "",
+      number: "",
+    });
+    setErrors({
+      password: "",
+      email: "",
+      number: "",
+    });
+    setTouched({
+      email: false,
+      number: false,
+      password: false,
+    });
+    setShowPassword(false);
+    setIsLogin((prevIsLogin) => !prevIsLogin);
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setTouched({
+      email: true,
+      number: true,
+      password: true,
+    });
+
+    const trimmedState = {
+      username: state.username.trim(),
+      email: state.email.trim(),
+      password: state.password.trim(),
+      number: state.number.trim(),
+    };
+
+    // Validation checks
+    if (!trimmedState.email.endsWith("@gmail.com")) {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        email: "Please enter a valid email address ending with @gmail.com.",
+      }));
+      return;
+    } else {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        email: "",
+      }));
+    }
+
+    if (trimmedState.password.length < 11) {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        password: "Password must be at least 11 characters.",
+      }));
+      return;
+    } else {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        password: "",
+      }));
+    }
+
+    if (isLogin) {
+      const storedUser = localStorage.getItem(trimmedState.email);
+      if (storedUser) {
+        const user = JSON.parse(storedUser);
+        if (user.password === trimmedState.password) {
+          setLoginShowSuccessAlert(true);
+          login(user);
+          setTimeout(() => {
+            navigate("/home");
+          }, 3000);
+        } else {
+          setPasswordNotCorrect(true);
+          const id = setTimeout(() => {
+            setPasswordNotCorrect(false);
+          }, 3000);
+          setTimeoutId(id);
+        }
+      } else {
+        setEmailNotFound(true);
+        const id = setTimeout(() => {
+          setEmailNotFound(false);
+        }, 3000);
+        setTimeoutId(id);
+      }
+    } else {
+      if (localStorage.getItem(trimmedState.email)) {
+        setExist(true);
+        const id = setTimeout(() => {
+          setExist(false);
+        }, 5000);
+        setTimeoutId(id);
+        return;
+      }
+
+      setSignUpShowSuccessAlert(true);
+      const id = setTimeout(() => {
+        setSignUpShowSuccessAlert(false);
+      }, 3000);
+      setTimeoutId(id);
+
+      const user = {
+        username: trimmedState.username,
+        email: trimmedState.email,
+        password: trimmedState.password,
+        number: trimmedState.number,
+      };
+      localStorage.setItem(trimmedState.email, JSON.stringify(user));
+      localStorage.setItem("currentUser", JSON.stringify(user));
+
+      localStorage.setItem("showCongratsAlert", "true");
+
+      setTimeout(() => {
+        setIsLogin(true);
+      }, 3000);
+    }
+
+    setState({
+      username: "",
+      email: "",
+      password: "",
+      number: "",
+    });
+    setErrors({
+      password: "",
+      email: "",
+      number: "",
+    });
+    setTouched({
+      email: false,
+      number: false,
+      password: false,
+    });
+  };
+
+  const handleClickShowPassword = () => {
+    setShowPassword((prevShowPassword) => !prevShowPassword);
+  };
 
   return (
     <form onSubmit={handleSubmit}>
@@ -48,17 +251,17 @@ const Form = () => {
       {!isLogin && (
         <div>
           <div className="form-control">
-            <label htmlFor="fullname">Full Name</label>
+            <label htmlFor="username">UserName</label>
             <br />
             <input
               type="text"
               autoComplete="off"
-              name="fullname"
-              id="fullname"
-              value={state.fullname}
+              name="username"
+              id="username"
+              value={state.username}
               required
               onChange={handleInputChange}
-              placeholder="Enter your Full Name"
+              placeholder="Enter your Username"
             />
           </div>
           <div className="form-control">

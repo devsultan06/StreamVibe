@@ -1,7 +1,6 @@
 import { NavLink } from "react-router-dom";
 import Logo from "/images/Logo.png";
 import Toggle from "/images/toggle.png";
-import { CiSearch } from "react-icons/ci";
 import { IoIosNotificationsOutline } from "react-icons/io";
 import { useEffect, useState, useLayoutEffect } from "react";
 import { useMediaQuery } from "react-responsive";
@@ -9,34 +8,38 @@ import { motion } from "framer-motion";
 import Links from "../JS/Links";
 import Aos from "aos";
 import "aos/dist/aos.css";
+import AccountMenu from "./AccountMenu";
 
 const Navbar = () => {
+  const [showCongratsAlert, setShowCongratsAlert] = useState(false);
+
+  useEffect(() => {
+    // Check for the flag in localStorage
+    const showAlert = localStorage.getItem("showCongratsAlert") === "true";
+    if (showAlert) {
+      setShowCongratsAlert(true);
+    }
+  }, []);
+
   useEffect(() => {
     Aos.init({ duration: 2000 });
   }, []);
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [, setIsLoading] = useState(true);
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isNotificationsOpen, setIsNotificationsOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
     setIsNotificationsOpen(false);
-    setIsSearchOpen(false);
   };
-  const handleSearchClick = () => {
-    setIsSearchOpen(!isSearchOpen);
-    setIsNotificationsOpen(false);
-    setIsMenuOpen(false);
-  };
+
   const handleNotificationsClick = () => {
     setIsNotificationsOpen(!isNotificationsOpen);
-    setIsSearchOpen(false);
     setIsMenuOpen(false);
   };
 
-  const isDesktop = useMediaQuery({ query: "(min-width: 900px)" }); // adjust the breakpoint as needed
+  const isDesktop = useMediaQuery({ query: "(min-width: 900px)" });
 
   useEffect(() => {
     if (isDesktop) {
@@ -54,9 +57,9 @@ const Navbar = () => {
 
   const handleCloseMenus = () => {
     setIsMenuOpen(false);
-    setIsSearchOpen(false);
     setIsNotificationsOpen(false);
   };
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 0) {
@@ -69,7 +72,7 @@ const Navbar = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [setIsMenuOpen, setIsSearchOpen, setIsNotificationsOpen]);
+  }, []);
 
   return (
     <div className="navbar flex justify-between px-20 py-6" data-aos="fade-up">
@@ -92,7 +95,9 @@ const Navbar = () => {
               to={link.href}
               key={index}
               target={link.label !== "Home" ? "_blank" : "_self"}
-              className={({ isActive }) => isActive ? "active-link" : undefined}
+              className={({ isActive }) =>
+                isActive ? "active-link" : undefined
+              }
             >
               <li>{link.label}</li>
             </NavLink>
@@ -130,7 +135,9 @@ const Navbar = () => {
             >
               <NavLink
                 to={link.href}
-                className={({ isActive }) => isActive ? "active-link" : undefined}
+                className={({ isActive }) =>
+                  isActive ? "active-link" : undefined
+                }
                 target={link.label !== "Home" ? "_blank" : "_self"}
                 onClick={(event) => {
                   if (link.label === "Home") {
@@ -148,31 +155,33 @@ const Navbar = () => {
       </motion.nav>
 
       <div className="right_bar flex space-x-5 items-center">
-        <CiSearch
-          className="search-icon cursor-pointer text-white"
-          onClick={handleSearchClick}
-        />
-        {isSearchOpen && (
-          <input
-            type="search"
-            placeholder="Search..."
-            className="search-input bg-white text-grey px-3 py-2 rounded-lg absolute top-[105px] right-[130px]"
+        <div className="notification">
+          <IoIosNotificationsOutline
+            className="notification-icon cursor-pointer text-white"
+            onClick={handleNotificationsClick}
           />
-        )}
-        <IoIosNotificationsOutline
-          className="notification-icon cursor-pointer text-white"
-          onClick={handleNotificationsClick}
-        />
-        {isNotificationsOpen && (
-          <div className="notification-box absolute bg-white rounded-lg p-3 shadow-md">
-            <h5 className="text-lg font-bold mb-2">Notifications</h5>
-            <ul>
-              <li className="text-lg">Notification 1</li>
-              <li className="text-lg">Notification 2</li>
-              <li className="text-lg">Notification 3</li>
-            </ul>
+          {isNotificationsOpen && (
+            <div className="notification-box bg-white rounded-lg p-3 shadow-md">
+              <h5 className="text-lg font-bold mb-2">Notifications</h5>
+              <ul>
+                <li className="text-lg">Notification 1</li>
+                <li className="text-lg">Notification 2</li>
+                <li className="text-lg">Notification 3</li>
+              </ul>
+            </div>
+          )}
+        </div>
+
+        {showCongratsAlert && (
+          <div
+            className="fixed top-10 right-10 bg-green-500 text-white p-4 rounded-md shadow-lg"
+            role="alert"
+          >
+            Congratulations for signing up!
           </div>
         )}
+
+        <AccountMenu />
       </div>
 
       <div className="toggle" onClick={toggleMenu}>

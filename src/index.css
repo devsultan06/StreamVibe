@@ -74,7 +74,6 @@ div.play img {
   transform-origin: 0%;
 }
 
-.search-icon,
 .notification-icon {
   font-size: 25px;
 }
@@ -83,10 +82,13 @@ div.play img {
   height: 400px; /* adjust the height to your needs */
   padding: 20px;
 }
-
+div.notification{
+  position: relative;
+}
 .notification-box {
-  top: 100px;
-  right: 90px;
+  position: absolute;
+  top: 40px;
+  right: 0px;
   z-index: 100;
 }
 

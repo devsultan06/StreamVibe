@@ -10,7 +10,7 @@ import Category from "./Category";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/swiper-bundle.css";
-const Movies = () => {
+const Movies = ({ user }) => {
   return (
     <div className="explore bg-black10 text-white">
       <div className="explore-header flex justify-between">
@@ -20,7 +20,11 @@ const Movies = () => {
             Whether you're looking for a comedy to make you laugh.
           </p>
         </div>
-
+        {user && (
+          <h2 style={{ color: "black", fontSize: "10px" }}>
+            Welcome, {user.fullname}!
+          </h2>
+        )}{" "}
         <div
           className="swipe flex justify-between items-center gap-20 bg-black06"
           data-aos="fade-right"
@@ -68,10 +72,7 @@ const Movies = () => {
               <Category {...categories} />
             </SwiperSlide>
           ))}
-          <div
-            className="swiper-pagination hidden-md-and-up"
-            data-aos="flip-left"
-          ></div>
+          <div className="swiper-pagination hidden-md-and-up"></div>
         </Swiper>
       </div>
     </div>

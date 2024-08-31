@@ -1,7 +1,7 @@
 const Links = [
   {
     label: "Home",
-    href: "/",
+    href: "/home",
   },
   {
     label: "Movies&Shows",
@@ -17,7 +17,7 @@ const Links = [
   },
   {
     label: "SignUp",
-    href: "/authentication",
+    href: "/",
   },
 ];
 
