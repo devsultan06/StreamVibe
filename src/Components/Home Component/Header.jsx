@@ -1,8 +1,9 @@
+/* eslint-disable react/prop-types */
 import PlayButton from "/images/Play-Video-Button-2.png";
 import { motion, useScroll, useSpring } from "framer-motion";
 import Lenis from "@studio-freight/lenis";
 import Navbar from "../../utils/Navbar";
-const Header = () => {
+const Header = ({user}) => {
   const lenis = new Lenis();
 
   function raf(time) {
@@ -20,7 +21,7 @@ const Header = () => {
   return (
     <div className="navbar-head bg-navbar-head-image bg-cover h-screen w-full relative mx-auto p-4">
       <motion.div className="progress-bar bg-red45" style={{ scaleX }} />
-      <Navbar />
+      <Navbar user={user}/>
       <div className="play absolute">
         <img
           src={PlayButton}
