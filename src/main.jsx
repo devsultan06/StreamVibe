@@ -2,7 +2,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home/Home";
-import Movies from "./pages/Movies/Movies";
+import Movies from "./pages/Movies/Movie";
 import MovieShow from "./pages/MovieShow/MovieShow";
 import Subscription from "./pages/Subscription/Subscription";
 import Support from "./pages/Support/Support";
