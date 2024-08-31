@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -82,7 +81,7 @@ div.play img {
   height: 400px; /* adjust the height to your needs */
   padding: 20px;
 }
-div.notification{
+div.notification {
   position: relative;
 }
 .notification-box {
@@ -1100,6 +1099,16 @@ input.amount {
   background-color: #b11a1a;
 }
 
+div.profile {
+  height: 100vh;
+  width: 100%;
+  background-color: #0f0f0f;
+}
+
+div.gap {
+  padding-bottom: 150px;
+}
+
 @media (max-width: 1480px) {
   div.right form {
     padding: 30px;
@@ -1327,5 +1336,15 @@ input.amount {
 
   div.logo a img {
     width: 170px;
+  }
+
+  div.profile{
+    text-align: center;
+  }
+
+  .det{
+    display: block;
+    text-align: center;
+    margin-left: -20px; 
   }
 }

@@ -10,6 +10,7 @@ import Authentication from "./pages/auth/Authentication";
 import NotFound from "./pages/404-page/NotFound";
 import { UserProvider } from "./contexts/UserContext";
 import ProtectedRoute from "./ProtectedRoute";
+import Profile from "./pages/profile/Profile";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <BrowserRouter>
@@ -32,6 +33,10 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route
           path="/support"
           element={<ProtectedRoute element={<Support />} />}
+        />
+        <Route
+          path="/profile"
+          element={<ProtectedRoute element={<Profile />} />}
         />
         <Route path="*" element={<NotFound />} /> {/* 404 route */}
       </Routes>

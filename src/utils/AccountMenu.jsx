@@ -6,16 +6,20 @@ import MenuItem from "@mui/material/MenuItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import IconButton from "@mui/material/IconButton";
 import Tooltip from "@mui/material/Tooltip";
+import Modal from "@mui/material/Modal";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
 import PersonAdd from "@mui/icons-material/PersonAdd";
 import Settings from "@mui/icons-material/Settings";
 import Logout from "@mui/icons-material/Logout";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { UserContext } from "../contexts/UserContext";
 import { useNavigate } from "react-router-dom";
 
 export default function AccountMenu() {
   const { user, logout } = useContext(UserContext);
-  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [anchorEl, setAnchorEl] = useState(null);
+  const [openModal, setOpenModal] = useState(false);
   const open = Boolean(anchorEl);
   const navigate = useNavigate();
 
@@ -27,9 +31,24 @@ export default function AccountMenu() {
     setAnchorEl(null);
   };
 
-  const handleLogout = () => {
+  const handleLogoutClick = () => {
+    setOpenModal(true);
+    handleClose(); // Close the menu
+  };
+
+  const handleLogoutConfirm = () => {
     logout();
+    setOpenModal(false);
     navigate("/"); // Redirect to authentication page
+  };
+
+  const handleModalClose = () => {
+    setOpenModal(false);
+  };
+
+  const handleProfileClick = () => {
+    navigate("/profile"); // Redirect to ProfilePage
+    handleClose(); // Close the menu
   };
 
   const usernameInitial = user?.username ? user.username[0] : "U";
@@ -46,7 +65,14 @@ export default function AccountMenu() {
             aria-haspopup="true"
             sx={{ p: 0 }}
           >
-            <Avatar sx={{ width: 32, height: 32, bgcolor: "#E50000", fontWeight:600 }}>
+            <Avatar
+              sx={{
+                width: 32,
+                height: 32,
+                bgcolor: "#E50000",
+                fontWeight: 600,
+              }}
+            >
               {usernameInitial}
             </Avatar>
           </IconButton>
@@ -91,7 +117,7 @@ export default function AccountMenu() {
         anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
       >
         <MenuItem sx={{ color: "#EAEAEA", mb: 1 }}>{displayUsername}</MenuItem>
-        <MenuItem sx={{ color: "#EAEAEA", mb: 1 }}>
+        <MenuItem sx={{ color: "#EAEAEA", mb: 1 }} onClick={handleProfileClick}>
           <Avatar /> Profile
         </MenuItem>
         <MenuItem sx={{ color: "#EAEAEA", mb: 1 }}>
@@ -109,13 +135,63 @@ export default function AccountMenu() {
           </ListItemIcon>
           Settings
         </MenuItem>
-        <MenuItem onClick={handleLogout} sx={{ color: "#EAEAEA", mb: 1 }}>
+        <MenuItem onClick={handleLogoutClick} sx={{ color: "#EAEAEA", mb: 1 }}>
           <ListItemIcon>
             <Logout fontSize="small" sx={{ color: "#EAEAEA" }} />
           </ListItemIcon>
           Logout
         </MenuItem>
       </Menu>
+
+      <Modal
+        open={openModal}
+        onClose={handleModalClose}
+        aria-labelledby="logout-modal-title"
+        aria-describedby="logout-modal-description"
+      >
+        <Box
+          sx={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            width: 500,
+            height: 200,
+            bgcolor: "#1A1A1A",
+            border: "2px solid #000",
+            boxShadow: 24,
+            p: 4,
+            color: "#EAEAEA",
+            textAlign: "center",
+            borderRadius: 2,
+          }}
+        >
+          <Typography
+            id="logout-modal-title"
+            variant="h6"
+            component="h2"
+            sx={{ mt: 1, p:1}}
+          >
+            Are you sure you want to log out?
+          </Typography>
+          <Box sx={{ mt: 2, display: "flex", justifyContent: "space-around" }}>
+            <Button
+              variant="contained"
+              color="error"
+              onClick={handleLogoutConfirm}
+            >
+              Yes
+            </Button>
+            <Button
+              variant="outlined"
+              style={{ borderColor: "#EAEAEA", color: "#EAEAEA" }}
+              onClick={handleModalClose}
+            >
+              No
+            </Button>
+          </Box>
+        </Box>
+      </Modal>
     </React.Fragment>
   );
 }

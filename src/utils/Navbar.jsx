@@ -11,6 +11,10 @@ import "aos/dist/aos.css";
 import AccountMenu from "./AccountMenu";
 
 const Navbar = () => {
+  useEffect(() => {
+    Aos.init({ duration: 2000 });
+  }, []);
+
   const [showCongratsAlert, setShowCongratsAlert] = useState(false);
 
   useEffect(() => {
@@ -19,10 +23,6 @@ const Navbar = () => {
     if (showAlert) {
       setShowCongratsAlert(true);
     }
-  }, []);
-
-  useEffect(() => {
-    Aos.init({ duration: 2000 });
   }, []);
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
