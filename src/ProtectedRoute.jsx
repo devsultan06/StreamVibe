@@ -9,7 +9,7 @@ const ProtectedRoute = ({ element }) => {
 
   // If user is not logged in, redirect to authentication page
   if (!user) {
-    return <Navigate to="/" />;
+    return <Navigate to="/auth" />;
   }
 
   return element;
