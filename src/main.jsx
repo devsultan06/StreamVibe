@@ -16,7 +16,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <BrowserRouter>
     <UserProvider>
       <Routes>
-        <Route path="/auth" element={<Authentication />} />
+        <Route path="/" element={<Authentication />} />
         <Route path="/home" element={<ProtectedRoute element={<Home />} />} />
         <Route
           path="/movies"

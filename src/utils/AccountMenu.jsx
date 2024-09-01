@@ -39,7 +39,7 @@ export default function AccountMenu() {
   const handleLogoutConfirm = () => {
     logout();
     setOpenModal(false);
-    navigate("/auth"); // Redirect to authentication page
+    navigate("/"); // Redirect to authentication page
   };
 
   const handleModalClose = () => {
