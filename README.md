@@ -1,9 +1,8 @@
-![StreamVibe](/public/images/Screenshot%202024-08-07%20221451.png)
+![StreamVibe](/public/images/Screenshot%202024-09-01%20201027.png)
 
 This is a [React.js](https://react.dev/) project installed using [Vite](https://vitejs.dev/)
 
 A subscription-based streaming service called StreamVibe provides thousands of internet-connected devices with access to an extensive selection of highly acclaimed TV series, films, anime, documentaries, and more. For free you may watch as much as you like, whenever you want, and without ever seeing an advertisement. On your iOS, Android, or Windows 10 device, you can also download TV series and movies to view offline.
-
 
 ## Getting Started
 
@@ -18,7 +17,3 @@ pnpm dev
 # or
 bun dev
 ```
-
-
-
-
