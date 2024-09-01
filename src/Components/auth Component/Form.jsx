@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/no-unescaped-entities */
+import bcrypt from "bcryptjs"; // Import bcryptjs
 import Alert from "@mui/material/Alert";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
@@ -151,7 +152,14 @@ const Form = () => {
       const storedUser = localStorage.getItem(trimmedState.email);
       if (storedUser) {
         const user = JSON.parse(storedUser);
-        if (user.password === trimmedState.password) {
+
+        // Compare the hashed password
+        const passwordMatch = await bcrypt.compare(
+          trimmedState.password,
+          user.password
+        );
+
+        if (passwordMatch) {
           setLoginShowSuccessAlert(true);
           login(user);
           setTimeout(() => {
@@ -187,10 +195,13 @@ const Form = () => {
       }, 3000);
       setTimeoutId(id);
 
+      // Hash the password before storing
+      const hashedPassword = await bcrypt.hash(trimmedState.password, 10);
+
       const user = {
         username: trimmedState.username,
         email: trimmedState.email,
-        password: trimmedState.password,
+        password: hashedPassword, // Store hashed password
         number: trimmedState.number,
       };
       localStorage.setItem(trimmedState.email, JSON.stringify(user));
