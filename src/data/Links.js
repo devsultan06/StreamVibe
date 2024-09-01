@@ -15,10 +15,6 @@ const Links = [
     label: "Subscription",
     href: "/subscription",
   },
-  {
-    label: "SignUp",
-    href: "/",
-  },
 ];
 
 export default Links;

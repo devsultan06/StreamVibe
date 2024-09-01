@@ -12,7 +12,7 @@ const Form = () => {
   const { login } = useContext(UserContext);
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
-  const [isLogin, setIsLogin] = useState(false);
+  const [isLogin, setIsLogin] = useState(true);
   const [state, setState] = useState({
     username: "",
     email: "",
@@ -265,7 +265,6 @@ const Form = () => {
             <br />
             <input
               type="text"
-              autoComplete="off"
               name="username"
               id="username"
               value={state.username}
@@ -302,7 +301,6 @@ const Form = () => {
           type="email"
           name="email"
           id="email"
-          autoComplete="off"
           value={state.email}
           required
           onChange={handleInputChange}
@@ -348,7 +346,7 @@ const Form = () => {
       {isLogin ? (
         <div className="existing">
           <a href="#!" onClick={handleClickSwitch}>
-            Don't yet have an account? Sign Up
+            First time using StreamVibe? Sign Up
           </a>
         </div>
       ) : (
