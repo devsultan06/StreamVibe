@@ -120,9 +120,7 @@ export default function AccountMenu() {
         <MenuItem sx={{ color: "#EAEAEA", mb: 1 }} onClick={handleProfileClick}>
           <Avatar /> Profile
         </MenuItem>
-        <MenuItem sx={{ color: "#EAEAEA", mb: 1 }}>
-          <Avatar /> My Account
-        </MenuItem>
+
         <MenuItem sx={{ color: "#EAEAEA", mb: 1 }}>
           <ListItemIcon>
             <PersonAdd fontSize="small" sx={{ color: "#EAEAEA" }} />
@@ -170,7 +168,7 @@ export default function AccountMenu() {
             id="logout-modal-title"
             variant="h6"
             component="h2"
-            sx={{ mt: 1, p:1}}
+            sx={{ mt: 1, p: 1 }}
           >
             Are you sure you want to log out?
           </Typography>

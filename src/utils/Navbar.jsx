@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { NavLink } from "react-router-dom";
 import Logo from "/images/Logo.png";
 import Toggle from "/images/toggle.png";
@@ -9,8 +10,14 @@ import Links from "../JS/Links";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import AccountMenu from "./AccountMenu";
+import { useContext } from "react";
+import { UserContext } from "../contexts/UserContext";
+import Notification from "./Notification";
 
 const Navbar = () => {
+  const { user } = useContext(UserContext);
+
+  const displayUsername = user?.username ? user.username : "User";
   useEffect(() => {
     Aos.init({ duration: 2000 });
   }, []);
@@ -160,26 +167,10 @@ const Navbar = () => {
             className="notification-icon cursor-pointer text-white"
             onClick={handleNotificationsClick}
           />
-          {isNotificationsOpen && (
-            <div className="notification-box bg-white rounded-lg p-3 shadow-md">
-              <h5 className="text-lg font-bold mb-2">Notifications</h5>
-              <ul>
-                <li className="text-lg">Notification 1</li>
-                <li className="text-lg">Notification 2</li>
-                <li className="text-lg">Notification 3</li>
-              </ul>
-            </div>
+          {isNotificationsOpen && showCongratsAlert && (
+            <Notification displayUsername={displayUsername} />
           )}
         </div>
-
-        {showCongratsAlert && (
-          <div
-            className="fixed top-10 right-10 bg-green-500 text-white p-4 rounded-md shadow-lg"
-            role="alert"
-          >
-            Congratulations for signing up!
-          </div>
-        )}
 
         <AccountMenu />
       </div>
