@@ -6,7 +6,7 @@ import { IoIosNotificationsOutline } from "react-icons/io";
 import { useEffect, useState, useLayoutEffect } from "react";
 import { useMediaQuery } from "react-responsive";
 import { motion } from "framer-motion";
-import Links from "../JS/Links";
+import Links from "../data/Links";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import AccountMenu from "./AccountMenu";

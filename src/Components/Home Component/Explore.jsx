@@ -5,7 +5,7 @@ import SwipeLeftImage from "/images/button-left.png";
 import SwipeRightImage from "/images/button-right.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
-import categories from "../../JS/categories";
+import categories from "../../data/categories";
 import Category from "./Category";
 import "swiper/css";
 import "swiper/css/navigation";

@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import faqData from "../../JS/faq";
+import faqData from "../../data/faq";
 const Faq = () => {
   const [showAnswers, setShowAnswers] = useState({});
 

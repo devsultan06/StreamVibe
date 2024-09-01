@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import Device from "./Device";
-import Types from "../../JS/Types";
+import Types from "../../data/Types";
 const Devices = () => {
   return (
     <div className="devices bg-black10 text-white">

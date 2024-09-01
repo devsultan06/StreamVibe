@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
-import plansTable from "../../JS/plansTable";
+import plansTable from "../../data/plansTable";
 
 const PricingTable = () => {
   return (
@@ -14,11 +14,7 @@ const PricingTable = () => {
           the one that's right for you.
         </p>
       </div>
-      <table
-        className="pricing-table"
-        data-aos="fade-right"
-    
-      >
+      <table className="pricing-table" data-aos="fade-right">
         <thead>
           <tr>
             <th>Features</th>

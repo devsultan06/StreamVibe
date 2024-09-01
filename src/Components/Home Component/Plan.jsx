@@ -1,10 +1,10 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/no-unescaped-entities */
 import { useState } from "react";
-import plans from "../../JS/plans";
+import plans from "../../data/plans";
 import PlanCard from "./PlanCard";
 import Year from "./Year";
-import yearPlans from "../../JS/yearPlans";
+import yearPlans from "../../data/yearPlans";
 const Pricing = ({ onPayClick }) => {
   const [planType, setPlanType] = useState("monthly");
 
