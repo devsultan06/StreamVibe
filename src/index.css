@@ -874,7 +874,7 @@ div.authentication {
   align-items: center;
   justify-content: center;
   color: #fff;
-  background-image: url("/public/images/StreamVibe-Home-Background.png");
+  background-image: url("/images/StreamVibe-Home-Background.png");
 }
 
 div.authentication form {
