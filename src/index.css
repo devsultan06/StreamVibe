@@ -608,7 +608,7 @@ div.second-item {
   right: 0;
   max-width: 100%;
   height: 100%;
-  background-image: url("/images/movieshowbg.png");
+  background-image: url("/images/movieshowbg.jpg");
   background-size: cover;
   filter: brightness(0.5);
 }
@@ -622,7 +622,7 @@ div.second-item {
   right: 0;
   max-width: 100%;
   height: 100%;
-  background-image: url("/images/movieshowbg3.png");
+  background-image: url("/images/movieshowbg2.jpg");
   background-size: cover;
   filter: brightness(0.5); /* adjust the brightness to your liking */
 }
@@ -635,7 +635,7 @@ div.second-item {
   right: 0;
   max-width: 100%;
   height: 100%;
-  background-image: url("/images/movieshowbg5.png");
+  background-image: url("/images/movieshowbg3.jpg");
   background-size: cover;
   filter: brightness(0.5); /* adjust the brightness to your liking */
 }
