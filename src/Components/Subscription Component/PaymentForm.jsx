@@ -50,7 +50,7 @@ const PaymentForm = ({ id }) => {
   };
 
   return (
-    <div>
+    <div className="payment">
       <Cards
         number={state.number}
         expiry={state.expiry}
@@ -116,7 +116,7 @@ const PaymentForm = ({ id }) => {
         <div className="form-group">
           <label>Amount</label>
           <input
-          className="amount"
+            className="amount"
             type="text"
             name="amount"
             disabled
