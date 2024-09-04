@@ -146,13 +146,6 @@ const Navbar = () => {
                   isActive ? "active-link" : undefined
                 }
                 target={link.label !== "Home" ? "_blank" : "_self"}
-                onClick={(event) => {
-                  if (link.label === "Home") {
-                    event.preventDefault();
-                    history.push(link.href);
-                    window.scrollTo(0, 0);
-                  }
-                }}
               >
                 {link.label}
               </NavLink>
