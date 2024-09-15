@@ -108,7 +108,6 @@ const Form = () => {
   };
 
   const handleSubmit = async (event) => {
-    setloading(true);
     event.preventDefault();
     setTouched({
       email: true,
