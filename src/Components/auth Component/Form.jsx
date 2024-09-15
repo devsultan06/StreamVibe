@@ -14,7 +14,6 @@ const Form = () => {
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const [isLogin, setIsLogin] = useState(true);
-  const [loading, setloading] = useState(false);
   const [state, setState] = useState({
     username: "",
     email: "",
@@ -181,7 +180,6 @@ const Form = () => {
           setEmailNotFound(false);
         }, 3000);
         setTimeoutId(id);
-        setloading(false);
       }
     } else {
       if (localStorage.getItem(trimmedState.email)) {
@@ -211,7 +209,6 @@ const Form = () => {
       localStorage.setItem(trimmedState.email, JSON.stringify(user));
       localStorage.setItem("currentUser", JSON.stringify(user));
 
-      setloading(false);
       localStorage.setItem("showCongratsAlert", "true");
 
       setTimeout(() => {
@@ -345,7 +342,7 @@ const Form = () => {
       </div>
       <div className="form-actions">
         <button type="submit" className="submit">
-          {loading ? "Loading..." : isLogin ? "Login" : "Sign Up"}
+          {isLogin ? "Login" : "Sign Up"}
         </button>
       </div>
       {isLogin ? (
