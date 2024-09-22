@@ -3,7 +3,7 @@
 import Navbar from "../../utils/Navbar";
 import { useEffect } from "react";
 import SupportImage from "/images/support-img.png";
-import Form from "../../Components/Support Comonent/Form";
+import Form from "../../Components/Support Component/Form";
 import Faq from "../../Components/Home Component/Faq";
 import Trial from "../../Components/Home Component/Trial";
 import Footer from "../../utils/Footer";

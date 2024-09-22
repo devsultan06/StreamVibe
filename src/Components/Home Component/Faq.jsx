@@ -55,7 +55,7 @@ const Faq = () => {
       <div className="faq-questions">
         {faqData.map((faq, index) => (
           <div
-            className="faqi"
+            className="faq-box"
             key={index}
             data-aos="flip-left"
             data-aos-easing="ease-out-cubic"
