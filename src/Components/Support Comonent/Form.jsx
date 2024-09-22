@@ -1,98 +1,19 @@
-import { useState } from "react";
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
+import useFormSupport from "../../hooks/useFormSupport";
 
 const Form = () => {
-  const [state, setState] = useState({
-    firstname: "",
-    lastname: "",
-    email: "",
-    message: "",
-    number: "",
-  });
-
-  const handlePhoneNumberChange = (value) => {
-    setState((prevValue) => ({
-      ...prevValue,
-      number: value,
-    }));
-  };
-
-  const [errors, setErrors] = useState({
-    email: "",
-    checkbox: "",
-  });
-  const [touched, setTouched] = useState({
-    email: false,
-  });
-
-  const [isCheckboxChecked, setIsCheckboxChecked] = useState(false);
-
-  const handleInputChange = (event) => {
-    const { name, value } = event.target;
-    setState((prevValue) => ({
-      ...prevValue,
-      [name]: value,
-    }));
-
-    if (name === "email") {
-      if (!value.endsWith("@gmail.com")) {
-        setErrors({
-          email: "Please enter a valid email address ending with @gmail.com.",
-        });
-      } else {
-        setErrors({
-          email: "",
-        });
-      }
-    }
-  };
-
-  const handleCheckboxChange = (event) => {
-    setIsCheckboxChecked(event.target.checked);
-    if (!event.target.checked) {
-      setErrors((prevErrors) => ({
-        ...prevErrors,
-        checkbox: "You must agree with the Terms of Use and Privacy Policy.",
-      }));
-    } else {
-      setErrors((prevErrors) => ({
-        ...prevErrors,
-        checkbox: "",
-      }));
-    }
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    if (!isCheckboxChecked) {
-      setErrors((prevErrors) => ({
-        ...prevErrors,
-        checkbox: "You must agree with the Terms of Use and Privacy Policy.",
-      }));
-      return;
-    }
-
-    // Handle form submission logic here
-    console.log("Form submitted:", state);
-
-    setState({
-      firstname: "",
-      lastname: "",
-      email: "",
-      number: "",
-      message: "",
-    });
-    setErrors({
-      message: "",
-      email: "",
-    });
-    setTouched({
-      email: false,
-    });
-
-    setIsCheckboxChecked(false);
-  };
+  const {
+    state,
+    errors,
+    touched,
+    isCheckboxChecked,
+    handleInputChange,
+    handleCheckboxChange,
+    handleSubmit,
+    handlePhoneNumberChange,
+    handleBlur,
+  } = useFormSupport();
 
   return (
     <form action="" onSubmit={handleSubmit}>
@@ -138,7 +59,7 @@ const Form = () => {
             value={state.email}
             required
             onChange={handleInputChange}
-            onBlur={() => setTouched((prev) => ({ ...prev, email: true }))}
+            onBlur={handleBlur}
             placeholder="Enter your Email"
           />
           {touched.email && errors.email && (
