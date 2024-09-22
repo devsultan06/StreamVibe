@@ -39,7 +39,7 @@ const useProfile = () => {
     // Additional logout handling logic here...
   };
 
-  return { profileImage, handleImageChange, handleLogout };
+  return { user,profileImage, handleImageChange, handleLogout };
 };
 
 export default useProfile;
