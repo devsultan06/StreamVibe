@@ -1,5 +1,5 @@
-
-
+import { UserContext } from "../contexts/UserContext";
+import { useContext, useState, useEffect } from "react";
 const useProfile = () => {
   const { user, setUser } = useContext(UserContext);
   const [profileImage, setProfileImage] = useState(null);
@@ -38,6 +38,8 @@ const useProfile = () => {
 
     // Additional logout handling logic here...
   };
-}
+
+  return { profileImage, handleImageChange, handleLogout };
+};
 
 export default useProfile;

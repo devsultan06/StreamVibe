@@ -1,10 +1,10 @@
 /* eslint-disable no-unused-vars */
 import * as React from "react";
-import { useContext, useState, useEffect } from "react";
+
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Avatar from "@mui/material/Avatar";
-import { UserContext } from "../../contexts/UserContext";
+
 import Container from "@mui/material/Container";
 import Paper from "@mui/material/Paper";
 import Button from "@mui/material/Button";
@@ -13,13 +13,14 @@ import PhotoCamera from "@mui/icons-material/PhotoCamera";
 import Grid from "@mui/material/Grid";
 import { styled } from "@mui/material/styles";
 import Navbar from "../../utils/Navbar";
+import useProfile from "../../hooks/useProfile";
 
 const Input = styled("input")({
   display: "none",
 });
 
 export default function ProfilePage() {
-
+  const { user, profileImage, handleImageChange } = useProfile();
 
   return (
     <div className="profile">
