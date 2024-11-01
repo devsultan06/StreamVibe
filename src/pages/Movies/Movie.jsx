@@ -12,7 +12,7 @@ import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/swiper-bundle.css";
-import MovieBox from "../../Components/Movies Component/MovieBox";
+import MovieBox from "../../components/movies/MovieBox";
 import { useEffect } from "react";
 import BackToTop from "../../utils/BackToTop";
 

@@ -1,11 +1,11 @@
-import Explore from "../../Components/Home Component/Explore";
-import Header from "../../Components/Home Component/Header";
-import NavbarTitle from "../../Components/Home Component/NavbarTitle";
-import Devices from "../../Components/Home Component/Devices";
+import Explore from "../../components/home/Explore";
+import Header from "../../components/home/Header";
+import NavbarTitle from "../../components/home/NavbarTitle";
+import Devices from "../../components/home/Devices";
 import Preloader from "../../utils/Preloader";
-import Faq from "../../Components/Home Component/Faq";
-import Pricing from "../../Components/Home Component/Plan";
-import Trial from "../../Components/Home Component/Trial";
+import Faq from "../../components/home/Faq";
+import Pricing from "../../components/home/Plan";
+import Trial from "../../components/home/Trial";
 import Footer from "../../utils/Footer";
 import BackToTop from "../../utils/BackToTop";
 import { useEffect, useState } from "react";

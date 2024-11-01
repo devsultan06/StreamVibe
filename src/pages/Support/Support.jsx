@@ -3,9 +3,9 @@
 import Navbar from "../../utils/Navbar";
 import { useEffect } from "react";
 import SupportImage from "/images/support-img.png";
-import Form from "../../Components/Support Component/Form";
-import Faq from "../../Components/Home Component/Faq";
-import Trial from "../../Components/Home Component/Trial";
+import Form from "../../components/support/Form";
+import Faq from "../../components/home/Faq";
+import Trial from "../../components/home/Trial";
 import Footer from "../../utils/Footer";
 import BackToTop from "../../utils/BackToTop";
 

@@ -1,5 +1,5 @@
 
-import Form from "../../Components/auth Component/Form";
+import Form from "../../components/auth/Form";
 
 /* eslint-disable react/no-unescaped-entities */
 

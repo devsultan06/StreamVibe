@@ -3,14 +3,14 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home/Home";
-import Movies from "./pages/Movies/Movie";
-import MovieShow from "./pages/MovieShow/MovieShow";
-import Subscription from "./pages/Subscription/Subscription";
-import Support from "./pages/Support/Support";
+import Movies from "./pages/movies/Movie";
+import MovieShow from "./pages/movieShow/MovieShow";
+import Subscription from "./pages/subscription/Subscription";
+import Support from "./pages/support/Support";
 import Authentication from "./pages/auth/Authentication";
-import NotFound from "./pages/404-page/NotFound";
+import NotFound from "./pages/notfound/NotFound";
 import { UserProvider } from "./contexts/UserContext";
-import ProtectedRoute from "./ProtectedRoute";
+import ProtectedRoute from "./routes/ProtectedRoute";
 import Profile from "./pages/profile/Profile";
 
 ReactDOM.createRoot(document.getElementById("root")).render(

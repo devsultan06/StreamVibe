@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import Navbar from "../../utils/Navbar";
-import Plan from "../../Components/Home Component/Plan";
-import Trial from "../../Components/Home Component/Trial";
+import Plan from "../../components/home/Plan";
+import Trial from "../../components/home/Trial";
 import Footer from "../../utils/Footer";
 import BackToTop from "../../utils/BackToTop";
-import PricingTable from "../../Components/Subscription Component/PricingTable";
-import Modal from "../../Components/Subscription Component/Modal"; // Adjust the path as needed
-import PaymentForm from "../../Components/Subscription Component/PaymentForm"; // Create this component for your form
+import PricingTable from "../../components/subscription/PricingTable";
+import Modal from "../../components/subscription/Modal"; // Adjust the path as needed
+import PaymentForm from "../../components/subscription/PaymentForm"; // Create this component for your form
 
 const Subscription = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
