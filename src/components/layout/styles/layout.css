@@ -1,0 +1,39 @@
+.active-link {
+  background-color: #5c5959; /* Background color for the active link */
+}
+
+footer.footer {
+  padding: 0px 70px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+@media screen and (max-width: 920px) {
+  nav {
+    transition: 1s;
+  }
+  .active-link {
+    background-color: transparent; /* Background color for the active link */
+  }
+  .responsive-nav {
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 860px) {
+  footer.footer {
+    padding: 0px 20px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+}
+
+@media (max-width: 600px) {
+  div.plans {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+    margin-top: 60px;
+  }
+}

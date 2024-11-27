@@ -1,0 +1,783 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.notification-icon {
+  font-size: 25px;
+}
+
+.notification-box {
+  position: absolute;
+  padding: 12px;
+  top: 40px;
+  right: 0px;
+  z-index: 10;
+  width: 350px;
+  background-color: #1a1a1a;
+  color: white;
+}
+
+.notification-box li {
+  font-size: 15px;
+}
+
+.notification-box li a {
+  color: blue;
+  text-decoration: underline;
+}
+
+.movies-swipe-button-prev,
+.movies-swipe-button-next {
+  padding: 8px;
+  cursor: pointer;
+  transition: 0.3s ease-in;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+}
+
+.movies-swipe-button-prev:hover,
+.movies-swipe-button-next:hover {
+  background-color: #e50000;
+}
+
+div.device:hover {
+  transform: translateY(10px);
+  background: linear-gradient(to top, #e50000 100%, #290101);
+}
+
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #1a1a1a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.preloader span img {
+  margin-top: 67px;
+  margin-right: 10px;
+}
+.preloader span {
+  font-size: 40px;
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+
+div.container {
+  border-bottom: 1px solid #999999;
+  margin-bottom: 20px;
+}
+div.row {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 3rem;
+  padding-bottom: 40px;
+}
+
+div.row h3 {
+  color: white;
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+
+div.row ul li {
+  margin-bottom: 10px;
+}
+
+.icons ul {
+  display: flex;
+  gap: 10px;
+}
+
+.icons ul li a {
+  display: block;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #1a1a1a;
+  transition: 0.5s ease-in-out;
+}
+
+.icons ul li a:hover {
+  background-color: #e50000;
+}
+
+div.row ul li a {
+  color: #999999;
+}
+
+section.movies {
+  background-color: #1a1a1a;
+  padding: 0px 70px;
+  height: 200vh;
+}
+
+section.movies button {
+  border: none;
+  outline: none;
+}
+
+.avengers-box h1 {
+  font-size: 32px;
+  filter: brightness(3);
+  font-weight: 900;
+}
+
+.avengers-box p {
+  color: #999999;
+  font-size: 20px;
+  padding: 10px 200px;
+}
+
+.avengers-container,
+.avengers-container:nth-child(2),
+.avengers-container:nth-child(3) {
+  padding-top: 120px;
+  padding-bottom: 100px;
+  position: relative;
+  display: inline-block; /* or block, depending on your layout */
+  max-width: 100%;
+  background-position: center;
+  object-fit: cover;
+  text-align: center;
+  height: 95vh;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.plus,
+.volume,
+.thumbs {
+  padding: 8px;
+  cursor: pointer;
+  width: 40px;
+  outline: none;
+  border: none;
+  transition: 0.3s ease-in;
+  border-radius: 5px;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  border: none;
+}
+
+.plus:hover,
+.volume:hover,
+.thumbs:hover {
+  background-color: #e50000;
+}
+
+div.collections,
+div.second-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+}
+
+.avengers-container::before {
+  content: "";
+  position: absolute;
+  border-radius: 10px;
+  top: 100;
+  left: 0%;
+  right: 0;
+  max-width: 100%;
+  height: 100%;
+  background-image: url("/images/movieshowbg.jpg");
+  background-size: cover;
+  filter: brightness(0.5);
+}
+
+.slide2 .avengers-container::before {
+  content: "";
+  position: absolute;
+  border-radius: 10px;
+  top: 100;
+  left: 0%;
+  right: 0;
+  max-width: 100%;
+  height: 100%;
+  background-image: url("/images/movieshowbg2.jpg");
+  background-size: cover;
+  filter: brightness(0.5); /* adjust the brightness to your liking */
+}
+
+.slide3 .avengers-container::before {
+  content: "";
+  position: absolute;
+  top: 100;
+  left: 0%;
+  right: 0;
+  max-width: 100%;
+  height: 100%;
+  background-image: url("/images/movieshowbg3.jpg");
+  background-size: cover;
+  filter: brightness(0.5); /* adjust the brightness to your liking */
+}
+
+.slide4 .avengers-container::before {
+  content: "";
+  position: absolute;
+  border-radius: 10px;
+  top: 100;
+  left: 0%;
+  right: 0;
+  max-width: 100%;
+  height: 100%;
+  background-image: url("/images/team-superheroes-defending-earth-from-cosmic-th_1148322-72774.jpg");
+  background-size: cover;
+  filter: brightness(0.5); /* adjust the brightness to your liking */
+}
+
+.slide5 .avengers-container::before {
+  content: "";
+  position: absolute;
+  top: 100;
+  left: 0%;
+  right: 0;
+  max-width: 100%;
+  height: 100%;
+  background-image: url("/images/power-struggles-within-superhero-alliances-ar-generative-ai_1169639-111853.jpg");
+  background-size: cover;
+  filter: brightness(0.5); /* adjust the brightness to your liking */
+}
+
+.swipe-movies {
+  margin-top: 20px;
+}
+
+.avengers-box {
+  padding-top: 200px;
+  border-radius: 10px;
+}
+
+.avengers-box > * {
+  /* target the text elements */
+  position: relative;
+  z-index: 1;
+  color: #fff; /* set the text color to white */
+}
+
+.swiper-container {
+  width: 1000px;
+  max-width: 100%;
+}
+
+div.vid-tag {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+div.vid-tag video {
+  height: 90vh;
+  width: 90vh;
+}
+
+.success {
+  width: 300px;
+  position: absolute;
+  top: 100;
+
+  font-size: 17px !important;
+  display: flex;
+  align-items: center;
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%, -50%);
+}
+
+div.support {
+  background-color: #1a1a1a;
+  color: white;
+}
+
+div.support-box {
+  padding: 150px 70px 100px 70px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+.support-box p {
+  font-size: 12px;
+}
+
+.support-box img {
+  margin-top: 40px;
+  height: 400px;
+}
+
+div.right form {
+  background-color: #0f0f0f;
+  padding: 30px;
+
+  border-radius: 8px;
+  width: 720px;
+}
+
+div.right form .form-controls input {
+  width: 100%;
+  margin-bottom: 30px;
+  margin-top: 10px;
+  background-color: #1a1a1a;
+  padding: 10px;
+  outline: none;
+  border: 1px solid #5c5959;
+  border-radius: 5px;
+  color: #999999;
+}
+
+div.right form .form-controls textarea {
+  width: 210%;
+  margin-bottom: 30px;
+  margin-top: 10px;
+  background-color: #1a1a1a;
+  padding: 10px;
+  outline: none;
+  border: 1px solid #5c5959;
+  border-radius: 5px;
+  color: #999999;
+  resize: none;
+}
+
+div.right form .form-controls {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+textarea::placeholder {
+  color: #5c5959;
+}
+
+div.terms-and-submit {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.phone-input-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Border for visual debugging */
+  border-radius: 4px; /* Rounded corners */
+  /* Hide any overflow */
+
+  background-color: white;
+  margin-top: 40px;
+  position: relative;
+}
+
+.PhoneInputCountrySelect {
+  background-color: #1a1a1a;
+}
+
+.PhoneInput {
+  width: 100%;
+  border-radius: 4px;
+  height: 0px;
+}
+
+.PhoneInputInternationalIconPhone {
+  opacity: 0;
+  display: none;
+}
+
+.PhoneInputInternationalIconGlobe {
+  opacity: 0;
+  display: none;
+}
+
+.PhoneInputCountry {
+  width: 50px;
+  height: 44px;
+  margin-top: -30px;
+}
+
+.PhoneInputCountry .PhoneInputCountryIcon {
+  width: 30px; /* Adjust the size */
+  height: 25px; /* Adjust the size */
+  border-radius: 0%;
+  border: 1px solid #1a1a1a;
+  margin-left: 4px;
+  margin-top: -460px;
+  z-index: 2;
+}
+
+div.terms {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+}
+
+div.terms1 p.error {
+  margin-top: 10px;
+}
+div.terms input {
+  background-color: #1a1a1a;
+  border: 2px solid #0f0f0f;
+}
+
+div.send button {
+  width: 100%;
+  padding: 10px;
+  background-color: #e50000;
+  color: white;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 15px;
+  transition: 0.1s ease-in-out;
+}
+
+div.send button:hover {
+  background-color: #b11a1a !important;
+}
+
+.subscription {
+  background-color: #1a1a1a;
+  height: 180vh;
+}
+
+div.space {
+  padding-bottom: 200px;
+}
+
+.not-found {
+  background-color: #1a1a1a;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  height: 100vh;
+  width: 100%;
+  font-size: 30px;
+}
+
+.not-found .in {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.not-found img {
+  width: 100px;
+  mix-blend-mode: color-dodge;
+}
+
+.password {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.password input {
+  width: 90%;
+}
+
+div.password-icon {
+  position: absolute;
+  right: 25px;
+  top: 18px;
+  cursor: pointer;
+  width: 10px;
+}
+
+table {
+  margin-top: 30px;
+}
+.pricing-table-container {
+  padding: 0px 70px;
+  color: #fff;
+  background-color: #1a1a1a;
+}
+
+.pricing-table td {
+  color: #999999;
+  font-size: 15px;
+}
+
+.pricing-table th,
+.pricing-table td {
+  padding: 20px !important;
+  border: 1px solid #333;
+  text-align: left;
+  width: 20%;
+}
+
+.pricing-table th {
+  background-color: #0f0f0f;
+  font-weight: bold;
+  padding: 20px !important;
+}
+
+.popular-tag {
+  background-color: #e50914;
+  color: #fff;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.75rem;
+  border-radius: 0.25rem;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  backdrop-filter: blur(5px); /* Blur effect */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it sits above other content */
+}
+
+.modal-content {
+  background-color: #1a1a1a;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 500px;
+  max-width: 90%;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: white;
+}
+
+.payment-form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.payment-form h2 {
+  margin-bottom: 1rem;
+  text-align: center;
+  color: white;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+.form-group input {
+  width: 100%;
+  background-color: #1a1a1a;
+  padding: 10px;
+  outline: none;
+  border: 1px solid #5c5959;
+  border-radius: 5px;
+  color: #999999;
+}
+input.amount {
+  cursor: not-allowed;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-row .form-group {
+  width: 48%;
+}
+
+.submit-button {
+  padding: 0.75rem;
+  font-size: 1rem;
+  background-color: #e50000;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.submit-button:hover {
+  background-color: #b11a1a;
+}
+
+div.profile {
+  height: 100vh;
+  width: 100%;
+  background-color: #0f0f0f;
+}
+
+div.gap {
+  padding-bottom: 150px;
+}
+
+@media (max-width: 1480px) {
+  div.right form {
+    padding: 30px;
+    width: 550px;
+  }
+}
+@media (max-width: 990px) {
+  div.support-box {
+    display: block;
+  }
+}
+
+@media (max-width: 590px) {
+  .notification-box {
+    position: absolute;
+    padding: 12px;
+    top: 40px;
+    left: -200px;
+    z-index: 10;
+    width: 350px;
+    background-color: #1a1a1a;
+    color: white;
+  }
+}
+
+@media (max-width: 860px) {
+  .pricing-table-container {
+    padding: 0px 20px;
+    padding-bottom: 50px;
+  }
+}
+
+@media screen and (max-width: 1075px) {
+  div.row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  section.movies {
+    background-color: #1a1a1a;
+    padding: 0px 10px;
+    height: 200vh;
+  }
+
+  .avengers-box p {
+    color: #999999;
+    font-size: 20px;
+    padding: 10px 0px;
+  }
+
+  div.support-box {
+    padding: 150px 10px 100px 10px;
+  }
+  div.support-box form {
+    width: 100%;
+    margin-top: 40px;
+  }
+
+  div.support-box form .form-controls {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .PhoneInputCountry {
+    width: 50px;
+    height: 44px;
+    margin-top: -22px;
+  }
+
+  div.support-box form .form-controls input {
+    margin-bottom: 10px;
+  }
+
+  div.right form .form-controls textarea {
+    width: 100%;
+  }
+
+  div.terms-and-submit {
+    display: block;
+  }
+
+  div.terms {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  div.device {
+    padding: 30px;
+  }
+  div.row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  div.collections {
+    display: block;
+    gap: 1px;
+  }
+
+  div.collections > button:nth-child(1) {
+    width: 90%;
+  }
+
+  .avengers-box {
+    padding-top: 150px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .payment {
+    margin-left: -10px;
+    margin-top: 30px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .hidden-md-and-up {
+    display: block;
+  }
+
+  div.profile {
+    text-align: center;
+  }
+
+  .det {
+    display: block;
+    text-align: center;
+    margin-left: -20px;
+  }
+}

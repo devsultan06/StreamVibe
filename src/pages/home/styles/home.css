@@ -1,0 +1,29 @@
+div.device {
+  background: linear-gradient(90deg, #0f0f0f 99.8%, #290101);
+  background: linear-gradient(to bottom, #290101 4.6%, #0f0f0f);
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+  cursor: pointer;
+  transition: 0.5s ease-in-out background 0.9s ease-in;
+}
+
+.swiper-pagination-bullet {
+  background-color: red !important;
+  width: 15px !important;
+  height: 15px !important;
+}
+
+div.category:nth-child(7) img {
+  border-radius: 30px;
+}
+
+.category-title:hover img {
+  transform: translateX(8px);
+}
+
+@media screen and (max-width: 800px) {
+  .category:nth-child(3) {
+    display: none;
+  }
+}
