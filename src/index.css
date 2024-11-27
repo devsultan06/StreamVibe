@@ -11,7 +11,7 @@ body {
   box-sizing: border-box;
 }
 /* Hide Vercel-specific footer (example) */
-div.toolbar_pillbar__SSKzY{
+#feedback-toolbar{
   display: none !important;
 }
 
