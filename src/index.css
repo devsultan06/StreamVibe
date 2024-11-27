@@ -10,6 +10,10 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
+/* Hide Vercel-specific footer (example) */
+div.toolbar_pillbar__SSKzY{
+  display: none !important;
+}
 
 .notification-icon {
   font-size: 25px;
