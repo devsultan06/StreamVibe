@@ -10,7 +10,7 @@ const useGoogleAuth = (handleSetMessage) => {
       const user = userCredential.user;
 
       await sendEmailVerification(user, {
-        url: "http://localhost:5173/verified?verification=true",
+        url: "https://streamvibe06.vercel.app/verified?verification=true",
         handleCodeInApp: true,
       });
 

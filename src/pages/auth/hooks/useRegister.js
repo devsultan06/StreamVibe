@@ -21,7 +21,7 @@ const useRegister = (handleSetMessage, resetForm, setFieldValue) => {
       await updateProfile(user, { displayName: username });
 
       await sendEmailVerification(user, {
-        url: "http://localhost:5173/verified?verification=true",
+        url: "https://streamvibe06.vercel.app/verified?verification=true",
         handleCodeInApp: true,
       });
 
