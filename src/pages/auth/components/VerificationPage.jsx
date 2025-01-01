@@ -34,7 +34,7 @@ const VerifiedPage = () => {
 
           clearInterval(intervalId); // Stop the interval when verified
           setIsChecking(false); // Stop checking
-          navigate("/home"); // Redirect to homepage
+          navigate("https://streamvibe06.vercel.app/home"); // Redirect to homepage
         } else if (auth.currentUser) {
           console.log("Email not verified yet"); // For debugging purposes
         }
