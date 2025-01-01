@@ -10,41 +10,37 @@ const VerifiedPage = () => {
   const [isChecking, setIsChecking] = useState(true);
 
   useEffect(() => {
-    // Check if the "verification" query parameter exists
     const params = new URLSearchParams(location.search);
     const verification = params.get("verification");
 
     if (verification !== "true") {
-      // Redirect to home page if the query parameter is not present or not correct
-      navigate("/auth");
+      window.location.href = "https://streamvibe06.vercel.app/auth";
       return;
     }
 
     const checkVerification = async () => {
       const intervalId = setInterval(async () => {
-        await auth.currentUser?.reload(); // Reload user to get the latest verification status
+        await auth.currentUser?.reload();
 
-        // Check if user is populated and email is verified
         if (auth.currentUser && auth.currentUser.emailVerified) {
-          // Update emailVerified status in Firestore
           const userDocRef = doc(firestore, "users", auth.currentUser.uid);
           await updateDoc(userDocRef, {
             emailVerified: true,
           });
 
-          clearInterval(intervalId); // Stop the interval when verified
-          setIsChecking(false); // Stop checking
-          navigate("https://streamvibe06.vercel.app/home"); // Redirect to homepage
+          clearInterval(intervalId);
+          setIsChecking(false);
+          window.location.href = "https://streamvibe06.vercel.app/home";
         } else if (auth.currentUser) {
-          console.log("Email not verified yet"); // For debugging purposes
+          console.log("Email not verified yet");
         }
-      }, 1000); // Retry every second
+      }, 1000);
 
-      return () => clearInterval(intervalId); // Cleanup on unmount
+      return () => clearInterval(intervalId);
     };
 
     checkVerification();
-  }, [navigate, location.search]); // Add location.search to dependencies so it updates when the query param changes
+  }, [navigate, location.search]);
 
   return (
     <div className="flex h-screen w-full flex-col items-center justify-center bg-black06">
