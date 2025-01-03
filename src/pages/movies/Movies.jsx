@@ -31,6 +31,7 @@ const Movies = () => {
   useEffect(() => {
     document.title = "Movies";
   }, []);
+  console.log("Hello");
   return (
     <section className="movies relative">
       <Navbar />
