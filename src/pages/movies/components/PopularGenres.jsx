@@ -1,10 +1,10 @@
 import { SwiperSlide } from "swiper/react";
-import categories from "../../../data/categories";
-import Category from "../../home/components/Category";
 import SwipeLeftImage from "/images/button-left.png";
 import SwipeRightImage from "/images/button-right.png";
 import { Swiper } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
+import PopularGenresCategory from "../categories/PopularGenresCategory";
+import populargenres from "../../../data/populargenres";
 
 const PopularGenres = () => {
   return (
@@ -17,10 +17,10 @@ const PopularGenres = () => {
           className="flex h-[60px] items-center justify-between gap-20 rounded-lg bg-black06 px-2.5 max-800:hidden"
           data-aos="fade-right"
         >
-          <button className="swipe-button-prev cursor-pointer rounded-[5px] border-0 bg-black10 p-[8px] outline-none transition duration-300 ease-in hover:bg-red45">
+          <button className="pg-swipe-button-prev cursor-pointer rounded-[5px] border-0 bg-black10 p-[8px] outline-none transition duration-300 ease-in hover:bg-red45">
             <img src={SwipeLeftImage} alt="" />
           </button>
-          <button className="swipe-button-next cursor-pointer rounded-[5px] border-0 bg-black10 p-2 outline-none transition duration-300 ease-in hover:bg-red45">
+          <button className="pg-swipe-button-next cursor-pointer rounded-[5px] border-0 bg-black10 p-2 outline-none transition duration-300 ease-in hover:bg-red45">
             <img src={SwipeRightImage} alt="" />
           </button>
         </div>
@@ -31,7 +31,7 @@ const PopularGenres = () => {
           spaceBetween={20}
           breakpoints={{
             1094: {
-              slidesPerView: 4.7,
+              slidesPerView: 4,
             },
 
             800: {
@@ -46,8 +46,8 @@ const PopularGenres = () => {
             },
           }}
           navigation={{
-            nextEl: ".swipe-button-next",
-            prevEl: ".swipe-button-prev",
+            nextEl: ".pg-swipe-button-next",
+            prevEl: ".pg-swipe-button-prev",
           }}
           pagination={{
             el: ".swiper-pagination",
@@ -55,9 +55,9 @@ const PopularGenres = () => {
             className: "swiper-pagination-custom",
           }}
         >
-          {categories.map((categories) => (
+          {populargenres.map((categories) => (
             <SwiperSlide key={categories.title}>
-              <Category {...categories} />
+              <PopularGenresCategory {...categories} />
             </SwiperSlide>
           ))}
           <div className="swiper-pagination mx-auto text-center max-800:block"></div>

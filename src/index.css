@@ -114,7 +114,6 @@ div.row ul li a {
 section.movies {
   background-color: #1a1a1a;
   padding: 0px 70px;
-  height: 500vh;
 }
 
 section.movies button {
@@ -525,7 +524,6 @@ div.gap {
   section.movies {
     background-color: #1a1a1a;
     padding: 0px 10px;
-    height: 200vh;
   }
 
   div.support-box {
