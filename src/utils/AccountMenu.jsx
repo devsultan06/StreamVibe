@@ -32,12 +32,12 @@ export default function AccountMenu() {
 
   const handleLogoutClick = () => {
     setOpenModal(true);
-    handleClose(); // Close the menu
+    handleClose();
   };
 
   const handleLogoutConfirm = () => {
     setOpenModal(false);
-    navigate("/"); // Redirect to authentication page
+    navigate("/"); 
   };
 
   const handleModalClose = () => {
@@ -45,8 +45,8 @@ export default function AccountMenu() {
   };
 
   const handleProfileClick = () => {
-    navigate("/profile"); // Redirect to ProfilePage
-    handleClose(); // Close the menu
+    navigate("/profile");
+    handleClose(); 
   };
 
 

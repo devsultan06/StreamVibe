@@ -20,7 +20,7 @@ const Home = () => {
     isAuthenticated
       ? console.log(user)
       : console.log("User is not authenticated");
-  }, [user, isAuthenticated]); // Depend on both user and isAuthenticated
+  }, [user, isAuthenticated]);
 
   useEffect(() => {
     document.title = "Home";

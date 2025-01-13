@@ -15,20 +15,19 @@ const PaymentForm = ({ id }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission logic here
     console.log("Payment Submitted", state);
   };
 
   const formatCardNumber = (value) => {
     return value
-      .replace(/\D/g, "") // Remove all non-digit characters
-      .replace(/(\d{4})(?=\d)/g, "$1 "); // Add a space after every 4 digits
+      .replace(/\D/g, "") 
+      .replace(/(\d{4})(?=\d)/g, "$1 "); 
   };
 
   const formatExpiryDate = (value) => {
     return value
-      .replace(/\D/g, "") // Remove all non-digit characters
-      .replace(/(\d{2})(?=\d)/g, "$1/"); // Add a slash after every 2 digits
+      .replace(/\D/g, "") 
+      .replace(/(\d{2})(?=\d)/g, "$1/"); 
   };
 
   const handleInputChange = (evt) => {
@@ -82,7 +81,7 @@ const PaymentForm = ({ id }) => {
             onChange={handleInputChange}
             onFocus={handleInputFocus}
             required
-            maxLength="19" // 16 digits + 3 spaces
+            maxLength="19" 
           />
         </div>
         <div className="form-row">
@@ -96,7 +95,7 @@ const PaymentForm = ({ id }) => {
               onChange={handleInputChange}
               onFocus={handleInputFocus}
               required
-              maxLength="5" // 2 digits + '/' + 2 digits
+              maxLength="5"
             />
           </div>
           <div className="form-group">

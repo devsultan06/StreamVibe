@@ -9,19 +9,15 @@ import Links from "../../data/Links";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import AccountMenu from "../../utils/AccountMenu";
-// import { useContext } from "react";
-// import { UserContext } from "../../contexts/AuthContext";
 import Notification from "../../utils/Notification";
 import "./styles/layout.css";
 import { IoIosCloseCircle } from "react-icons/io";
 
 const Navbar = () => {
-  // const { user } = useContext(UserContext);
   const navRef = useRef(null);
   const showNavbar = () => {
     navRef.current.classList.toggle("responsive-nav");
   };
-  // const displayUsername = user?.username ? user.username : "User";
   useEffect(() => {
     Aos.init({ duration: 2000 });
   }, []);
@@ -29,7 +25,6 @@ const Navbar = () => {
   const [showCongratsAlert, setShowCongratsAlert] = useState(false);
 
   useEffect(() => {
-    // Check for the flag in localStorage
     const showAlert = localStorage.getItem("showCongratsAlert") === "true";
     if (showAlert) {
       setShowCongratsAlert(true);
@@ -45,7 +40,7 @@ const Navbar = () => {
 
   useLayoutEffect(() => {
     const animation = async () => {
-      await new Promise((resolve) => setTimeout(resolve, 700)); // wait for 700ms
+      await new Promise((resolve) => setTimeout(resolve, 700)); 
       setIsLoading(false);
     };
     animation();

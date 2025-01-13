@@ -46,8 +46,6 @@ const useRegister = (handleSetMessage, resetForm, setFieldValue) => {
         errorMessage = "The email address is not valid.";
       }
       handleSetMessage(errorMessage, "error");
-      // Clear only the email field, leaving the other fields intact
-      // Clear only the email field
       setFieldValue("email", "");
     } finally {
       setLoading(false);

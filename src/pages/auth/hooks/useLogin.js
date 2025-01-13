@@ -7,7 +7,6 @@ import { useState } from "react";
 const useLogin = (handleSetMessage, resetForm) => {
   const navigate = useNavigate();
   const [loader, showLoader] = useState(false);
-  // eslint-disable-next-line no-unused-vars
   const login = async (email, password, setLoading) => {
     setLoading(true);
     try {
@@ -21,10 +20,8 @@ const useLogin = (handleSetMessage, resetForm) => {
         handleSetMessage("Logged in successfully", "success");
         resetForm({ values: { email: "", password: "" } });
 
-        // Show the loader
         showLoader(true);
 
-        // After 3 seconds, navigate to home and hide the loader
         setTimeout(() => {
           showLoader(false);
           navigate("/home");
