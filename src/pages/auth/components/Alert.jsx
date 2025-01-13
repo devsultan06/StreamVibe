@@ -8,21 +8,20 @@ const AlertModal = ({ message, type }) => {
 
   useEffect(() => {
     if (alertRef.current && message) {
-      // Animate the alert box from below when the errorMessage changes
       gsap.fromTo(
         alertRef.current,
-        { opacity: 0, y: 50 }, // Start from transparent and 50px below
+        { opacity: 0, y: 50 },
         {
           opacity: 1,
-          y: 0, // Move to its original position
+          y: 0, 
           duration: 0.5,
-          ease: "power2.out", // Smooth easing for a subtle effect
+          ease: "power2.out",
         },
       );
     }
-  }, [message]); // Trigger animation when the message changes
+  }, [message]); 
 
-  if (!message) return null; // Don't render if there's no error
+  if (!message) return null;
 
   return (
     <Alert ref={alertRef} variant="filled" severity={type} className="mt-3">

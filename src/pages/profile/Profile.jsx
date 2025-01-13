@@ -72,7 +72,7 @@ export default function ProfilePage() {
                 sx={{
                   "@media (max-width: 880px)": {
                     justifyContent: "center",
-                    textAlign: "center", // Aligns the text in the center
+                    textAlign: "center", 
                   },
                 }}
               >
@@ -170,7 +170,7 @@ export default function ProfilePage() {
               sx={{
                 bgcolor: "#E50000",
                 "&:hover": {
-                  bgcolor: "#C40000", // Change this to your desired hover color
+                  bgcolor: "#C40000",
                 },
               }}
               variant="contained"

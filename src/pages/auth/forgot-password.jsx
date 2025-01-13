@@ -1,7 +1,7 @@
 import { useFormik } from "formik";
 import * as yup from "yup";
-import { getAuthSchema } from "./schemas/schema"; // Adjust the import path as needed
-import { auth } from "../../firebase/config/firebase"; // Import your Firebase auth instance
+import { getAuthSchema } from "./schemas/schema";
+import { auth } from "../../firebase/config/firebase"; 
 import { sendPasswordResetEmail } from "firebase/auth";
 import { useState } from "react";
 import ClipLoader from "react-spinners/ClipLoader";
@@ -22,14 +22,12 @@ const ForgotPassword = () => {
     onSubmit: async (values) => {
       setLoading(true);
       try {
-        // Attempt to send the password reset email
         await sendPasswordResetEmail(auth, values.email);
         setMessage("A password reset link has been sent to your email.");
       } catch (error) {
-        console.error("Error sending reset email:", error.code, error.message); // Log error details
+        console.error("Error sending reset email:", error.code, error.message);
         let errorMessage = "An error occurred. Please try again.";
 
-        // Check for specific Firebase error codes
         if (error.code === "auth/user-not-found") {
           errorMessage = "This email is not registered.";
         } else if (error.code === "auth/invalid-email") {

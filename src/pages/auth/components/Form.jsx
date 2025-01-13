@@ -17,7 +17,7 @@ const Form = () => {
   const [loading, setLoading] = useState(false);
   const { user, isAuthenticated } = useContext(AuthContext);
   const [isLogin, setIsLogin] = useState(true);
-  const [pageLoading, setPageLoading] = useState(true); // Full-page loading state
+  const [pageLoading, setPageLoading] = useState(true); 
   const [showPassword, setShowPassword] = useState(false);
   const [message, setMessage] = useState({ message: "", type: "" });
   const usernameRef = useRef(null);
@@ -31,7 +31,6 @@ const Form = () => {
   };
 
   const onSubmit = async (values) => {
-    // Trim the values before logging them
     const trimmedValues = {
       email: values.email.trim(),
       password: values.password.trim(),
@@ -77,12 +76,11 @@ const Form = () => {
   useEffect(() => {
     document.title = isLogin ? "Auth | Login" : "Auth | Sign Up";
   }, [isLogin]);
-  // Fetch and set user email if verified
   useEffect(() => {
     if (isAuthenticated) {
       setPageLoading(false);
       if (isLogin) {
-        setFieldValue("email", user.email || ""); // Fallback to empty string
+        setFieldValue("email", user.email || ""); 
       }
     }
   }, [user, isLogin, setFieldValue, isAuthenticated]);
@@ -99,7 +97,6 @@ const Form = () => {
   const handleFormSubmit = (event) => {
     event.preventDefault();
 
-      // Clear the previous message when the button is clicked
   setMessage({ message: "", type: "" });
     setTouched({
       username: true,
@@ -108,7 +105,6 @@ const Form = () => {
     });
     handleSubmit(event);
 
-    // Focus on the first field with an error
     setTimeout(() => {
       if (!isLogin && errors.username) {
         usernameRef.current.focus();
@@ -138,8 +134,8 @@ const Form = () => {
         className="w-[450px] rounded-[10px] bg-[#0f0f0f] p-[25px]"
       >
         <AlertModal
-          message={message.message} // Passing the message text
-          type={message.type} // Passing the type (either 'success' or 'error')
+          message={message.message}
+          type={message.type} 
         />
         <h1 className="mb-[40px] mt-[10px] text-[30px] font-bold">
           {isLogin ? "Login" : "Register"}
@@ -196,7 +192,7 @@ const Form = () => {
           <button
             type="submit"
             className="w-full cursor-pointer rounded border-none bg-red45 px-4 py-2 font-semibold text-white outline-none transition duration-100 ease-in-out hover:bg-[#b11a1a]"
-            disabled={loading} // Disable the button when loading
+            disabled={loading}
           >
             {loading ? (
               <ClipLoader
@@ -219,12 +215,12 @@ const Form = () => {
                 variant="contained"
                 startIcon={<FcGoogle />}
                 sx={{
-                  backgroundColor: "black", // Set initial color in sx
+                  backgroundColor: "black", 
                   color: "white",
                   width: "100%",
                   padding: "0.5rem 1rem",
                   "&:hover": {
-                    backgroundColor: "#b11a1a", // Set hover color in sx
+                    backgroundColor: "#b11a1a", 
                   },
                 }}
                 onClick={signInWithGoogle}

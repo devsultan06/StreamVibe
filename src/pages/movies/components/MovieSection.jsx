@@ -13,7 +13,7 @@ const MoviesSection = () => {
     <Box
       component="fieldset"
       sx={{
-        border: "2px solid #333", // Dark border for the fieldset
+        border: "2px solid #333", 
         borderRadius: "8px",
         padding: "16px",
 

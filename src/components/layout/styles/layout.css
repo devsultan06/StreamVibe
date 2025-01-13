@@ -1,5 +1,5 @@
 .active-link {
-  background-color: #5c5959; /* Background color for the active link */
+  background-color: #5c5959; 
 }
 
 footer.footer {
@@ -13,7 +13,7 @@ footer.footer {
     transition: 1s;
   }
   .active-link {
-    background-color: transparent; /* Background color for the active link */
+    background-color: transparent; 
   }
   .responsive-nav {
     transform: translateY(0);

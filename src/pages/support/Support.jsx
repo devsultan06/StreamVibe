@@ -38,7 +38,7 @@ const Support = () => {
       <Faq />
       <Trial />
       <Footer />
-      <BackToTop /> {/* Add the BackToTop component here */}
+      <BackToTop /> 
     </div>
   );
 };

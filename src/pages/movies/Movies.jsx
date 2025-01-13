@@ -1,5 +1,4 @@
 /* eslint-disable react/no-unescaped-entities */
-// // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/swiper-bundle.css";
@@ -8,7 +7,6 @@ import Navbar from "../../components/layout/Navbar";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/swiper-bundle.css";
@@ -17,6 +15,7 @@ import BackToTop from "../../components/ui/BackToTop";
 import Avengers from "./components/Avengers";
 import MoviesSection from "./components/MovieSection";
 import { AuthContext } from "../../contexts/AuthContext";
+import "./styles/movies.css";
 
 const Movies = () => {
   const { user, isAuthenticated } = useContext(AuthContext);
@@ -27,7 +26,7 @@ const Movies = () => {
     } else {
       console.log("User is not authenticated");
     }
-  }, [user, isAuthenticated]); // Depend on both user and isAuthenticated
+  }, [user, isAuthenticated]);
   useEffect(() => {
     document.title = "Movies";
   }, []);
@@ -40,11 +39,11 @@ const Movies = () => {
         spaceBetween={20}
         slidesPerView={1}
         navigation={{
-          nextEl: ".movies-swipe-button-next", // Unique selector
-          prevEl: ".movies-swipe-button-prev", // Unique selector
+          nextEl: ".movies-swipe-button-next",
+          prevEl: ".movies-swipe-button-prev",
         }}
         pagination={{
-          el: ".movies-swiper-pagination", // Unique selector
+          el: ".movies-swiper-pagination",
           clickable: true,
           className: "swiper-pagination-custom",
         }}
@@ -69,11 +68,11 @@ const Movies = () => {
           <Avengers />
         </SwiperSlide>
       </Swiper>
-      <div className="movies-swiper-pagination hidden-md-and-up"></div>
+      <div className="movies-swiper-pagination mt-4 flex items-center justify-center"></div>
       <div className="moviesection">
         <MoviesSection />
       </div>
-      <BackToTop /> {/* Add the BackToTop component here */}
+      <BackToTop />
     </section>
   );
 };

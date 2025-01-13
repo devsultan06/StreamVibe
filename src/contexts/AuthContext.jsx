@@ -14,14 +14,12 @@ const AuthProvider = ({ children }) => {
     password: null,
   });
 
-  const [loading, setLoading] = useState(true); // Track loading state
+  const [loading, setLoading] = useState(true); 
   const isAuthenticated = !!user.email && !!user.emailVerified;
 
   useEffect(() => {
-    // Set up an authentication state observer
     const observer = auth.onAuthStateChanged((currentUser) => {
       if (currentUser) {
-        // User is logged in, set their email and username in the context
         setUser({
           email: currentUser?.email,
           username: currentUser?.displayName,
@@ -31,7 +29,6 @@ const AuthProvider = ({ children }) => {
             currentUser?.reloadUserInfo?.passwordHash || "Google Password",
         });
       } else {
-        // No user is logged in
         setUser({
           email: null,
           username: null,
@@ -40,7 +37,7 @@ const AuthProvider = ({ children }) => {
           password: null,
         });
       }
-      setLoading(false); // Finish loading once the observer has set the user
+      setLoading(false);
     });
 
     return () => observer();

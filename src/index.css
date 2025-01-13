@@ -11,7 +11,7 @@ body {
   box-sizing: border-box;
 }
 /* Hide Vercel-specific footer (example) */
-#feedback-toolbar{
+#feedback-toolbar {
   display: none !important;
 }
 
@@ -37,21 +37,6 @@ body {
 .notification-box li a {
   color: blue;
   text-decoration: underline;
-}
-
-.movies-swipe-button-prev,
-.movies-swipe-button-next {
-  padding: 8px;
-  cursor: pointer;
-  transition: 0.3s ease-in;
-  border-radius: 5px;
-  outline: none;
-  border: none;
-}
-
-.movies-swipe-button-prev:hover,
-.movies-swipe-button-next:hover {
-  background-color: #e50000;
 }
 
 div.device:hover {
@@ -137,150 +122,6 @@ section.movies button {
   outline: none;
 }
 
-.avengers-box h1 {
-  font-size: 32px;
-  filter: brightness(3);
-  font-weight: 900;
-}
-
-.avengers-box p {
-  color: #999999;
-  font-size: 20px;
-  padding: 10px 200px;
-}
-
-.avengers-container,
-.avengers-container:nth-child(2),
-.avengers-container:nth-child(3) {
-  padding-top: 120px;
-  padding-bottom: 100px;
-  position: relative;
-  display: inline-block; /* or block, depending on your layout */
-  max-width: 100%;
-  background-position: center;
-  object-fit: cover;
-  text-align: center;
-  height: 95vh;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-.plus,
-.volume,
-.thumbs {
-  padding: 8px;
-  cursor: pointer;
-  width: 40px;
-  outline: none;
-  border: none;
-  transition: 0.3s ease-in;
-  border-radius: 5px;
-  outline: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 20px;
-  border: none;
-}
-
-.plus:hover,
-.volume:hover,
-.thumbs:hover {
-  background-color: #e50000;
-}
-
-div.collections,
-div.second-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  justify-content: center;
-}
-
-.avengers-container::before {
-  content: "";
-  position: absolute;
-  border-radius: 10px;
-  top: 100;
-  left: 0%;
-  right: 0;
-  max-width: 100%;
-  height: 100%;
-  background-image: url("/images/movieshowbg.jpg");
-  background-size: cover;
-  filter: brightness(0.5);
-}
-
-.slide2 .avengers-container::before {
-  content: "";
-  position: absolute;
-  border-radius: 10px;
-  top: 100;
-  left: 0%;
-  right: 0;
-  max-width: 100%;
-  height: 100%;
-  background-image: url("/images/movieshowbg2.jpg");
-  background-size: cover;
-  filter: brightness(0.5); /* adjust the brightness to your liking */
-}
-
-.slide3 .avengers-container::before {
-  content: "";
-  position: absolute;
-  top: 100;
-  left: 0%;
-  right: 0;
-  max-width: 100%;
-  height: 100%;
-  background-image: url("/images/movieshowbg3.jpg");
-  background-size: cover;
-  filter: brightness(0.5); /* adjust the brightness to your liking */
-}
-
-.slide4 .avengers-container::before {
-  content: "";
-  position: absolute;
-  border-radius: 10px;
-  top: 100;
-  left: 0%;
-  right: 0;
-  max-width: 100%;
-  height: 100%;
-  background-image: url("/images/team-superheroes-defending-earth-from-cosmic-th_1148322-72774.jpg");
-  background-size: cover;
-  filter: brightness(0.5); /* adjust the brightness to your liking */
-}
-
-.slide5 .avengers-container::before {
-  content: "";
-  position: absolute;
-  top: 100;
-  left: 0%;
-  right: 0;
-  max-width: 100%;
-  height: 100%;
-  background-image: url("/images/power-struggles-within-superhero-alliances-ar-generative-ai_1169639-111853.jpg");
-  background-size: cover;
-  filter: brightness(0.5); /* adjust the brightness to your liking */
-}
-
-.swipe-movies {
-  margin-top: 20px;
-}
-
-.avengers-box {
-  padding-top: 200px;
-  border-radius: 10px;
-}
-
-.avengers-box > * {
-  /* target the text elements */
-  position: relative;
-  z-index: 1;
-  color: #fff; /* set the text color to white */
-}
-
 .swiper-container {
   width: 1000px;
   max-width: 100%;
@@ -296,19 +137,6 @@ div.vid-tag {
 div.vid-tag video {
   height: 90vh;
   width: 90vh;
-}
-
-.success {
-  width: 300px;
-  position: absolute;
-  top: 100;
-
-  font-size: 17px !important;
-  display: flex;
-  align-items: center;
-  left: 50%;
-  right: 50%;
-  transform: translate(-50%, -50%);
 }
 
 div.support {
@@ -700,12 +528,6 @@ div.gap {
     height: 200vh;
   }
 
-  .avengers-box p {
-    color: #999999;
-    font-size: 20px;
-    padding: 10px 0px;
-  }
-
   div.support-box {
     padding: 150px 10px 100px 10px;
   }
@@ -749,15 +571,6 @@ div.gap {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  div.collections {
-    display: block;
-    gap: 1px;
-  }
-
-  div.collections > button:nth-child(1) {
-    width: 90%;
-  }
-
   .avengers-box {
     padding-top: 150px;
   }
@@ -771,10 +584,6 @@ div.gap {
 }
 
 @media screen and (max-width: 800px) {
-  .hidden-md-and-up {
-    display: block;
-  }
-
   div.profile {
     text-align: center;
   }

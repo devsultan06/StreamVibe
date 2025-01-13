@@ -10,7 +10,7 @@ import PaymentForm from "./components/PaymentForm";
 
 const Subscription = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedId, setSelectedId] = useState(null); // State to hold the selected ID
+  const [selectedId, setSelectedId] = useState(null); 
 
   useEffect(() => {
     document.title = "Subscription";
@@ -18,15 +18,15 @@ const Subscription = () => {
 
   const handleOpenModal = (id) => {
     console.log("Pay button clicked", id);
-    setSelectedId(id); // Store the ID in the state
+    setSelectedId(id);
     setIsModalOpen(true);
-    document.body.style.overflow = "hidden"; // Disable scrolling when modal is open
+    document.body.style.overflow = "hidden"; 
   };
 
   const handleCloseModal = () => {
     setIsModalOpen(false);
-    setSelectedId(null); // Clear the selected ID when closing the modal
-    document.body.style.overflow = "auto"; // Enable scrolling when modal is closed
+    setSelectedId(null); 
+    document.body.style.overflow = "auto";
   };
 
   return (
@@ -40,7 +40,6 @@ const Subscription = () => {
       <BackToTop />
       <Modal show={isModalOpen} handleClose={handleCloseModal}>
         <PaymentForm id={selectedId} />
-        {/* Pass the selected ID to PaymentForm */}
       </Modal>
     </div>
   );

@@ -3,7 +3,6 @@ import { VscFoldUp } from "react-icons/vsc";
 const BackToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
 
-  // Show or hide the button based on the scroll position
   const toggleVisibility = () => {
     if (window.pageYOffset > 100) {
       setIsVisible(true);

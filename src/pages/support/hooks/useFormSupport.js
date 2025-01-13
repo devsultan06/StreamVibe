@@ -70,7 +70,6 @@ const useFormSupport = () => {
       return;
     }
 
-    // Handle form submission logic here
     console.log("Form submitted:", state);
 
     setState({

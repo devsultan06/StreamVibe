@@ -17,17 +17,17 @@ const InputField = ({
 }) => {
   return (
     <TextField
-      type={name === "password" && showPassword ? "text" : type} // Toggle type based on showPassword
+      type={name === "password" && showPassword ? "text" : type} 
       label={label}
       variant="outlined"
       name={name}
       id={id}
-      value={value} // Value of the input field
+      value={value} 
       onChange={handleInputChange}
-      autoComplete="off" // Disable suggestions and autofill
+      autoComplete="off" 
       error={error}
       inputRef={inputRef}
-      helperText={error ? helperText : ""} // Show error message if error is true
+      helperText={error ? helperText : ""} 
       InputProps={{
         endAdornment: name === "password" && (
           <EndAdorment
@@ -37,25 +37,25 @@ const InputField = ({
         ),
       }}
       sx={{
-        width: "100%", // Full width
-        marginBottom: "16px", // Margin bottom (adjust as needed)
+        width: "100%",
+        marginBottom: "16px", 
         "& .MuiOutlinedInput-root": {
-          color: "white", // Text color in the input field
+          color: "white", 
           "& fieldset": {
-            borderColor: error ? "red" : "#5c5959", // Border color when not focused
+            borderColor: error ? "red" : "#5c5959", 
           },
           "&:hover fieldset": {
-            borderColor: error ? "red" : "#5c5959", // Border color on hover
+            borderColor: error ? "red" : "#5c5959",
           },
           "&.Mui-focused fieldset": {
-            borderColor: error ? "red" : "#5c5959", // Border color when focused
+            borderColor: error ? "red" : "#5c5959",
           },
         },
         "& .MuiInputLabel-root": {
-          color: error ? "red" : "white", // Label color when not focused
+          color: error ? "red" : "white", 
         },
         "& .MuiInputLabel-root.Mui-focused": {
-          color: error ? "red" : "white", // Label color when focused
+          color: error ? "red" : "white",
         },
       }}
     />

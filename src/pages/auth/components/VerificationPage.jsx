@@ -27,7 +27,6 @@ const VerifiedPage = () => {
 
             if (auth.currentUser.emailVerified) {
               console.log("User email is verified.");
-              // Update Firestore
               const userDocRef = doc(firestore, "users", auth.currentUser.uid);
               await updateDoc(userDocRef, {
                 emailVerified: true,

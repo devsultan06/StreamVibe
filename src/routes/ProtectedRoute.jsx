@@ -21,14 +21,13 @@ const ProtectedRoute = ({ element }) => {
           wrapperClass=""
         />
       </div>
-    ); // Or return a loading spinner
+    );
   }
 
   if (!isAuthenticated) {
-    return <Navigate to="/auth" replace />; // Redirect to login if not authenticated
+    return <Navigate to="/auth" replace />;
   }
-
-  return element; // Render protected route if authenticated
+  return element;
 };
 
 export default ProtectedRoute;

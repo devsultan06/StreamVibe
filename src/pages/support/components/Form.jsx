@@ -72,7 +72,7 @@ const Form = () => {
           <div className="phone-input-wrapper">
             <PhoneInput
               international
-              defaultCountry="US" // You can set the default country here
+              defaultCountry="US" 
               value={state.number}
               onChange={handlePhoneNumberChange}
               placeholder="Enter phone number"
