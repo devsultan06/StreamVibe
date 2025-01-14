@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Copyright from "../ui/Copyright";
 import "./styles/layout.css";
+import { FaDiscord } from "react-icons/fa";
 const Footer = () => {
   return (
     <footer className="footer bg-black06">
@@ -115,11 +116,11 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="https://www.linkedin.com/in/sultan-a-dev-572673260/"
+                  href="https://discord.com/users/1097891811395129434"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img src="/images/linkedin.png" alt="" />
+                  <FaDiscord className="discord" />{" "}
                 </a>
               </li>
             </ul>
