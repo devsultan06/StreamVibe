@@ -6,12 +6,14 @@ import { Navigation, Pagination } from "swiper/modules";
 import NewReleasesCategory from "../categories/NewReleasesCategory";
 import newreleases from "../../../data/newreleases";
 
-const NewReleases = () => {
+const NewReleases = ({ isShow }) => {
   return (
     <div className="mt-[30px] bg-black10 px-[30px] text-white max-590:px-[10px] max-860:px-[10px]">
       <div className="flex justify-between">
         <div data-aos="fade-right">
-          <h1 className="text-xl">New Releases</h1>
+          <h1 className="text-xl">
+            {!isShow ? "New Releases" : "New Released Shows"}
+          </h1>
         </div>
         <div
           className="flex h-[60px] items-center justify-between gap-20 rounded-lg bg-black06 px-2.5 max-800:hidden"
@@ -57,7 +59,7 @@ const NewReleases = () => {
         >
           {newreleases.map((categories) => (
             <SwiperSlide key={categories.released}>
-              <NewReleasesCategory {...categories} />
+              <NewReleasesCategory {...categories} isShow={isShow} />
             </SwiperSlide>
           ))}
           <div className="swiper-pagination mx-auto text-center max-800:block"></div>

@@ -6,12 +6,14 @@ import { Navigation, Pagination } from "swiper/modules";
 import MustWatchMoviesCategory from "../categories/MustWatchMoviesCategory";
 import mustwatchmovies from "../../../data/mustwatchmovies";
 
-const MustWatchMovies = () => {
+const MustWatchMovies = ({ isShow }) => {
   return (
     <div className="mt-[30px] bg-black10 px-[30px] text-white max-590:px-[10px] max-860:px-[10px]">
       <div className="flex justify-between">
         <div data-aos="fade-right">
-          <h1 className="text-xl">Must - Watch Movies </h1>
+          <h1 className="text-xl">
+            Must - Watch {!isShow ? "Movies" : "Shows"}{" "}
+          </h1>
         </div>
         <div
           className="flex h-[60px] items-center justify-between gap-20 rounded-lg bg-black06 px-2.5 max-800:hidden"
@@ -57,7 +59,7 @@ const MustWatchMovies = () => {
         >
           {mustwatchmovies.map((categories) => (
             <SwiperSlide key={categories.time}>
-              <MustWatchMoviesCategory {...categories} />
+              <MustWatchMoviesCategory {...categories} isShow={isShow} />
             </SwiperSlide>
           ))}
           <div className="swiper-pagination mx-auto text-center max-800:block"></div>

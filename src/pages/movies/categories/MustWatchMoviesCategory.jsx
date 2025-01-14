@@ -26,7 +26,7 @@ const renderStars = (rating) => {
   }
   return stars;
 };
-const MustWatchMoviesCategory = ({ time, watched, image, star }) => {
+const MustWatchMoviesCategory = ({ times, watched, images, stars, isShow }) => {
   return (
     <div
       className="category mb-[60px] cursor-pointer rounded-[10px] bg-black15 p-[10px] max-800:rounded-[10px] max-800:p-[10px]"
@@ -36,18 +36,24 @@ const MustWatchMoviesCategory = ({ time, watched, image, star }) => {
       data-aos-duration="4000"
     >
       <div className="image-box">
-        <img src={image} alt="" className="w-full" />
+        <img
+          src={!isShow ? images[0] : images[1]}
+          alt="Movie"
+          className="w-full"
+        />{" "}
       </div>
-      <div className=" mt-2.5 block rounded-md p-2.5">
+      <div className="mt-2.5 block rounded-md p-2.5">
         <div className="time mb-[10px] flex items-center justify-center rounded-[20px] border border-white/30 p-[7px] transition-colors duration-200 hover:border-white/50 hover:bg-[#1a1a1a]">
           <img src={timeicon} alt="" className="mr-[5px] w-[20px]" />
-          <p>{time}</p>
+          <p>{!isShow ? times[0] : times[1]}</p>
         </div>
 
         <div className="likes flex items-center justify-center gap-2 rounded-[20px] border border-white/30 p-[7px] transition-colors duration-200 hover:border-white/50 hover:bg-[#1a1a1a]">
           <div className="flex items-center">
-            <div className="mr-2 flex">{renderStars(star)}</div>
-            <p>{watched}</p>
+            <div className="mr-2 flex">
+              {renderStars(!isShow ? stars[0] : stars[1])}
+            </div>
+            <p>{!isShow ? watched[0] : watched[1]}</p>
           </div>
         </div>
       </div>

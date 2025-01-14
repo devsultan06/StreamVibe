@@ -6,12 +6,14 @@ import { Navigation, Pagination } from "swiper/modules";
 import TrendingCategory from "../categories/TrendingCategory";
 import trendingcategory from "../../../data/trendingcategory";
 
-const Trending = () => {
+const Trending = ({ isShow }) => {
   return (
     <div className="mt-[30px] bg-black10 px-[30px] text-white max-590:px-[10px] max-860:px-[10px]">
       <div className="flex justify-between">
         <div data-aos="fade-right">
-          <h1 className="text-xl">Trending Now</h1>
+          <h1 className="text-xl">
+            {!isShow ? "Trending Now" : "Trending Shows Now"}
+          </h1>
         </div>
         <div
           className="flex h-[60px] items-center justify-between gap-20 rounded-lg bg-black06 px-2.5 max-800:hidden"
@@ -31,7 +33,7 @@ const Trending = () => {
           spaceBetween={20}
           breakpoints={{
             1094: {
-              slidesPerView: 4.7,
+              slidesPerView: 4,
             },
 
             800: {
@@ -57,7 +59,7 @@ const Trending = () => {
         >
           {trendingcategory.map((categories) => (
             <SwiperSlide key={categories.time}>
-              <TrendingCategory {...categories} />
+              <TrendingCategory {...categories} isShow={isShow} />
             </SwiperSlide>
           ))}
           <div className="swiper-pagination mx-auto text-center max-800:block"></div>
