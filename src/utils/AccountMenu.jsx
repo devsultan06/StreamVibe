@@ -12,11 +12,16 @@ import Typography from "@mui/material/Typography";
 import PersonAdd from "@mui/icons-material/PersonAdd";
 import Settings from "@mui/icons-material/Settings";
 import Logout from "@mui/icons-material/Logout";
-import {useState } from "react";
+import { useState } from "react";
 
 import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../contexts/AuthContext";
+import { useContext } from "react";
 
 export default function AccountMenu() {
+  const {
+    user: { username},
+  } = useContext(AuthContext);
   const [anchorEl, setAnchorEl] = useState(null);
   const [openModal, setOpenModal] = useState(false);
   const open = Boolean(anchorEl);
@@ -37,7 +42,7 @@ export default function AccountMenu() {
 
   const handleLogoutConfirm = () => {
     setOpenModal(false);
-    navigate("/"); 
+    navigate("/");
   };
 
   const handleModalClose = () => {
@@ -46,9 +51,8 @@ export default function AccountMenu() {
 
   const handleProfileClick = () => {
     navigate("/profile");
-    handleClose(); 
+    handleClose();
   };
-
 
   return (
     <React.Fragment>
@@ -69,7 +73,7 @@ export default function AccountMenu() {
                 fontWeight: 600,
               }}
             >
-              {/* {usernameInitial} */}
+              {username[0]}
             </Avatar>
           </IconButton>
         </Tooltip>
@@ -112,7 +116,7 @@ export default function AccountMenu() {
         transformOrigin={{ horizontal: "right", vertical: "top" }}
         anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
       >
-        {/* <MenuItem sx={{ color: "#EAEAEA", mb: 1 }}>{displayUsername}</MenuItem> */}
+        <MenuItem sx={{ color: "#EAEAEA", mb: 1 }}>{username}</MenuItem>
         <MenuItem sx={{ color: "#EAEAEA", mb: 1 }} onClick={handleProfileClick}>
           <Avatar /> Profile
         </MenuItem>

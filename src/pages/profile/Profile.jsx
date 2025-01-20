@@ -13,6 +13,8 @@ import PhotoCamera from "@mui/icons-material/PhotoCamera";
 import Grid from "@mui/material/Grid";
 import { styled } from "@mui/material/styles";
 import Navbar from "../../components/layout/Navbar";
+import { useContext } from "react";
+import { AuthContext } from "../../contexts/AuthContext";
 // import useProfile from "./hooks/useProfile";
 
 const Input = styled("input")({
@@ -21,6 +23,10 @@ const Input = styled("input")({
 
 export default function ProfilePage() {
   // const { user, profileImage, handleImageChange } = useProfile();
+
+  const {
+    user: { username, email },
+  } = useContext(AuthContext);
 
   return (
     <div className="profile">
@@ -61,7 +67,7 @@ export default function ProfilePage() {
                 }}
                 // src={profileImage || ""}
               >
-                {/* {!profileImage && (user?.username ? user.username[0] : "U")} */}
+                {username ? username[0] : "U"}
               </Avatar>
             </Grid>
             <Grid item xs={12} sm={8} md={9}>
@@ -72,7 +78,7 @@ export default function ProfilePage() {
                 sx={{
                   "@media (max-width: 880px)": {
                     justifyContent: "center",
-                    textAlign: "center", 
+                    textAlign: "center",
                   },
                 }}
               >
@@ -84,7 +90,7 @@ export default function ProfilePage() {
                       textAlign: { xs: "center", sm: "left" },
                     }}
                   >
-                    {/* {user?.username || "User"} */}
+                    {username || "User"}
                   </Typography>
                   <Typography
                     variant="subtitle1"
@@ -93,7 +99,7 @@ export default function ProfilePage() {
                       textAlign: { xs: "center", sm: "left" },
                     }}
                   >
-                    {/* {user?.email || "user@example.com"} */}
+                    {email || "user@example.com"}
                   </Typography>
                 </Box>
                 <Box sx={{ display: { xs: "none", sm: "block" } }}>
@@ -145,7 +151,7 @@ export default function ProfilePage() {
                 Email
               </Typography>
               <Typography variant="body1" sx={{ color: "#EAEAEA" }}>
-                {/* {user?.email || "user@example.com"} */}
+                {email || "user@example.com"}
               </Typography>
             </Grid>
             <Grid item xs={12} md={6}>
@@ -161,7 +167,7 @@ export default function ProfilePage() {
                 Username
               </Typography>
               <Typography variant="body1" sx={{ color: "#EAEAEA" }}>
-                {/* {user?.username || "user123"} */}
+                {username || "user123"}
               </Typography>
             </Grid>
           </Grid>

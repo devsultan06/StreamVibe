@@ -9,9 +9,9 @@ import Links from "../../data/Links";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import AccountMenu from "../../utils/AccountMenu";
-import Notification from "../../utils/Notification";
 import "./styles/layout.css";
 import { IoIosCloseCircle } from "react-icons/io";
+import Notification from "../../utils/Notification";
 
 const Navbar = () => {
   const navRef = useRef(null);
@@ -22,14 +22,14 @@ const Navbar = () => {
     Aos.init({ duration: 2000 });
   }, []);
 
-  const [showCongratsAlert, setShowCongratsAlert] = useState(false);
+  // const [showCongratsAlert, setShowCongratsAlert] = useState(false);
 
-  useEffect(() => {
-    const showAlert = localStorage.getItem("showCongratsAlert") === "true";
-    if (showAlert) {
-      setShowCongratsAlert(true);
-    }
-  }, []);
+  // useEffect(() => {
+  //   const showAlert = localStorage.getItem("showCongratsAlert") === "true";
+  //   if (showAlert) {
+  //     setShowCongratsAlert(true);
+  //   }
+  // }, []);
 
   const [, setIsLoading] = useState(true);
   const [isNotificationsOpen, setIsNotificationsOpen] = useState(false);
@@ -40,7 +40,7 @@ const Navbar = () => {
 
   useLayoutEffect(() => {
     const animation = async () => {
-      await new Promise((resolve) => setTimeout(resolve, 700)); 
+      await new Promise((resolve) => setTimeout(resolve, 700));
       setIsLoading(false);
     };
     animation();
@@ -114,7 +114,7 @@ const Navbar = () => {
             className="notification-icon cursor-pointer text-white"
             onClick={handleNotificationsClick}
           />
-          {isNotificationsOpen && showCongratsAlert && <Notification />}
+          {isNotificationsOpen && <Notification />}
         </div>
 
         <AccountMenu />
