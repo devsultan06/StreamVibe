@@ -2,7 +2,6 @@
 import { useState, useEffect, useRef, useContext } from "react";
 import { useFormik } from "formik";
 import InputField from "./InputField.jsx";
-import { getAuthSchema } from "../schemas/schema.js";
 import Button from "@mui/material/Button";
 import { FcGoogle } from "react-icons/fc";
 import ClipLoader from "react-spinners/ClipLoader";
@@ -12,6 +11,7 @@ import { ThreeDots } from "react-loader-spinner";
 import useLogin from "../hooks/useLogin.js";
 import useRegister from "../hooks/useRegister.js";
 import useGoogleAuth from "../hooks/useGoogleAuth.js";
+import { getAuthSchema } from "../../../schemas/authSchema.js";
 
 const Form = () => {
   const [loading, setLoading] = useState(false);

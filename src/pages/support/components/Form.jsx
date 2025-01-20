@@ -1,20 +1,46 @@
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
-import useFormSupport from "../hooks/useFormSupport";
+import { useFormik } from "formik";
+
+import { getSupportSchema } from "../../../schemas/supportSchema";
 
 const Form = () => {
+  const validationSchema = getSupportSchema();
+
   const {
-    state,
+    values,
     errors,
     touched,
-    isCheckboxChecked,
-    handleInputChange,
-    handleCheckboxChange,
-    handleSubmit,
-    handlePhoneNumberChange,
+    handleChange,
     handleBlur,
-  } = useFormSupport();
+    handleSubmit,
+    resetForm,
+    setTouched,
+    setFieldValue,
+  } = useFormik({
+    initialValues: {
+      firstName: "",
+      lastName: "",
+      email: "",
+      phoneNumber: "",
+      message: "",
+      agreeToTerms: false,
+    },
+    validationSchema,
+    onSubmit: async (values) => {
+      const trimmedValues = {
+        ...values,
+        email: values.email.trim(),
+        phoneNumber: values.phoneNumber.trim(),
+        firstName: values.firstName.trim(),
+        lastName: values.lastName.trim(),
+        message: values.message.trim(),
+        agreeToTerms: values.agreeToTerms,
+      };
 
+      console.log(trimmedValues);
+    },
+  });
   return (
     <form action="" onSubmit={handleSubmit}>
       <div className="form-controls">
@@ -26,9 +52,6 @@ const Form = () => {
             autoComplete="off"
             name="firstname"
             id="firstname"
-            value={state.firstname}
-            required
-            onChange={handleInputChange}
             placeholder="Enter your First Name"
           />
         </div>
@@ -41,9 +64,6 @@ const Form = () => {
             autoComplete="off"
             name="lastname"
             id="lastname"
-            value={state.lastname}
-            required
-            onChange={handleInputChange}
             placeholder="Enter your Last Name"
           />
         </div>
@@ -56,15 +76,9 @@ const Form = () => {
             name="email"
             id="email"
             autoComplete="off"
-            value={state.email}
             required
-            onChange={handleInputChange}
-            onBlur={handleBlur}
             placeholder="Enter your Email"
           />
-          {touched.email && errors.email && (
-            <p className="error">{errors.email}</p>
-          )}
         </div>
         <div className="form-control">
           <label htmlFor="number">Phone Number</label>
@@ -72,18 +86,12 @@ const Form = () => {
           <div className="phone-input-wrapper">
             <PhoneInput
               international
-              defaultCountry="US" 
-              value={state.number}
-              onChange={handlePhoneNumberChange}
+              defaultCountry="US"
               placeholder="Enter phone number"
               className="PhoneInput"
               style={{ backgroundColor: "black" }}
             />
           </div>
-
-          {touched.number && errors.number && (
-            <p className="error">{errors.number}</p>
-          )}
         </div>
         <div className="form-control">
           <label htmlFor="number">Message</label>
@@ -91,8 +99,6 @@ const Form = () => {
           <textarea
             name="message"
             id="message"
-            onChange={handleInputChange}
-            value={state.message}
             placeholder="Enter your Message"
             rows={4}
             required
@@ -102,17 +108,9 @@ const Form = () => {
       <div className="terms-and-submit">
         <div className="terms1">
           <div className="terms">
-            <input
-              type="checkbox"
-              name="terms"
-              id="terms"
-              checked={isCheckboxChecked}
-              onChange={handleCheckboxChange}
-            />
+            <input type="checkbox" name="terms" id="terms" />
             <p>I agree with Terms of Use and Privacy Policy</p>
           </div>
-
-          {errors.checkbox && <p className="error">{errors.checkbox}</p>}
         </div>
 
         <div className="send">

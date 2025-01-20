@@ -1,10 +1,10 @@
 import { useFormik } from "formik";
 import * as yup from "yup";
-import { getAuthSchema } from "./schemas/schema";
 import { auth } from "../../firebase/config/firebase"; 
 import { sendPasswordResetEmail } from "firebase/auth";
 import { useState } from "react";
 import ClipLoader from "react-spinners/ClipLoader";
+import { getAuthSchema } from "../../schemas/authSchema";
 
 const validationSchema = yup.object().shape({
   email: getAuthSchema(false).fields.email,
