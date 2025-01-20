@@ -17,15 +17,17 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../contexts/AuthContext";
 import { useContext } from "react";
+import useLogout from "../hooks/useLogout";
 
 export default function AccountMenu() {
   const {
-    user: { username},
+    user: { username },
   } = useContext(AuthContext);
   const [anchorEl, setAnchorEl] = useState(null);
   const [openModal, setOpenModal] = useState(false);
   const open = Boolean(anchorEl);
   const navigate = useNavigate();
+  const { handleLogout } = useLogout();
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -43,6 +45,7 @@ export default function AccountMenu() {
   const handleLogoutConfirm = () => {
     setOpenModal(false);
     navigate("/");
+    handleLogout();
   };
 
   const handleModalClose = () => {
@@ -170,7 +173,7 @@ export default function AccountMenu() {
             component="h2"
             sx={{ mt: 1, p: 1 }}
           >
-            Are you sure you want to log out?
+            Are you sure you want to log out {username}?
           </Typography>
           <Box sx={{ mt: 2, display: "flex", justifyContent: "space-around" }}>
             <Button
