@@ -1,0 +1,12 @@
+div.send button {
+  width: 100%;
+  font-weight: 600;
+  transition: 0.1s ease-in-out;
+}
+
+@media screen and (max-width: 1075px) {
+  div.support-box form {
+    width: 100%;
+    margin-top: 40px;
+  }
+}

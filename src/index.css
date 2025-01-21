@@ -138,132 +138,6 @@ div.vid-tag video {
   width: 90vh;
 }
 
-div.support {
-  background-color: #1a1a1a;
-  color: white;
-}
-
-div.support-box {
-  padding: 150px 70px 100px 70px;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 10px;
-}
-.support-box p {
-  font-size: 12px;
-}
-
-.support-box img {
-  margin-top: 40px;
-  height: 400px;
-}
-
-div.right form {
-  background-color: #0f0f0f;
-  padding: 30px;
-
-  border-radius: 8px;
-  width: 720px;
-}
-
-.terms input {
-  cursor: pointer;
-}
-
-div.right form .form-controls {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
-}
-textarea::placeholder {
-  color: #5c5959;
-}
-
-div.terms-and-submit {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.phone-input-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /* Border for visual debugging */
-  border-radius: 4px; /* Rounded corners */
-  /* Hide any overflow */
-
-  background-color: white;
-  margin-top: 40px;
-  position: relative;
-}
-
-.PhoneInputCountrySelect {
-  background-color: #1a1a1a;
-}
-
-.PhoneInput {
-  width: 100%;
-  border-radius: 4px;
-  height: 0px;
-}
-
-.PhoneInputInternationalIconPhone {
-  opacity: 0;
-  display: none;
-}
-
-.PhoneInputInternationalIconGlobe {
-  opacity: 0;
-  display: none;
-}
-
-.PhoneInputCountry {
-  width: 50px;
-  height: 44px;
-  margin-top: -30px;
-}
-
-.PhoneInputCountry .PhoneInputCountryIcon {
-  width: 30px; /* Adjust the size */
-  height: 25px; /* Adjust the size */
-  border-radius: 0%;
-  border: 1px solid #1a1a1a;
-  margin-left: 4px;
-  margin-top: -460px;
-  z-index: 2;
-}
-
-div.terms {
-  display: flex;
-  align-items: center;
-
-  gap: 8px;
-}
-
-div.terms input {
-  background-color: #1a1a1a;
-  border: 2px solid #0f0f0f;
-}
-
-div.send button {
-  width: 100%;
-  padding: 10px;
-  background-color: #e50000;
-  color: white;
-  border: none;
-  outline: none;
-  border-radius: 5px;
-  font-weight: 600;
-  font-size: 15px;
-  transition: 0.1s ease-in-out;
-}
-
-div.send button:hover {
-  background-color: #b11a1a !important;
-}
-
 .subscription {
   background-color: #1a1a1a;
   height: 180vh;
@@ -459,18 +333,6 @@ div.gap {
   padding-bottom: 150px;
 }
 
-@media (max-width: 1480px) {
-  div.right form {
-    padding: 30px;
-    width: 550px;
-  }
-}
-@media (max-width: 990px) {
-  div.support-box {
-    display: block;
-  }
-}
-
 @media (max-width: 590px) {
   .notification-box {
     position: absolute;
@@ -500,40 +362,6 @@ div.gap {
   section.movies {
     background-color: #1a1a1a;
     padding: 0px 10px;
-  }
-
-  div.support-box {
-    padding: 150px 10px 100px 10px;
-  }
-  div.support-box form {
-    width: 100%;
-    margin-top: 40px;
-  }
-
-  div.support-box form .form-controls {
-    grid-template-columns: repeat(1, 1fr);
-  }
-
-  .PhoneInputCountry {
-    width: 50px;
-    height: 44px;
-    margin-top: -22px;
-  }
-
-  div.support-box form .form-controls input {
-    margin-bottom: 10px;
-  }
-
-  div.right form .form-controls textarea {
-    width: 100%;
-  }
-
-  div.terms-and-submit {
-    display: block;
-  }
-
-  div.terms {
-    margin-bottom: 20px;
   }
 }
 

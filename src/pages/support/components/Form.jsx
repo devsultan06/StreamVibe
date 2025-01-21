@@ -5,6 +5,7 @@ import InputField from "../../../components/ui/InputField";
 import useSendEmail from "../hooks/useSendEmail";
 import Modal from "./Modal";
 import ClipLoader from "react-spinners/ClipLoader";
+import "../styles/support.css";
 
 const Form = () => {
   const validationSchema = getSupportSchema();
@@ -62,8 +63,12 @@ const Form = () => {
         message={error}
         onClose={resetStatus} // Reset error state on close
       />
-      <form action="" onSubmit={handleSubmit}>
-        <div className="form-controls">
+      <form
+        action=""
+        onSubmit={handleSubmit}
+        className="max-1075:mt-40px w-[720px] rounded-[8px] bg-[#0f0f0f] p-[30px]"
+      >
+        <div className="form-controls grid grid-cols-2 gap-[30px] max-1075:grid-cols-1">
           <div className="form-control">
             <InputField
               type="text"
@@ -132,9 +137,9 @@ const Form = () => {
             />
           </div>
         </div>
-        <div className="terms-and-submit">
+        <div className="align-center mt-[20px] flex justify-between max-990:block">
           <div className="terms1">
-            <div className="terms">
+            <div className="terms flex items-center gap-[8px] max-1075:mb-[20px]">
               <input
                 type="checkbox"
                 name="agreeToTerms"
@@ -142,18 +147,23 @@ const Form = () => {
                 checked={values.agreeToTerms}
                 onChange={handleChange}
                 onBlur={handleBlur}
+                className="cursor-pointer"
               />
               <p>I agree with Terms of Use and Privacy Policy</p>
             </div>
             {errors.agreeToTerms && touched.agreeToTerms && (
-              <p className="text-sm md:mt-[0px] md:mb-[0px] mb-[10px] mt-1 text-red45">
+              <p className="md:mt-[0px] md:mb-[0px] mb-[10px] mt-1 text-[12px] text-red45">
                 {errors.agreeToTerms}
               </p>
             )}
           </div>
 
           <div className="send">
-            <button type="submit" disabled={isLoading}>
+            <button
+              type="submit"
+              disabled={isLoading}
+              className="text-[15px cursor-pointer rounded-[5px] border-none bg-[#e50000] p-[10px] text-white outline-none hover:bg-[#b11a1a]"
+            >
               {isLoading ? (
                 <ClipLoader
                   color="white"
