@@ -16,7 +16,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../contexts/AuthContext";
 import { useContext } from "react";
-import useLogOut from "../hooks/useLogout";
+import useLogOut from "../hooks/useLogOut";
 
 export default function AccountMenu() {
   const {
