@@ -3,7 +3,7 @@ import { signOut } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { auth } from "../firebase/config/firebase";
 
-const useLogout = () => {
+const useLogOut = () => {
   const navigate = useNavigate();
 
   const handleLogout = async () => {
@@ -18,4 +18,4 @@ const useLogout = () => {
   return { handleLogout };
 };
 
-export default useLogout;
+export default useLogOut;

@@ -13,11 +13,10 @@ import PersonAdd from "@mui/icons-material/PersonAdd";
 import Settings from "@mui/icons-material/Settings";
 import Logout from "@mui/icons-material/Logout";
 import { useState } from "react";
-
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../contexts/AuthContext";
 import { useContext } from "react";
-import useLogout from "../hooks/useLogout";
+import useLogOut from "../hooks/useLogout";
 
 export default function AccountMenu() {
   const {
@@ -27,7 +26,7 @@ export default function AccountMenu() {
   const [openModal, setOpenModal] = useState(false);
   const open = Boolean(anchorEl);
   const navigate = useNavigate();
-  const { handleLogout } = useLogout();
+  const { handleLogout } = useLogOut();
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
