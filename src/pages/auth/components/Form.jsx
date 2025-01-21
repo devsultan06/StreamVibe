@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { useState, useEffect, useRef, useContext } from "react";
 import { useFormik } from "formik";
-import InputField from "./InputField.jsx";
+import InputField from "../../../components/ui/InputField.jsx";
 import Button from "@mui/material/Button";
 import { FcGoogle } from "react-icons/fc";
 import ClipLoader from "react-spinners/ClipLoader";

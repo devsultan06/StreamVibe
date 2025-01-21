@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import TextField from "@mui/material/TextField";
-import EndAdorment from "./EndAdorment";
+import EndAdorment from "../../pages/auth/components/EndAdorment";
 
 const InputField = ({
   label,

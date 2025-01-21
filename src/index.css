@@ -166,31 +166,6 @@ div.right form {
   border-radius: 8px;
   width: 720px;
 }
-/* 
-div.right form .form-controls input {
-  width: 100%;
-  margin-bottom: 30px;
-  margin-top: 10px;
-  background-color: #1a1a1a;
-  padding: 10px;
-  outline: none;
-  border: 1px solid #5c5959;
-  border-radius: 5px;
-  color: #999999;
-} */
-
-/* div.right form .form-controls textarea {
-  width: 210%;
-  margin-bottom: 30px;
-  margin-top: 10px;
-  background-color: #1a1a1a;
-  padding: 10px;
-  outline: none;
-  border: 1px solid #5c5959;
-  border-radius: 5px;
-  color: #999999;
-  resize: none;
-} */
 
 .terms input {
   cursor: pointer;
@@ -267,9 +242,6 @@ div.terms {
   gap: 8px;
 }
 
-div.terms1 p.error {
-  margin-top: 10px;
-}
 div.terms input {
   background-color: #1a1a1a;
   border: 2px solid #0f0f0f;
