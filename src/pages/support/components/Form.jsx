@@ -1,8 +1,9 @@
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
 import { useFormik } from "formik";
-
 import { getSupportSchema } from "../../../schemas/supportSchema";
+import { TextField } from "@mui/material";
+import InputField from "../../auth/components/InputField";
 
 const Form = () => {
   const validationSchema = getSupportSchema();
@@ -45,72 +46,89 @@ const Form = () => {
     <form action="" onSubmit={handleSubmit}>
       <div className="form-controls">
         <div className="form-control">
-          <label htmlFor="firstname">First Name</label>
-          <br />
-          <input
+          <InputField
             type="text"
-            autoComplete="off"
-            name="firstname"
-            id="firstname"
-            placeholder="Enter your First Name"
+            label="First Name"
+            name="firstName"
+            id="firstName"
+            value={values.firstName}
+            handleInputChange={handleChange}
+            handleBlur={handleBlur}
+            error={!!(errors.firstName && touched.firstName)}
+            helperText={errors.firstName}
+          />
+        </div>
+        <div className="form-control">
+          <InputField
+            type="text"
+            label="Last Name"
+            name="lastName"
+            id="lastName"
+            value={values.lastName}
+            handleInputChange={handleChange}
+            handleBlur={handleBlur}
+            error={!!(errors.lastName && touched.lastName)}
+            helperText={errors.lastName}
           />
         </div>
 
         <div className="form-control">
-          <label htmlFor="lastname">Last Name</label>
-          <br />
-          <input
-            type="text"
-            autoComplete="off"
-            name="lastname"
-            id="lastname"
-            placeholder="Enter your Last Name"
-          />
-        </div>
-
-        <div className="form-control">
-          <label htmlFor="email">Email</label>
-          <br />
-          <input
+          <InputField
+            label="Email"
             type="email"
             name="email"
             id="email"
-            autoComplete="off"
-            required
-            placeholder="Enter your Email"
+            value={values.email}
+            handleInputChange={handleChange}
+            handleBlur={handleBlur}
+            error={!!(errors.email && touched.email)}
+            helperText={errors.email}
           />
         </div>
         <div className="form-control">
-          <label htmlFor="number">Phone Number</label>
-          <br />
-          <div className="phone-input-wrapper">
-            <PhoneInput
-              international
-              defaultCountry="US"
-              placeholder="Enter phone number"
-              className="PhoneInput"
-              style={{ backgroundColor: "black" }}
-            />
-          </div>
+          <InputField
+            label="Phone Number"
+            type="phoneNumber"
+            name="phoneNumber"
+            id="phoneNumber"
+            value={values.phoneNumber}
+            handleInputChange={handleChange}
+            handleBlur={handleBlur}
+            error={!!(errors.phoneNumber && touched.phoneNumber)}
+            helperText={errors.phoneNumber}
+          />
         </div>
         <div className="form-control">
-          <label htmlFor="number">Message</label>
-          <br />
-          <textarea
+          <InputField
+            label="Message"
+            type="text"
             name="message"
             id="message"
-            placeholder="Enter your Message"
+            value={values.message}
+            handleInputChange={handleChange}
+            handleBlur={handleBlur}
+            error={!!(errors.message && touched.message)}
+            helperText={errors.message}
             rows={4}
-            required
-          ></textarea>
+          />
         </div>
       </div>
       <div className="terms-and-submit">
         <div className="terms1">
           <div className="terms">
-            <input type="checkbox" name="terms" id="terms" />
+            <input
+              type="checkbox"
+              name="agreeToTerms"
+              id="agreeToTerms"
+              checked={values.agreeToTerms}
+              onChange={handleChange}
+              onBlur={handleBlur}
+            />
             <p>I agree with Terms of Use and Privacy Policy</p>
           </div>
+          {errors.agreeToTerms && touched.agreeToTerms && (
+            <p className="text-sm mt-1 text-red45">{errors.agreeToTerms}</p>
+          )}
         </div>
 
         <div className="send">

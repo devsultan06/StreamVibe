@@ -19,8 +19,8 @@ export const getSupportSchema = () => {
       .string()
       .required("Phone number is required")
       .matches(
-        /^[0-9]{10}$/,
-        "Phone number must be exactly 10 digits and numeric",
+        /^[0-9]{11}$/,
+        "Phone number must be exactly 11 digits and numeric",
       ),
     message: yup
       .string()

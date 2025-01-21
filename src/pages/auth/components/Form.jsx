@@ -17,12 +17,13 @@ const Form = () => {
   const [loading, setLoading] = useState(false);
   const { user, isAuthenticated } = useContext(AuthContext);
   const [isLogin, setIsLogin] = useState(true);
-  const [pageLoading, setPageLoading] = useState(true); 
+  const [pageLoading, setPageLoading] = useState(true);
   const [showPassword, setShowPassword] = useState(false);
   const [message, setMessage] = useState({ message: "", type: "" });
   const usernameRef = useRef(null);
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
+  const phoneNumberRef = useRef(null);
 
   const validationSchema = getAuthSchema(isLogin);
 
@@ -35,6 +36,7 @@ const Form = () => {
       email: values.email.trim(),
       password: values.password.trim(),
       username: !isLogin ? values.username.trim() : undefined,
+      phoneNumber: !isLogin ? values.phoneNumber : undefined,
     };
 
     if (isLogin) {
@@ -64,6 +66,7 @@ const Form = () => {
       username: "",
       email: "",
       password: "",
+      phoneNumber: "",
     },
     validationSchema,
     onSubmit,
@@ -80,7 +83,7 @@ const Form = () => {
     if (isAuthenticated) {
       setPageLoading(false);
       if (isLogin) {
-        setFieldValue("email", user.email || ""); 
+        setFieldValue("email", user.email || "");
       }
     }
   }, [user, isLogin, setFieldValue, isAuthenticated]);
@@ -92,12 +95,10 @@ const Form = () => {
     resetForm();
   };
 
-  
-
   const handleFormSubmit = (event) => {
     event.preventDefault();
 
-  setMessage({ message: "", type: "" });
+    setMessage({ message: "", type: "" });
     setTouched({
       username: true,
       email: true,
@@ -112,6 +113,8 @@ const Form = () => {
         emailRef.current.focus();
       } else if (errors.password) {
         passwordRef.current.focus();
+      } else if (!isLogin && errors.phoneNumber) {
+        phoneNumberRef.current.focus();
       }
     }, 0);
   };
@@ -133,10 +136,7 @@ const Form = () => {
         onSubmit={handleFormSubmit}
         className="w-[450px] rounded-[10px] bg-[#0f0f0f] p-[25px]"
       >
-        <AlertModal
-          message={message.message}
-          type={message.type} 
-        />
+        <AlertModal message={message.message} type={message.type} />
         <h1 className="mb-[40px] mt-[10px] text-[30px] font-bold">
           {isLogin ? "Login" : "Register"}
         </h1>
@@ -180,6 +180,20 @@ const Form = () => {
           helperText={errors.password}
           inputRef={passwordRef}
         />
+        {!isLogin && (
+          <InputField
+            label="Phone Number"
+            type="phoneNumber"
+            name="phoneNumber"
+            id="phoneNumber"
+            value={values.phoneNumber}
+            handleInputChange={handleChange}
+            handleBlur={handleBlur}
+            error={!!(errors.phoneNumber && touched.phoneNumber)}
+            helperText={errors.phoneNumber}
+            inputRef={phoneNumberRef}
+          />
+        )}
         <div className="mb-[10px]">
           <a
             href="/forgot-password"
@@ -215,12 +229,12 @@ const Form = () => {
                 variant="contained"
                 startIcon={<FcGoogle />}
                 sx={{
-                  backgroundColor: "black", 
+                  backgroundColor: "black",
                   color: "white",
                   width: "100%",
                   padding: "0.5rem 1rem",
                   "&:hover": {
-                    backgroundColor: "#b11a1a", 
+                    backgroundColor: "#b11a1a",
                   },
                 }}
                 onClick={signInWithGoogle}

@@ -13,21 +13,25 @@ const InputField = ({
   setShowPassword,
   error,
   helperText,
-  inputRef
+  inputRef,
+  rows,
 }) => {
   return (
     <TextField
-      type={name === "password" && showPassword ? "text" : type} 
+      type={name === "password" && showPassword ? "text" : type}
       label={label}
       variant="outlined"
       name={name}
       id={id}
-      value={value} 
+      value={value}
       onChange={handleInputChange}
-      autoComplete="off" 
+      multiline={name === "message"}
+      rows={rows}
+      fullWidth={name === "message"}
+      autoComplete="off"
       error={error}
       inputRef={inputRef}
-      helperText={error ? helperText : ""} 
+      helperText={error ? helperText : ""}
       InputProps={{
         endAdornment: name === "password" && (
           <EndAdorment
@@ -38,11 +42,11 @@ const InputField = ({
       }}
       sx={{
         width: "100%",
-        marginBottom: "16px", 
+        marginBottom: "16px",
         "& .MuiOutlinedInput-root": {
-          color: "white", 
+          color: "white",
           "& fieldset": {
-            borderColor: error ? "red" : "#5c5959", 
+            borderColor: error ? "red" : "#5c5959",
           },
           "&:hover fieldset": {
             borderColor: error ? "red" : "#5c5959",
@@ -52,7 +56,7 @@ const InputField = ({
           },
         },
         "& .MuiInputLabel-root": {
-          color: error ? "red" : "white", 
+          color: error ? "red" : "white",
         },
         "& .MuiInputLabel-root.Mui-focused": {
           color: error ? "red" : "white",

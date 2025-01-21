@@ -76,7 +76,7 @@ export default function AccountMenu() {
                 fontWeight: 600,
               }}
             >
-              {username[0]}
+              {username?.[0]}
             </Avatar>
           </IconButton>
         </Tooltip>

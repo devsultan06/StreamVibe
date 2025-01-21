@@ -21,5 +21,14 @@ export const getAuthSchema = (isLogin) => {
             "Password must contain at least one uppercase letter, one lowercase letter, and one numeric digit",
           )
       : yup.string().required("Password is required"),
+    phoneNumber: !isLogin
+      ? yup
+          .string()
+          .required("Phone number is required")
+          .matches(
+            /^[0-9]{11}$/,
+            "Phone number must be exactly 11 digits and numeric",
+          )
+      : yup.string(), // No fallback for login
   });
 };

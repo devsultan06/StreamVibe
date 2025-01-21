@@ -166,7 +166,7 @@ div.right form {
   border-radius: 8px;
   width: 720px;
 }
-
+/* 
 div.right form .form-controls input {
   width: 100%;
   margin-bottom: 30px;
@@ -177,9 +177,9 @@ div.right form .form-controls input {
   border: 1px solid #5c5959;
   border-radius: 5px;
   color: #999999;
-}
+} */
 
-div.right form .form-controls textarea {
+/* div.right form .form-controls textarea {
   width: 210%;
   margin-bottom: 30px;
   margin-top: 10px;
@@ -190,6 +190,10 @@ div.right form .form-controls textarea {
   border-radius: 5px;
   color: #999999;
   resize: none;
+} */
+
+.terms input {
+  cursor: pointer;
 }
 
 div.right form .form-controls {
