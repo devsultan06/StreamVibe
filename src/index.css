@@ -10,7 +10,6 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
-/* Hide Vercel-specific footer (example) */
 #feedback-toolbar {
   display: none !important;
 }
@@ -145,18 +144,6 @@ div.vid-tag video {
 
 div.space {
   padding-bottom: 200px;
-}
-
-.not-found {
-  background-color: #1a1a1a;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
-  height: 100vh;
-  width: 100%;
-  font-size: 30px;
 }
 
 .not-found .in {
