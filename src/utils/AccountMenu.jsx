@@ -148,15 +148,15 @@ export default function AccountMenu() {
         onClose={handleModalClose}
         aria-labelledby="logout-modal-title"
         aria-describedby="logout-modal-description"
+        disableScrollLock
       >
         <Box
           sx={{
             position: "absolute",
             top: "50%",
             left: "50%",
-            transform: "translate(-50%, -50%)",
-            width: 500,
-            height: 200,
+            transform: "translate(-50%, -50%)", // Center align
+            width: { xs: "90%", sm: 400, md: 500 }, // Adjust width responsively
             bgcolor: "#1A1A1A",
             border: "2px solid #000",
             boxShadow: 24,
@@ -164,6 +164,8 @@ export default function AccountMenu() {
             color: "#EAEAEA",
             textAlign: "center",
             borderRadius: 2,
+            maxHeight: "90vh", // Prevent overflow on small screens
+            overflowY: "auto", // Allow scrolling if the content overflows
           }}
         >
           <Typography
@@ -174,11 +176,20 @@ export default function AccountMenu() {
           >
             Are you sure you want to log out {username}?
           </Typography>
-          <Box sx={{ mt: 2, display: "flex", justifyContent: "space-around" }}>
+          <Box
+            sx={{
+              mt: 2,
+              display: "flex",
+              justifyContent: "space-around",
+              flexWrap: "wrap",
+              gap: 2,
+            }}
+          >
             <Button
               variant="contained"
               color="error"
               onClick={handleLogoutConfirm}
+              sx={{ flex: { xs: "1 0 100%", sm: "1 0 auto" } }} // Adjust buttons for small screens
             >
               Yes
             </Button>
@@ -186,6 +197,7 @@ export default function AccountMenu() {
               variant="outlined"
               style={{ borderColor: "#EAEAEA", color: "#EAEAEA" }}
               onClick={handleModalClose}
+              sx={{ flex: { xs: "1 0 100%", sm: "1 0 auto" } }} // Adjust buttons for small screens
             >
               No
             </Button>

@@ -15,6 +15,7 @@ import Notification from "../../utils/Notification";
 
 const Navbar = () => {
   const navRef = useRef(null);
+  const notificationRef = useRef(null);
   const showNavbar = () => {
     navRef.current.classList.toggle("responsive-nav");
   };
@@ -64,6 +65,24 @@ const Navbar = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        notificationRef.current &&
+        !notificationRef.current.contains(event.target) &&
+        !event.target.closest(".notification-icon")
+      ) {
+        setIsNotificationsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
     <div
       className="navbar fixed left-0 right-0 top-[10px] z-[1000] mt-[15px] flex justify-between p-[1.5rem] px-[5rem] max-1075:p-[10px]"
@@ -109,7 +128,7 @@ const Navbar = () => {
       </nav>
 
       <div className="right_bar flex items-center space-x-5">
-        <div className="relative">
+        <div className="relative" ref={notificationRef}>
           <IoIosNotificationsOutline
             className="notification-icon cursor-pointer text-white"
             onClick={handleNotificationsClick}
