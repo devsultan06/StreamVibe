@@ -1,8 +1,8 @@
 /* eslint-disable react/no-unescaped-entities */
 import "./styles/layout.css";
 const Trial = () => {
-  const handleFreeTrialClick = () => {
-    window.open("/Authentication", "_blank");
+  const handleClick = () => {
+    window.open("/subscription", "_blank");
   };
 
   return (
@@ -28,7 +28,7 @@ const Trial = () => {
           <div>
             <button
               className="mt-[10px] rounded-md bg-red45 p-[10px] font-bold transition duration-300 ease-in-out hover:bg-[#0f0f0f]"
-              onClick={handleFreeTrialClick}
+              onClick={handleClick}
             >
               Start a Free Trial
             </button>
