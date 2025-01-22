@@ -2,8 +2,8 @@ import "react-phone-number-input/style.css";
 import { useFormik } from "formik";
 import { getSupportSchema } from "../../../schemas/supportSchema";
 import InputField from "../../../components/ui/InputField";
-import useSendEmail from "../hooks/useSendEmail";
-import Modal from "./Modal";
+import useSendEmail from "../../../hooks/useSendEmail";
+import Modal from "../../../components/layout/Modal";
 import ClipLoader from "react-spinners/ClipLoader";
 import "../styles/support.css";
 
@@ -18,8 +18,6 @@ const Form = () => {
     handleBlur,
     handleSubmit,
     resetForm,
-    setTouched,
-    setFieldValue,
   } = useFormik({
     initialValues: {
       firstName: "",
@@ -48,20 +46,18 @@ const Form = () => {
 
   return (
     <>
-      {/* Success Modal */}
       <Modal
         open={isSuccess}
         title="Success"
         message="Your message has been sent successfully!"
-        onClose={resetStatus} // Reset success state on close
+        onClose={resetStatus} 
       />
 
-      {/* Error Modal */}
       <Modal
         open={!!error}
         title="Error"
         message={error}
-        onClose={resetStatus} // Reset error state on close
+        onClose={resetStatus}
       />
       <form
         action=""

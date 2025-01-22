@@ -1,12 +1,22 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import faqData from "../../data/faq";
+import ModalQuestion from "../../pages/home/components/ModalQuestion";
 
 const Faq = () => {
   const [activeIndex, setActiveIndex] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const toggleAnswer = (index) => {
     setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
+  };
+
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
   };
 
   return (
@@ -21,7 +31,10 @@ const Faq = () => {
         </div>
 
         <div className="question-button" data-aos="fade-right">
-          <button className="mt-[20px] rounded-[5px] bg-red45 p-[10px] font-bold hover:bg-[#b11a1a]">
+          <button
+            className="mt-[20px] rounded-[5px] bg-red45 p-[10px] font-bold hover:bg-[#b11a1a]"
+            onClick={handleOpenModal}
+          >
             Ask a Question
           </button>
         </div>
@@ -64,6 +77,10 @@ const Faq = () => {
           </div>
         ))}
       </div>
+      <ModalQuestion
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+      />
     </div>
   );
 };
