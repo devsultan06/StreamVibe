@@ -184,7 +184,7 @@ const Form = () => {
         {!isLogin && (
           <InputField
             label="Phone Number"
-            type="phoneNumber"
+            type="tel"
             name="phoneNumber"
             id="phoneNumber"
             value={values.phoneNumber}

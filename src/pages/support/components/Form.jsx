@@ -108,7 +108,7 @@ const Form = () => {
           <div className="form-control">
             <InputField
               label="Phone Number"
-              type="phoneNumber"
+              type="tel"
               name="phoneNumber"
               id="phoneNumber"
               value={values.phoneNumber}
