@@ -1,6 +1,5 @@
 import * as yup from "yup";
 
-// Define the schema for the support form
 export const getSupportSchema = () => {
   return yup.object().shape({
     firstName: yup

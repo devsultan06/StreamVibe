@@ -29,6 +29,6 @@ export const getAuthSchema = (isLogin) => {
             /^[0-9]{11}$/,
             "Phone number must be exactly 11 digits and numeric",
           )
-      : yup.string(), // No fallback for login
+      : yup.string(),
   });
 };
