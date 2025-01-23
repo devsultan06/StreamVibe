@@ -22,6 +22,7 @@ div.category:nth-child(7) img {
   transform: translateX(8px);
 }
 
+
 @media screen and (max-width: 800px) {
   .category:nth-child(3) {
     display: none;

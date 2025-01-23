@@ -10,10 +10,12 @@ import Trial from "../../components/layout/Trial";
 import Footer from "../../components/layout/Footer";
 import BackToTop from "../../components/ui/BackToTop";
 import Plan from "../../components/layout/Plan";
-import "./styles/home.css"
+import "./styles/home.css";
+import SubscriptionModal from "./components/SubscriptionModal";
 
 const Home = () => {
   const [loaded, setLoaded] = useState(false);
+  const [showModal, setShowModal] = useState(false);
   const { user, isAuthenticated } = useContext(AuthContext);
 
   useEffect(() => {
@@ -27,7 +29,23 @@ const Home = () => {
     setTimeout(() => {
       setLoaded(true);
     }, 3000);
+
+    const isFirstVisit = localStorage.getItem("visited");
+
+    if (!isFirstVisit) {
+      setTimeout(() => {
+        setShowModal(true);
+      }, 6000);
+    }
   }, []);
+
+  const closeModal = () => {
+    setShowModal(false);
+  };
+
+  const markAsVisited = () => {
+    localStorage.setItem("visited", "true");
+  };
 
   return (
     <div>
@@ -47,6 +65,14 @@ const Home = () => {
             <BackToTop />
           </div>
         </div>
+      )}
+
+      {showModal && (
+        <SubscriptionModal
+          open={showModal}
+          onClose={closeModal}
+          onVisited={markAsVisited}
+        />
       )}
     </div>
   );
