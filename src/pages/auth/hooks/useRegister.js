@@ -8,7 +8,13 @@ import { setDoc, doc } from "firebase/firestore";
 import { auth, db } from "../../../firebase/config/firebase.js";
 
 const useRegister = (handleSetMessage, resetForm, setFieldValue) => {
-  const register = async (username, email, password, setLoading) => {
+  const register = async (
+    username,
+    email,
+    password,
+    phoneNumber,
+    setLoading,
+  ) => {
     setLoading(true);
 
     try {
@@ -29,6 +35,7 @@ const useRegister = (handleSetMessage, resetForm, setFieldValue) => {
         email: user.email,
         username: user.displayName,
         emailVerified: user.emailVerified,
+        phoneNumber: Number(phoneNumber) || "",
         photoURL: user.photoURL || "DEFAULT_PHOTO_URL",
       });
 
@@ -36,7 +43,9 @@ const useRegister = (handleSetMessage, resetForm, setFieldValue) => {
         "A verification email has been sent to your email address. Please check your inbox.",
         "success",
       );
-      resetForm({ values: { username: "", email: "", password: "" } });
+      resetForm({
+        values: { username: "", email: "", password: "", phoneNumber: "" },
+      });
     } catch (error) {
       let errorMessage = "An unexpected error occurred. Please try again.";
       if (error.code === "auth/email-already-in-use") {

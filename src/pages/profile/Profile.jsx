@@ -25,8 +25,9 @@ export default function ProfilePage() {
   // const { user, profileImage, handleImageChange } = useProfile();
 
   const {
-    user: { username, email },
+    user: { username, email, phoneNumber },
   } = useContext(AuthContext);
+
 
   return (
     <div className="profile">
@@ -159,7 +160,7 @@ export default function ProfilePage() {
                 Phone Number
               </Typography>
               <Typography variant="body1" sx={{ color: "#EAEAEA" }}>
-                {/* {user?.number || "+234"} */}
+                {phoneNumber || "+234"}
               </Typography>
             </Grid>
             <Grid item xs={12} md={6}>

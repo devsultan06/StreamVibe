@@ -46,6 +46,7 @@ const Form = () => {
         trimmedValues.username,
         trimmedValues.email,
         trimmedValues.password,
+        trimmedValues.phoneNumber,
         setLoading,
       );
     }
