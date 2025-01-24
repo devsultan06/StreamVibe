@@ -28,7 +28,7 @@ const AuthProvider = ({ children }) => {
           email: currentUser.email,
           username: currentUser.displayName,
           emailVerified: currentUser.emailVerified,
-          phoneNumber: currentUser.phoneNumber, // Might be null
+          phoneNumber: currentUser.phoneNumber,
           photoURL: currentUser.photoURL || "DEFAULT_PHOTO_URL",
           password:
             currentUser?.reloadUserInfo?.passwordHash || "Google Password",

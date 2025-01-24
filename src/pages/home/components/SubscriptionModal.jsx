@@ -15,9 +15,9 @@ const SubscriptionModal = ({ open, onClose, onVisited }) => {
 
   useEffect(() => {
     if (open) {
-      setIsDialogOpen(true); // Apply transition only on open
+      setIsDialogOpen(true); 
     } else {
-      setIsDialogOpen(false); // When closing, ensure no fade during internal typing
+      setIsDialogOpen(false); 
     }
   }, [open]);
 
@@ -51,8 +51,8 @@ const SubscriptionModal = ({ open, onClose, onVisited }) => {
         style: {
           backgroundColor: "#1A1A1A",
           color: "#fff",
-          transition: "opacity 0.3s ease-in-out", // Apply CSS transition here
-          opacity: isDialogOpen ? 1 : 0, // Adjust opacity based on modal open state
+          transition: "opacity 0.3s ease-in-out", 
+          opacity: isDialogOpen ? 1 : 0, 
         },
       }}
     >
