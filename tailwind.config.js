@@ -18,14 +18,11 @@ export default {
     },
     screens: {
       tablet: "-800px",
-      // => @media (min-width: 640px) { ... }
 
       laptop: "1024px",
-      // => @media (min-width: 1024px) { ... }
 
       desktop: "1280px",
-      // => @media (min-width: 1280px) { ... }
-      "max-590": { max: "590px" }, // Custom breakpoint for max 590px
+      "max-590": { max: "590px" }, 
       "max-600": { max: "600px" },
 
       "max-800": { max: "800px" },
