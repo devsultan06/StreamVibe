@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 import * as React from "react";
-
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Avatar from "@mui/material/Avatar";

@@ -12,7 +12,7 @@ import { AuthProvider } from "./contexts/AuthContext.jsx";
 import Profile from "./pages/profile/Profile.jsx";
 import ForgotPassword from "./pages/auth/forgot-password.jsx";
 import VerificationPage from "./pages/auth/components/VerificationPage.jsx";
-import ProtectedRoute from "./routes/ProtectedRoute.jsx"; // Import the ProtectedRoute component
+import ProtectedRoute from "./routes/ProtectedRoute.jsx"; 
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <BrowserRouter
