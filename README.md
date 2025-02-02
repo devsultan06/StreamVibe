@@ -1,4 +1,4 @@
-![StreamVibe](/public/images/Screenshot%202024-09-01%20201027.png)
+![StreamVibe](/frontend/public/images/Screenshot%202024-09-01%20201027.png)
 
 This is a [React.js](https://react.dev/) project installed using [Vite](https://vitejs.dev/)
 
