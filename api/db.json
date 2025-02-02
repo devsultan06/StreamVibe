@@ -1,0 +1,15 @@
+{
+    "movies": [
+      {
+        "id": 1,
+        "title": "Inception",
+        "image": "/images/ts3.png"
+      },
+      {
+        "id": 2,
+        "title": "The Dark Knight",
+        "image": "/images/ts4.png"
+      }
+    ]
+  }
+  
