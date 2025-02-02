@@ -1,6 +1,13 @@
 import Form from "./components/Form";
 /* eslint-disable react/no-unescaped-entities */
 
+const BASE_URL = "http://localhost:5000";
+
+fetch(`${BASE_URL}/movies`)
+  .then((res) => res.json())
+  .then((data) => console.log(data))
+  .catch((err) => console.error("Error fetching movies:", err));
+
 const Authentication = () => {
   return (
     <div
