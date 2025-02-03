@@ -1,27 +1,22 @@
 import fs from "fs";
 
-// Function to generate a random 6-digit ID for trendingMovies
 const generateMovieId = () => {
-  return "movie-" + Math.floor(Math.random() * 1000000); // 6-digit number
+  return "movie-" + Math.floor(Math.random() * 1000000);
 };
 
-// Function to generate a random 6-digit ID for trendingShows
 const generateShowId = () => {
-  return "show-" + Math.floor(Math.random() * 1000000); // 6-digit number
+  return "show-" + Math.floor(Math.random() * 1000000); 
 };
 
-// File path for db.json
 const dbFilePath = "./db.json";
 
-// Function to update IDs for each movie/show
 const updateIds = (items, generateId) => {
   return items.map((item) => ({
     ...item,
-    id: generateId(), // Assign a random unique ID based on type
+    id: generateId(), 
   }));
 };
 
-// Read the db.json file, update IDs, and save back the updated data
 const updateDbJson = () => {
   fs.readFile(dbFilePath, "utf8", (err, data) => {
     if (err) {
@@ -31,15 +26,12 @@ const updateDbJson = () => {
 
     const dbData = JSON.parse(data);
 
-    // Update the IDs for trendingMovies and trendingShows
     const updatedMovies = updateIds(dbData.trendingMovies, generateMovieId);
     const updatedShows = updateIds(dbData.trendingShows, generateShowId);
 
-    // Combine the updated data into dbData
     dbData.trendingMovies = updatedMovies;
     dbData.trendingShows = updatedShows;
 
-    // Write the updated data back into db.json
     fs.writeFile(dbFilePath, JSON.stringify(dbData, null, 2), (err) => {
       if (err) {
         console.error(`Error writing ${dbFilePath}:`, err);
