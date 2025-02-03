@@ -1,3 +1,4 @@
+import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
@@ -12,7 +13,16 @@ import { AuthProvider } from "./contexts/AuthContext.jsx";
 import Profile from "./pages/profile/Profile.jsx";
 import ForgotPassword from "./pages/auth/forgot-password.jsx";
 import VerificationPage from "./pages/auth/components/VerificationPage.jsx";
-import ProtectedRoute from "./routes/ProtectedRoute.jsx"; 
+import ProtectedRoute from "./routes/ProtectedRoute.jsx";
+
+const isUnderDevelopment = import.meta.env.VITE_MAINTENANCE_MODE === "true";
+
+const MaintenancePage = () => (
+  <div style={{ textAlign: "center", marginTop: "20%" }}>
+    <h1>🚧 Site Under Development 🚧</h1>
+    <p>We're currently making improvements. Please check back later.</p>
+  </div>
+);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <BrowserRouter
@@ -21,20 +31,38 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       v7_startTransition: true,
     }}
   >
+    {" "}
     <AuthProvider>
-      <Routes>
-        <Route path="/" element={<Navigate to="/auth" replace />} />
-        <Route path="/auth" element={<Authentication />} />
-        <Route path="/home" element={<ProtectedRoute element={<Home />} />} />
-        <Route path="/movies" element={<ProtectedRoute element={<Movies />} />} />
-        <Route path="/movieshow" element={<ProtectedRoute element={<MovieShow />} />} />
-        <Route path="/subscription" element={<ProtectedRoute element={<Subscription />} />} />
-        <Route path="/support" element={<Support />} /> {/* No authentication required for support */}
-        <Route path="/profile" element={<ProtectedRoute element={<Profile />} />} />
-        <Route path="/forgot-password" element={<ForgotPassword />} />
-        <Route path="/verified" element={<VerificationPage />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      {isUnderDevelopment ? (
+        <MaintenancePage />
+      ) : (
+        <Routes>
+          <Route path="/" element={<Navigate to="/auth" replace />} />
+          <Route path="/auth" element={<Authentication />} />
+          <Route path="/home" element={<ProtectedRoute element={<Home />} />} />
+          <Route
+            path="/movies"
+            element={<ProtectedRoute element={<Movies />} />}
+          />
+          <Route
+            path="/movieshow"
+            element={<ProtectedRoute element={<MovieShow />} />}
+          />
+          <Route
+            path="/subscription"
+            element={<ProtectedRoute element={<Subscription />} />}
+          />
+          <Route path="/support" element={<Support />} />{" "}
+          {/* No authentication required for support */}
+          <Route
+            path="/profile"
+            element={<ProtectedRoute element={<Profile />} />}
+          />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/verified" element={<VerificationPage />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      )}
     </AuthProvider>
-  </BrowserRouter>
+  </BrowserRouter>,
 );
