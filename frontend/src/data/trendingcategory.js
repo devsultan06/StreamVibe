@@ -15,7 +15,7 @@ const trendingcategory = [
     images: ["/images/tn3.png", "/images/ts3.png"],
     times: ["1h 45min", "1h 50min"],
     watched: "1.5k",
-    season: "5 Season",
+    season: "5",
   },
   {
     images: ["/images/tn4.png", "/images/ts4.png"],

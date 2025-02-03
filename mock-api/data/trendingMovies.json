@@ -1,0 +1,65 @@
+[
+  {
+    "id": "gf5gal",
+    "title": "Inception",
+    "image": "../images/tn1.png",
+    "time": "2h 28min",
+    "watched": "5.1k"
+  },
+  {
+    "id": "2w5g0e",
+    "title": "The Dark Knight",
+    "image": "../images/tn2.png",
+    "time": "2h 32min",
+    "watched": "6.3k"
+  },
+  {
+    "id": "ix8zky",
+    "title": "The Shawshank Redemption",
+    "image": "../images/tn3.png",
+    "time": "2h 22min",
+    "watched": "4.9k"
+  },
+  {
+    "id": "vmwn28",
+    "title": "The Godfather",
+    "image": "../images/tn4.png",
+    "time": "2h 55min",
+    "watched": "3.8k"
+  },
+  {
+    "id": "0q6mr2",
+    "title": "The Godfather: Part II",
+    "image": "../images/tn5.png",
+    "time": "3h 22min",
+    "watched": "3.2k"
+  },
+  {
+    "id": "e03gct",
+    "title": "The Dark Knight Rises",
+    "image": "../images/tn6.png",
+    "time": "2h 44min",
+    "watched": "5.9k"
+  },
+  {
+    "id": "6b6t5a",
+    "title": "The Lord of the Rings: The Return of the King",
+    "image": "../images/tn7.png",
+    "time": "3h 21min",
+    "watched": "4.5k"
+  },
+  {
+    "id": "a59w4z",
+    "title": "The Lord of the Rings: The Fellowship of the Ring",
+    "image": "../images/tn8.png",
+    "time": "2h 58min",
+    "watched": "4.1k"
+  },
+  {
+    "id": "lq9yoa",
+    "title": "The Lord of the Rings: The Two Towers",
+    "image": "../images/tn9.png",
+    "time": "2h 59min",
+    "watched": "4.3k"
+  }
+]
