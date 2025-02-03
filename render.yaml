@@ -7,7 +7,6 @@ services:
     plan: free
     branch: main
     autoDeploy: true
-    root: mock-api
     envVars:
       - key: NODE_ENV
         value: production
