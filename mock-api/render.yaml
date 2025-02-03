@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: movie-api
+    env: node
+    buildCommand: cd mock-api && npm install
+    startCommand: cd mock-api && npm start
+    plan: free
+    branch: main
+    autoDeploy: true
+    root: mock-api
+    envVars:
+      - key: NODE_ENV
+        value: production
