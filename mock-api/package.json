@@ -2,9 +2,9 @@
   "name": "movie-api",
   "version": "1.0.0",
   "description": "Mock backend for movie data using json-server",
-  "main": "server.js",
+  "main": "server.cjs",
   "scripts": {
-    "start": "node server.js",
+    "start": "node server.cjs",
     "server": "json-server --watch db.json --port 5000"
   },
   "dependencies": {
