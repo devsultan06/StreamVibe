@@ -15,7 +15,7 @@ import ForgotPassword from "./pages/auth/forgot-password.jsx";
 import VerificationPage from "./pages/auth/components/VerificationPage.jsx";
 import ProtectedRoute from "./routes/ProtectedRoute.jsx";
 
-const isUnderDevelopment = import.meta.env.VITE_MAINTENANCE_MODE === "true";
+const isUnderDevelopment = import.meta.env.VITE_MAINTENANCE_MODE === "false";
 
 const MaintenancePage = () => (
   <div style={{ textAlign: "center", marginTop: "20%" }}>
