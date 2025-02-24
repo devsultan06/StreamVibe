@@ -7,63 +7,63 @@
     {
       "id": "movie-126124",
       "title": "Morbius",
-      "image": "/images/tn1.png",
+      "image": "https://movie-api-btr8.onrender.com/images/tn1.png",
       "time": "2h 28min",
       "watched": "5.1k"
     },
     {
       "id": "movie-682338",
       "title": "Bhaijaan",
-      "image": "/images/tn2.png",
+      "image": "https://movie-api-btr8.onrender.com/images/tn2.png",
       "time": "2h 32min",
       "watched": "6.3k"
     },
     {
       "id": "movie-79567",
       "title": "The Shawshank Redemption",
-      "image": "/images/tn3.png",
+      "image": "https://movie-api-btr8.onrender.com/images/tn3.png",
       "time": "2h 22min",
       "watched": "4.9k"
     },
     {
       "id": "movie-186219",
       "title": "Pathan",
-      "image": "/images/tn4.png",
+      "image": "https://movie-api-btr8.onrender.com/images/tn4.png",
       "time": "2h 55min",
       "watched": "3.8k"
     },
     {
       "id": "movie-155926",
       "title": "Ant-Man",
-      "image": "/images/tn5.png",
+      "image": "https://movie-api-btr8.onrender.com/images/tn5.png",
       "time": "3h 22min",
       "watched": "3.2k"
     },
     {
       "id": "movie-773199",
       "title": "The Dark Knight Rises",
-      "image": "/images/tn6.png",
+      "image": "https://movie-api-btr8.onrender.com/images/tn6.png",
       "time": "2h 44min",
       "watched": "5.9k"
     },
     {
       "id": "movie-399147",
       "title": "The Lord of the Rings: The Return of the King",
-      "image": "/images/tn7.png",
+      "image": "https://movie-api-btr8.onrender.com/images/tn7.png",
       "time": "3h 21min",
       "watched": "4.5k"
     },
     {
       "id": "movie-256367",
       "title": "The Lord of the Rings: The Fellowship of the Ring",
-      "image": "/images/tn8.png",
+      "image": "https://movie-api-btr8.onrender.com/images/tn8.png",
       "time": "2h 58min",
       "watched": "4.1k"
     },
     {
       "id": "movie-935010",
       "title": "The Lord of the Rings: The Two Towers",
-      "image": "/images/tn9.png",
+      "image": "https://movie-api-btr8.onrender.com/images/tn9.png",
       "time": "2h 59min",
       "watched": "4.3k"
     }
@@ -72,63 +72,63 @@
     {
       "id": "show-28181",
       "title": "Breaking Bad",
-      "image": "/images/ts1.png",
+      "image": "https://movie-api-btr8.onrender.com/images/ts1.png",
       "season": "5",
       "time": "50min"
     },
     {
       "id": "show-725708",
       "title": "Stranger Things",
-      "image": "/images/ts2.png",
+      "image": "https://movie-api-btr8.onrender.com/images/ts2.png",
       "season": "4",
       "time": "55min"
     },
     {
       "id": "show-563350",
       "title": "Game of Thrones",
-      "image": "/images/ts3.png",
+      "image": "https://movie-api-btr8.onrender.com/images/ts3.png",
       "season": "8",
       "time": "57min"
     },
     {
       "id": "show-669251",
       "title": "The Crown",
-      "image": "/images/ts4.png",
+      "image": "https://movie-api-btr8.onrender.com/images/ts4.png",
       "season": "4",
       "time": "58min"
     },
     {
       "id": "show-738441",
       "title": "The Mandalorian",
-      "image": "/images/ts5.png",
+      "image": "https://movie-api-btr8.onrender.com/images/ts5.png",
       "season": "2",
       "time": "40min"
     },
     {
       "id": "show-419771",
       "title": "The Witcher",
-      "image": "/images/ts6.png",
+      "image": "https://movie-api-btr8.onrender.com/images/ts6.png",
       "season": "2",
       "time": "1h"
     },
     {
       "id": "show-147396",
       "title": "The Umbrella Academy",
-      "image": "/images/ts7.png",
+      "image": "https://movie-api-btr8.onrender.com/images/ts7.png",
       "season": "2",
       "time": "1h"
     },
     {
       "id": "show-138166",
       "title": "Money Heist",
-      "image": "/images/ts8.png",
+      "image": "https://movie-api-btr8.onrender.com/images/ts8.png",
       "season": "5",
       "time": "1h 10min"
     },
     {
       "id": "show-732315",
       "title": "The Queen's Gambit",
-      "image": "/images/ts9.png",
+      "image": "https://movie-api-btr8.onrender.com/images/ts9.png",
       "season": "1",
       "time": "1h"
     }
