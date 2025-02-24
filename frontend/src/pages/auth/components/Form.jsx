@@ -223,7 +223,7 @@ const Form = () => {
               "Register"
             )}
           </button>
-          {!isLogin && (
+          {isLogin && (
             <div className="mt-[20px]">
               <p className="pb-[10px] text-center text-white">Or</p>
               <Button
@@ -240,7 +240,7 @@ const Form = () => {
                 }}
                 onClick={signInWithGoogle}
               >
-                Sign Up with Google
+                Log In with Google
               </Button>
             </div>
           )}
