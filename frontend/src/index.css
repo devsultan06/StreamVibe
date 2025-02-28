@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 * {
-  font-family: "Poppins", sans-serif;
+  font-family: "Inter", serif;
 }
 body {
   margin: 0;
@@ -225,7 +225,7 @@ table {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000; 
+  z-index: 1000;
 }
 
 .modal-content {

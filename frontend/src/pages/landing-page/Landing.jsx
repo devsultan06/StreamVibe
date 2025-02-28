@@ -33,13 +33,13 @@ const LandingPage = () => {
         className="text-center"
       >
         <motion.h1
-          className="md:text-8xl text-[50px] font-extrabold uppercase"
+          className="md:text-8xl text-[50px] font-extrabold"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, delay: 0.3 }}
         >
           <span className="bg-gradient-to-r from-red-500 to-yellow-400 text-transparent block bg-clip-text">
-            WELCOME TO Stream
+            Welcome To Stream
           </span>
           <motion.span
             className="bg-gradient-to-r from-yellow-400 to-red-500 text-transparent block bg-clip-text"
