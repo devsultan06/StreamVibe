@@ -14,7 +14,7 @@ const Explore = () => {
   return (
     <div className="bg-black10 px-[70px] pb-24 text-white max-590:px-2.5 max-590:pb-24 max-860:px-5 max-860:pb-24">
       <div className="flex justify-between">
-        <div data-aos="fade-right">
+        <div>
           <h1 className="text-xl">Explore our wide variety of categories</h1>
           <p className="text-grey60">
             Whether you're looking for a comedy to make you laugh.
@@ -22,7 +22,6 @@ const Explore = () => {
         </div>
         <div
           className="flex h-[60px] items-center justify-between gap-20 rounded-lg bg-black06 px-2.5 max-800:hidden"
-          data-aos="fade-right"
         >
           <button className="swipe-button-prev cursor-pointer rounded-[5px] border-0 bg-black10 p-[8px] outline-none transition duration-300 ease-in hover:bg-red45">
             <img src={SwipeLeftImage} alt="" />

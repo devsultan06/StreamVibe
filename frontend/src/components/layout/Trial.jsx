@@ -10,12 +10,7 @@ const Trial = () => {
       className="flex justify-between bg-[#1a1a1a] px-[70px] pb-[100px] pt-[50px] max-590:px-[10px] max-590:pb-[100px] max-600:block max-600:text-center max-860:px-[20px] max-860:pb-[100px]"
       id="trial"
     >
-      <div
-        className="max-600:p[60px] h-[30vh] w-full items-center rounded-lg bg-[url('/images/trialbg.png')] bg-cover bg-center p-12 text-white max-600:h-[40vh] max-1075:px-[20px] max-1075:marker:py-[30px]"
-        data-aos="flip-left"
-        data-aos-easing="ease-out-cubic"
-        data-aos-duration="4000"
-      >
+      <div className="max-600:p[60px] h-[30vh] w-full items-center rounded-lg bg-[url('/images/trialbg.png')] bg-cover bg-center p-12 text-white max-600:h-[40vh] max-1075:px-[20px] max-1075:marker:py-[30px]">
         <div className="flex justify-between max-600:block max-600:text-center">
           <div data-aos="fade-right">
             <h1 className="text-xl">Start your free trial today!</h1>

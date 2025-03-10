@@ -22,7 +22,7 @@ const Faq = () => {
   return (
     <div className="bg-black10 px-[70px] pb-24 text-white max-590:px-2.5 max-590:pb-24 max-860:px-5 max-860:pb-24">
       <div className="flex justify-between max-800:block">
-        <div data-aos="fade-right">
+        <div>
           <h1 className="text-xl">Frequently Asked Questions</h1>
           <p className="text-grey60">
             Got questions? We&apos;ve got answers! Check out our FAQ section to
@@ -30,7 +30,7 @@ const Faq = () => {
           </p>
         </div>
 
-        <div className="question-button" data-aos="fade-right">
+        <div className="question-button">
           <button
             className="mt-[20px] rounded-[5px] bg-red45 p-[10px] font-bold hover:bg-[#b11a1a]"
             onClick={handleOpenModal}
@@ -45,9 +45,6 @@ const Faq = () => {
           <div
             className="cursor-pointer rounded-lg border-b border-red45 p-5 transition duration-100 ease-in-out"
             key={index}
-            data-aos="flip-left"
-            data-aos-easing="ease-out-cubic"
-            data-aos-duration="4000"
           >
             <div className="flex cursor-pointer items-center justify-between gap-4">
               <div className="flex items-center gap-2.5">
@@ -77,10 +74,7 @@ const Faq = () => {
           </div>
         ))}
       </div>
-      <ModalQuestion
-        isOpen={isModalOpen}
-        onClose={handleCloseModal}
-      />
+      <ModalQuestion isOpen={isModalOpen} onClose={handleCloseModal} />
     </div>
   );
 };

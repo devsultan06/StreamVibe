@@ -10,12 +10,11 @@ const PopularGenres = () => {
   return (
     <div className="mt-[30px] bg-black10 px-[30px] text-white max-590:px-[10px] max-860:px-[10px]">
       <div className="flex justify-between">
-        <div data-aos="fade-right">
+        <div >
           <h1 className="text-xl">Popular Top 10 in Genres</h1>
         </div>
         <div
           className="flex h-[60px] items-center justify-between gap-20 rounded-lg bg-black06 px-2.5 max-800:hidden"
-          data-aos="fade-right"
         >
           <button className="pg-swipe-button-prev cursor-pointer rounded-[5px] border-0 bg-black10 p-[8px] outline-none transition duration-300 ease-in hover:bg-red45">
             <img src={SwipeLeftImage} alt="" />

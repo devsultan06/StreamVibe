@@ -20,7 +20,7 @@ const Plan = ({ onPayClick }) => {
   return (
     <div className="bg-black10 px-[70px] pb-24 text-white max-590:px-2.5 max-590:pb-24 max-860:px-5 max-860:pb-24">
       <div className="flex justify-between max-800:block">
-        <div data-aos="fade-right">
+        <div>
           <h1 className="text-xl">Choose the plan that's right for you</h1>
           <p className="text-grey60">
             Join StreamVibe and select from our flexible subscription options
@@ -29,7 +29,6 @@ const Plan = ({ onPayClick }) => {
         </div>
         <div
           className="mt-[10px] flex w-[180px] items-center gap-4 rounded-[5px] bg-[#0f0f0f] p-2"
-          data-aos="fade-right"
         >
           <Button text="Monthly" handleClick={showMonthlyPlans}>
             Monthly

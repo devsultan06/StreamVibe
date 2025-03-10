@@ -5,12 +5,7 @@ import { FaDiscord } from "react-icons/fa";
 const Footer = () => {
   return (
     <footer className="footer bg-black06">
-      <div
-        className="container"
-        data-aos="flip-left"
-        data-aos-easing="ease-out-cubic"
-        data-aos-duration="4000"
-      >
+      <div className="container">
         <div className="row">
           <div className="col-md-3">
             <h3>Home</h3>

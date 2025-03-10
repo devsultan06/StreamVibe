@@ -4,7 +4,7 @@ import devices from "../../../data/devices";
 const Devices = () => {
   return (
     <div className="bg-black10 px-[70px] pb-[100px] text-white max-590:px-[10px] max-860:px-[20px]">
-      <div data-aos="fade-right">
+      <div >
         <h1 className="text-xl">
           We Provide you streaming experience across various devices.
         </h1>
