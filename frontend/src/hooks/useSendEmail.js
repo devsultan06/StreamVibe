@@ -39,6 +39,7 @@ const useSendEmail = (resetForm) => {
   const resetStatus = () => {
     setIsSuccess(false);
     setError(null);
+    
   };
 
   return {
