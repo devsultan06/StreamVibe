@@ -1,13 +1,12 @@
 // hooks/useRegister.js
-import {
-  createUserWithEmailAndPassword,
-  sendEmailVerification,
-  updateProfile,
-} from "firebase/auth";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { setDoc, doc } from "firebase/firestore";
 import { auth, db } from "../../../firebase/config/firebase.js";
+import { useNavigate } from "react-router-dom";
 
 const useRegister = (handleSetMessage, resetForm, setFieldValue) => {
+  const navigate = useNavigate();
+
   const register = async (
     username,
     email,
@@ -26,23 +25,17 @@ const useRegister = (handleSetMessage, resetForm, setFieldValue) => {
       const user = userCredential.user;
       await updateProfile(user, { displayName: username });
 
-      await sendEmailVerification(user, {
-        url: "https://streamvibe06.vercel.app/verified?verification=true",
-        handleCodeInApp: true,
-      });
-
       await setDoc(doc(db, "users", user.uid), {
         email: user.email,
         username: user.displayName,
-        emailVerified: user.emailVerified,
         phoneNumber: Number(phoneNumber) || "",
         photoURL: user.photoURL || "DEFAULT_PHOTO_URL",
       });
 
-      handleSetMessage(
-        "A verification email has been sent to your email address. Please check your inbox.",
-        "success",
-      );
+      handleSetMessage("Registration Successful!.Redirecting....", "success");
+      setTimeout(() => {
+        navigate("/home");
+      }, 3000);
       resetForm({
         values: { username: "", email: "", password: "", phoneNumber: "" },
       });

@@ -13,7 +13,6 @@ import NotFound from "./pages/notfound/NotFound.jsx";
 import { AuthProvider } from "./contexts/AuthContext.jsx";
 import Profile from "./pages/profile/Profile.jsx";
 import ForgotPassword from "./pages/auth/forgot-password.jsx";
-import VerificationPage from "./pages/auth/components/VerificationPage.jsx";
 import ProtectedRoute from "./routes/ProtectedRoute.jsx";
 
 const isUnderDevelopment = import.meta.env.VITE_MAINTENANCE_MODE === "false";
@@ -65,7 +64,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
                   element={<ProtectedRoute element={<Profile />} />}
                 />
                 <Route path="/forgot-password" element={<ForgotPassword />} />
-                <Route path="/verified" element={<VerificationPage />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             )}

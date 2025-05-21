@@ -16,7 +16,7 @@ const useLogin = (handleSetMessage, resetForm) => {
         password,
       );
       const user = userCredential.user;
-      if (user.emailVerified) {
+      if (user.email) {
         handleSetMessage("Logged in successfully", "success");
         resetForm({ values: { email: "", password: "" } });
 
@@ -27,10 +27,7 @@ const useLogin = (handleSetMessage, resetForm) => {
           navigate("/home");
         }, 3000);
       } else {
-        handleSetMessage(
-          "Please verify your email address to continue.",
-          "error",
-        );
+        handleSetMessage("Error logging in. Please try again.", "error");
       }
     } catch (error) {
       let errorMessage = "An unexpected error occurred. Please try again.";

@@ -10,14 +10,13 @@ const AuthProvider = ({ children }) => {
   const [user, setUser] = useState({
     email: null,
     username: null,
-    emailVerified: null,
     phoneNumber: null,
     photoURL: null,
     password: null,
   });
 
   const [loading, setLoading] = useState(true);
-  const isAuthenticated = !!user.email && !!user.emailVerified;
+  const isAuthenticated = !!user.email;
 
   const db = getFirestore();
 
@@ -27,7 +26,6 @@ const AuthProvider = ({ children }) => {
         const newUser = {
           email: currentUser.email,
           username: currentUser.displayName,
-          emailVerified: currentUser.emailVerified,
           phoneNumber: currentUser.phoneNumber,
           photoURL: currentUser.photoURL || "DEFAULT_PHOTO_URL",
           password:
@@ -52,7 +50,6 @@ const AuthProvider = ({ children }) => {
         setUser({
           email: null,
           username: null,
-          emailVerified: null,
           phoneNumber: null,
           photoURL: null,
           password: null,
